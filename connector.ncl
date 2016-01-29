@@ -38,7 +38,8 @@
 
             <causalConnector id="onSelectionMenuFiveResizeBackVideo">
                 <connectorParam name="varSet"/>
-                <simpleCondition role="onSelection"/>
+                <connectorParam name="keyCode"/>
+                <simpleCondition role="onSelection" key="$keyCode"/>
                 <compoundAction operator="seq">
                     <simpleAction role="stop" max="unbounded" qualifier="par"/>
                     <simpleAction role="start" max="unbounded" qualifier="par"/>
