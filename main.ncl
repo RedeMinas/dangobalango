@@ -125,12 +125,28 @@
 				<bindParam name="varSet" value="50.97%, 5.33%, 45.22%, 41.87%"/>
 			</bind>
 			<bind role="stop" component="iconMenu"/>
+		</link>
+
+		<!-- Inicia Menu, Background -->
+		<link id="link_onStopIconMenu"  xconnector="conBase#onEndIconMenu">
+			<bind component="iconMenu" role="onEnd"/>
 			<bind role="start" component="imgFundo"/>
 			<bind role="start" component="logoMenu"/>
 			<bind role="start" component="menu1"/>
 			<bind role="start" component="menu2"/>
 			<bind role="start" component="menu3"/>
 			<bind role="start" component="menu4"/>
+		</link>
+
+		<!-- Finaliza Menu, Background -->
+		<link id="link_onBeginIconMenu"  xconnector="conBase#onBeginIconMenu">
+			<bind component="iconMenu" role="onBegin"/>
+			<bind role="stop" component="imgFundo"/>
+			<bind role="stop" component="logoMenu"/>
+			<bind role="stop" component="menu1"/>
+			<bind role="stop" component="menu2"/>
+			<bind role="stop" component="menu3"/>
+			<bind role="stop" component="menu4"/>
 		</link>
 
 		<!-- Links de Animação -->
