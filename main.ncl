@@ -2,6 +2,11 @@
 <ncl id="Dango_Balango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
 	<head>
 
+		<transitionBase>
+			<transition id="efeitoInicio" type="fade" dur="0.8s"/>
+			<transition id="efeitoFIm" type="barWipe" dur="0.8s"/>
+		</transitionBase>
+
 		<regionBase>
 
 			<!-- Video Fundo -->
@@ -9,7 +14,7 @@
 
 			<!-- Imagem de Fundo -->
 			<region id="rgFundo" width="100%" height="100%" zIndex="1"/>
-			<region id="rgIconMenu" left="89.5%" top="3.7%" width="8.45%" height="6.7%" zIndex="2"/>
+			<region left="89.5%" top="3.7%" id="rgIconMenu" width="8.45%" height="6.7%" zIndex="2"/>
 
 			<!-- Menu -->
 			<region left="7.50%" top="2%" id="rgLogoMenu" width="26%" height="31.20%" zIndex="3"/>
@@ -51,10 +56,10 @@
 			focusIndex="4" moveDown="1" moveUp="3"><descriptorParam name="transparency" value="0.1"/></descriptor>
 
 			<!-- Lua -->
-			<descriptor id="dLuaSlideDic" region="rgLuaSlideDic" focusIndex="6"/>
-			<descriptor id="dLuagameDangoBalango" region="rgLuagameDangoBalango" focusIndex="7"/>
-			<descriptor id="dFundoGame" region="rgFundoGame"><descriptorParam name="transparency" value="0.1"/></descriptor>
-			<descriptor id="dLuaSlide" region="rgLuaSlide" focusIndex="8"/>
+			<descriptor id="dLuaSlideDic" region="rgLuaSlideDic" focusIndex="6" transIn="efeitoInicio" transOut="efeitoFim"/>
+			<descriptor id="dLuagameDangoBalango" region="rgLuagameDangoBalango" focusIndex="7" transIn="efeitoInicio" transOut="efeitoFim"/>
+			<descriptor id="dFundoGame" region="rgFundoGame" transIn="efeitoInicio" transOut="efeitoFim"><descriptorParam name="transparency" value="0.1"/></descriptor>
+			<descriptor id="dLuaSlide" region="rgLuaSlide" focusIndex="8" transIn="efeitoInicio" transOut="efeitoFim"/>
 
 		</descriptorBase>
 
@@ -95,12 +100,19 @@
 		</media>
 
 		<!-- Links principais-->
-		<link id="lOnStartVideo"  xconnector="conBase#onBeginStart">
+		<link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
 			<bind component="videoAbertura" role="onBegin" interface="icon"/>
 			<bind component="iconMenu" role="start"/>
 
 		</link>
 
+		<link id="link_onEndVideoBeginLoop"  xconnector="conBase#onEndVideoBeginLoop">
+			<bind component="videoAbertura" role="onEnd"/>
+			<bind component="videoAbertura" role="start"/>
+
+		</link>
+
+		<!--
 		<link id="link_stopComponetsOnEndVideo" xconnector="conBase#onStop">
 			<bind component="videoAbertura" role="onEnd"/>
 			<bind role="stop" component="iconMenu"/>
@@ -115,6 +127,7 @@
 			<bind role="stop" component="luaSlideDicTupi"/>
 			<bind role="stop" component="gameDangoBalango"/>
 		</link>
+		-->
 
 		<link id="link_iconMenuSelect" xconnector="conBase#onSelectionIconMenuResizeVideo">
 			<bind role="onSelection" component="iconMenu">
@@ -128,7 +141,7 @@
 		</link>
 
 		<!-- Inicia Menu, Background -->
-		<link id="link_onStopIconMenu"  xconnector="conBase#onEndIconMenu">
+		<link id="link_onEndIconMenu"  xconnector="conBase#onEndIconMenu">
 			<bind component="iconMenu" role="onEnd"/>
 			<bind role="start" component="imgFundo"/>
 			<bind role="start" component="logoMenu"/>
@@ -147,6 +160,10 @@
 			<bind role="stop" component="menu2"/>
 			<bind role="stop" component="menu3"/>
 			<bind role="stop" component="menu4"/>
+			<bind role="stop" component="luaSlidePersonagens"/>
+			<bind role="stop" component="gameDangoBalango"/>
+			<bind role="stop" component="fundoGame"/>
+			<bind role="stop" component="luaSlideDicTupi"/>
 		</link>
 
 		<!-- Links de Animação -->
@@ -282,7 +299,7 @@
 
 		</link>
 
-		<link id="link_btn_FiveSelection" xconnector="conBase#onSelectionMenuFiveResizeBackVideo">
+		<link id="link_btnExitSelectResizeVideo" xconnector="conBase#onSelectionMenuFiveResizeBackVideo">
 			<bind role="onSelection" component="imgFundo">
 				<bindParam name="keyCode" value="EXIT"/>
 			</bind>

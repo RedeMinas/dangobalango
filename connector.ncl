@@ -8,6 +8,11 @@
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
             </causalConnector>
 
+            <causalConnector id="onEndVideoBeginLoop">
+                <simpleCondition role="onEnd"/>
+                <simpleAction role="start" max="unbounded" qualifier="par"/>
+            </causalConnector>
+
             <causalConnector id="onEndIconMenu">
                 <simpleCondition role="onEnd"/>
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
