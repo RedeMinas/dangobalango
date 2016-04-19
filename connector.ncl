@@ -70,6 +70,22 @@
                 <simpleAction role="set" value="$newValue" duration="$vDuration" by="$vBy" />
             </causalConnector>
 
+            <causalConnector id="onBeginIconMenuSetAnim">
+                <connectorParam name="vBy" />
+                <connectorParam name="vDuration" />
+                <connectorParam name="newValue"/>
+                <simpleCondition role="onBegin"/>
+                <simpleAction role="set" value="$newValue" duration="$vDuration" by="$vBy" />
+            </causalConnector>
+
+            <causalConnector id="onEndIconMenuSetAnim">
+                <connectorParam name="vBy" />
+                <connectorParam name="vDuration" />
+                <connectorParam name="newValue"/>
+                <simpleCondition role="onEnd"/>
+                <simpleAction role="set" value="$newValue" duration="$vDuration" by="$vBy" />
+            </causalConnector>
+
             <causalConnector id="onKeySelectionStartNStopN">
                 <simpleCondition role="onSelection"/>
                 <compoundAction operator="seq">
@@ -83,6 +99,14 @@
                 <simpleCondition role="onSelection" key="$keyCode"/>
                 <compoundAction operator="seq">
                     <simpleAction role="stop" max="unbounded" qualifier="par"/>
+                </compoundAction>
+            </causalConnector>
+               <causalConnector id="onKeySelectionStopStart">
+                <connectorParam name="keyCode"/>
+                <simpleCondition role="onSelection" key="$keyCode"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="stop" max="unbounded" qualifier="seq"/>
+                    <simpleAction role="start" max="unbounded" qualifier="seq"/>
                 </compoundAction>
             </causalConnector>
 
