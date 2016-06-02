@@ -1,13 +1,13 @@
 function findImagesSlide()
-    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
-    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
 
     local imagesMenu = {}
 
-    for line in io.lines("imagelistSlide.txt") do
+    for line in io.lines("imagelistPer.txt") do
       print(#imagesMenu .. " - ".. line)
       table.insert(imagesMenu, line)
     end
