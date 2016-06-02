@@ -50,7 +50,7 @@ end
 
 function registerTimer()
 
-  local timeout = 2000
+  local timeout = 50000
 
 
   if cancelTimerFunc then
