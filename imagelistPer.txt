@@ -1,4 +1,3 @@
-media/personagens/
 media/personagens/04.png
 media/personagens/05.png
 media/personagens/02.jpg
