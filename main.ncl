@@ -25,13 +25,14 @@
             <region left="7.50%" top="62%" id="rgMenu3a" width="26%" height="14.72%" zIndex="3"/>
             <region left="7.50%" top="2%" id="rgMenu4" width="26%" height="17.20%" zIndex="2"/>
             <region left="7.50%" top="76%" id="rgMenu4a" width="26%" height="17.20%" zIndex="3"/>
-            <region left="91%"   top="92.3%" id="rgBtnSair" width="5%" height="3%" zIndex="4"/>
+            <region left="2%"   top="92%" id="rgBtnSair" width="5%" height="3%" zIndex="4"/>
             <!-- Lua -->
-            <region left="57.3%" top="51.5%" id="rgLuaSlideDic" width="35%" height="35%" zIndex="4"/>
-            <region left="57.3%" top="51.5%" id="rgLuaSlideInfo" width="35%" height="35%" zIndex="4"/>
-            <region left="57.3%" top="52.5%" id="rgLuagameDangoBalango" width="35%" height="35%" zIndex="4"/>
-            <region left="57.3%" top="52.5%" id="rgFundoGame" width="35%" height="35%" zIndex="3"/>
-            <region left="57.3%" top="51.5%" id="rgLuaSlide" width="35%" height="35%" zIndex="4"/>
+            <region left="57.3%" top="44%" id="rgLuaSlideDic" width="35%" height="53%" zIndex="4"/>
+            <region left="57.3%" top="44%" id="rgLuaSlideInfo" width="35%" height="53%" zIndex="4"/>
+            <region left="57.3%" top="45%" id="rgLuagameDangoBalango" width="35%" height="45%" zIndex="4"/>
+            <region left="57.3%" top="45%" id="rgFundoGame" width="35%" height="45%" zIndex="3"/>
+            <region left="57.9%" top="45%" id="rgFundoGame2" width="31%" height="45%" zIndex="3"/>
+            <region left="57.3%" top="44%" id="rgLuaSlide" width="35%" height="48%" zIndex="4"/>
         </regionBase>
 
         <descriptorBase>
@@ -39,6 +40,7 @@
             <descriptor id="dVideoFullscreen" region="rgVideoFullscreen"/>
             <!-- Imagem de Fundo -->
             <descriptor id="deFundo" region="rgFundo"/>
+
             <descriptor id="deIconMenu" region="rgIconMenu"/>
             <!-- Menu -->
             <descriptor id="deLogoMenu" region="rgLogoMenu"/>
@@ -64,6 +66,7 @@
             <descriptor id="dLuaSlideInfo" region="rgLuaSlideInfo" focusIndex="10"  transIn="efeitoInicio" transOut="efeitoFim"/>
             <descriptor id="dLuagameDangoBalango" region="rgLuagameDangoBalango" focusIndex="7" moveDown="3" moveUp="1" transIn="efeitoInicio" transOut="efeitoFim"/>
             <descriptor id="dFundoGame" region="rgFundoGame" transIn="efeitoInicio" transOut="efeitoFim"><descriptorParam name="transparency" value="0.1"/></descriptor>
+            <descriptor id="dFundoGame2" region="rgFundoGame2" transIn="efeitoInicio" transOut="efeitoFim"></descriptor>
             <descriptor id="dLuaSlide" region="rgLuaSlide" focusIndex="8"  transIn="efeitoInicio" transOut="efeitoFim"/>
         </descriptorBase>
 
@@ -100,6 +103,7 @@
         <media id="luaSlidePersonagens" type="application/x-ginga-NCLua" src="slidePersonagens.lua" descriptor="dLuaSlide"/>
         <media id="gameDangoBalango" src="media/gamedango/game.lua" descriptor="dLuagameDangoBalango"/>
         <media id="fundoGame" src="media/fundoPreto.jpg" descriptor="dFundoGame"/>
+        <media id="fundoGame2" src="media/fundoPreto.jpg" descriptor="dFundoGame2"/>
         <media id="luaSlideDicTupi" type="application/x-ginga-NCLua" src="slideDic.lua" descriptor="dLuaSlideDic"/>
         <media id="luaSlideInfo" type="application/x-ginga-NCLua" src="slideInfo.lua" descriptor="dLuaSlideInfo"/>
         <media id="settings" type="application/x-ginga-settings">
@@ -120,7 +124,7 @@
             </bind>
 
             <bind role="set" component="videoAbertura" interface="bounds">
-                <bindParam name="varSet" value="50.97%, 5.33%, 45.22%, 41.87%"/>
+                <bindParam name="varSet" value="50.97%, 2.33%, 45.22%, 41.87%"/>
             </bind>
             <bind role="stop" component="iconMenu"/>
         </link>
@@ -223,11 +227,11 @@
                 <bind role="stop" component="gameDangoBalango"/>
                 <bind role="stop" component="luaSlidePersonagens"/>
                 <bind role="stop" component="luaSlideInfo"/>
-                <bind role="stop" component="fundoGame"/>
+               <bind role="stop" component="fundoGame"/>
                 <bind role="stop" component="menu2a"/>
                 <bind role="stop" component="menu3a"/>
                 <bind role="stop" component="menu4a"/>
-
+                <bind role="start" component="fundoGame2"/>
 
                 <bind role="start" component="menu1a"/>
                 <bind role="start" component="luaSlideDicTupi"/>
@@ -244,12 +248,14 @@
                 <bind role="stop" component="menu1a"/>
                 <bind role="stop" component="menu3a"/>
                 <bind role="stop" component="menu4a"/>
+
                 <bind role="stop" component="luaSlidePersonagens"/>
                 <bind role="stop" component="luaSlideDicTupi"/>
                 <bind role="stop" component="luaSlideInfo"/>
-
+                <bind role="stop" component="fundoGame2"/>
                 <bind role="start" component="menu2a"/>
                 <bind role="start" component="fundoGame"/>
+
                 <bind role="start" component="gameDangoBalango"/>
                 
 
@@ -265,9 +271,9 @@
                 <bind role="stop" component="menu4a"/>
                 <bind role="stop" component="gameDangoBalango"/>
                 <bind role="stop" component="luaSlideDicTupi"/>
-                <bind role="stop" component="fundoGame"/>
+               <bind role="stop" component="fundoGame"/>
                 <bind role="stop" component="luaSlideInfo"/>
-
+                <bind role="start" component="fundoGame2"/>
                 <bind role="start" component="menu3a"/>
                 <bind role="start" component="luaSlidePersonagens"/>
 
@@ -284,9 +290,9 @@
                 <bind role="stop" component="menu3a"/>
                 <bind role="stop" component="gameDangoBalango"/>
                 <bind role="stop" component="luaSlidePersonagens"/>
-                <bind role="stop" component="fundoGame"/>
+                <bind role="start" component="fundoGame2"/>
                 <bind role="stop" component="luaSlideDicTupi"/>
-
+                <bind role="stop" component="fundoGame"/>
                 <bind role="start" component="menu4a"/>
                 <bind role="start" component="luaSlideInfo"/>
                 
@@ -373,6 +379,7 @@
                 <bind role="stop" component="menu4a"/>
                 <bind role="stop" component="sair"/>
                 <bind role="stop" component="fundoGame"/>
+                <bind role="stop" component="fundoGame2"/>
                 <bind role="stop" component="luaSlidePersonagens"/>
                 <bind role="stop" component="luaSlideDicTupi"/>
                 <bind role="stop" component="luaSlideInfo"/>

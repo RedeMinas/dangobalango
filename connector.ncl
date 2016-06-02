@@ -18,6 +18,51 @@
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
             </causalConnector>
 
+            <causalConnector id="onSelection_orSet_varStopStart">
+                <connectorParam name="var"/>
+                <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+                    <simpleAction role="stop"/>
+                    <simpleAction role="start"/>
+                </compoundAction>
+            </causalConnector>
+
+            <causalConnector id="onSelectionSet_varStop">
+                <connectorParam name="var"/>
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+                    <simpleAction role="stop"/> 
+                </compoundAction>               
+            </causalConnector>
+
+            <causalConnector id="onSelectionSet_varStart">
+                <connectorParam name="var"/>
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+                    <simpleAction role="start"/> 
+                </compoundAction>               
+            </causalConnector>
+
+            <causalConnector id="onSelectionSet_var">
+                <connectorParam name="var"/>
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                    <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
+                    
+                </compoundAction>               
+            </causalConnector>
+
+            <causalConnector id="onSelection_orSet_var">
+                <connectorParam name="var"/>
+                <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
+                <compoundAction operator="seq">
+          
+                </compoundAction>
+            </causalConnector>
+
             <causalConnector id="onBeginIconMenu">
                 <simpleCondition role="onBegin"/>
                 <simpleAction role="stop" max="unbounded" qualifier="par"/>
@@ -28,6 +73,30 @@
                 <simpleCondition role="onBegin"/>
                 <simpleAction role="set" value="$value"/>
             </causalConnector>
+
+            <causalConnector id="onSelectionKeySet">
+                <connectorParam name="keyCode"/>
+                <simpleCondition role="onSelection" key="$keyCode"/>
+                <simpleAction role="set" value="$value"/>
+            </causalConnector>
+
+
+
+
+ <causalConnector id="onSelectionKeySetStart">
+                <connectorParam name="keyCode"/>
+                <simpleCondition role="onSelection" key="$keyCode"/>
+                <simpleAction role="set" value="$value"/>
+                
+                    
+                    <simpleAction role="start" max="unbounded" qualifier="par"/>
+            </causalConnector>
+
+
+
+
+
+
 
             <causalConnector id="onEndSet">
                 <connectorParam name="value"/>
