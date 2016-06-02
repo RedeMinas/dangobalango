@@ -375,7 +375,7 @@
                 <bind role="stop" component="fundoGame"/>
                 <bind role="stop" component="luaSlidePersonagens"/>
                 <bind role="stop" component="luaSlideDicTupi"/>
-                <bind role="stop" component="luaSlideDicInfo"/>
+                <bind role="stop" component="luaSlideInfo"/>
                 <bind role="stop" component="gameDangoBalango"/>
 
             <bind role="set" component="videoAbertura" interface="bounds">
