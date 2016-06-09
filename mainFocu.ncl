@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Exemplo de uso de objeto NCLua -->
 
 
@@ -37,7 +37,7 @@
 				<region id="rgLuaSlideInfo" left="57.3%" top="44%"  width="35%" height="53%" zIndex="5"/>
             	<region id="rgLuaGameDango" left="57.3%" top="45%"  width="35%" height="45%" zIndex="5"/>
  				<region id="rgLuaSlidePerso" left="57.3%" top="44%"  width="35%" height="48%" zIndex="5"/>
-				 <region id="rgBack" left="2%" top="2%"  width="5%" height="3%" zIndex="5"/>
+		
 				 <region id="rgFundoGame2" left="57.9%" top="45%"  width="31%" height="45%" zIndex="4"/>
 				 <region id="rgFundoGame" left="57.3%" top="45%"  width="35%" height="45%" zIndex="4"/>
  			</region>
@@ -49,7 +49,7 @@
 			<descriptor id="dFundoGame2" region="rgFundoGame2"/>
 
 			<descriptor id="deIconMenu" region="rgIconMenu"/>
-			<descriptor id="deBack" region="rgBack"/>
+
 			<descriptor id="deSair" region="rgBtnSair"/>
 			<descriptor id="formDesc" region="formReg" focusIndex="1" explicitDur="15s"/>
 			<descriptor id="deMenu1" region="rgMenu1" focusIndex="2" moveDown="3" moveUp="5" moveRight="6" focusBorderWidth="0" focusSelSrc="media/menu/1a.png" focusSrc="media/menu/1a.png"/>
@@ -75,29 +75,33 @@
 		<media id="icone" src="media/menu/icon.png" descriptor="deIconMenu"/>
 		<media id="logo" src="media/menu/5.png" descriptor="deLogo"/>
 		<media id="sair" src="media/sair.png" descriptor="deSair"/>
-		<media id="back" src="media/sair.png" descriptor="deBack"/>
-		 <media id="fundoGame" src="media/fundoPreto.jpg" descriptor="dFundoGame"/>
+	
+		<media id="fundoGame" src="media/fundoPreto.jpg" descriptor="dFundoGame"/>
 		<media id="fundoGame2" src="media/fundoPreto.jpg" descriptor="dFundoGame2"/>
-		
-			
- 
-		
+		<media id="newMenu" refer="menu" instance="newInstance"/>
+	
+
+
 		<context id="menu">
-			<media id="settings" type="application/x-ginga-settings">
-            <property name="service.currentKeyMaster" value=""/>
-        </media>
+		
 			<port id="pMenu1" component="menu1"/>
 			<port id="pMenu2" component="menu2"/>
 			<port id="pMenu3" component="menu3"/>
 			<port id="pMenu4" component="menu4"/>
-				
+			<port id="pSettings" component="settings"/>
+		
 			<media id="menu1" src="media/menu/1.png" descriptor="deMenu1"/>
 			<media id="menu2" src="media/menu/2.png" descriptor="deMenu2"/>
 			<media id="menu3" src="media/menu/3.png" descriptor="deMenu3"/>
 			<media id="menu4" src="media/menu/4.png" descriptor="deMenu4"/>
-			
+		
 
-			
+			<media id="settings" type="application/x-ginga-settings">
+            <property name="service.currentKeyMaster" value=""/>
+		</media>
+
+	
+
 			<media id="variavel"  descriptor="dLuaSlideDic">
 				<property name="opc" value="1"/>
 			</media>
@@ -117,7 +121,7 @@
 				<media id="jogos"  src="media/gamedango/game.lua" descriptor="dLuaGameDango"/>
 				<media id="personagens" src="slidePersonagens.lua" descriptor="dLuaSlidePerso" />
 				<media id="informacoes" src="slideInfo.lua" descriptor="dLuaSlideInfo"/>
-
+			<media id="newSettings" refer="settings" instance="newInstance"/>
 			</switch>
 			
 			<link id="switch_opcoes" xconnector="conBase#onSelection_orSet_varStopStart">
@@ -128,15 +132,52 @@
 				<bind role="set" component="variavel" interface="opc">
 					<bindParam name="var" value="0"/>
 				</bind>
-				
-				
+
 				<bind role="stop" component="opcoes"/>
 				<bind role="start" component="opcoes"/>
 				</link>
 
 
+		 <link id="link_focoBeginDicionario" xconnector="conBase#onSelectionSet">
+            <bind role="onSelection" component="menu1"/>
+            <bind role="set" component="settings" interface="service.currentKeyMaster">
+                <bindParam name="value" value="dicionario"/>
+            </bind>
+        </link>
+
+
+ 		<link id="link_focoBeginGameDangoBalango" xconnector="conBase#onSelectionSet">
+            <bind role="onSelection" component="menu2" />
+            <bind role="set" component="settings" interface="service.currentKeyMaster">
+                <bindParam name="value" value="jogos"/>
+            </bind>
+        </link>
+        
+
+   
+
+        <link id="link_focoBeginPersonagens" xconnector="conBase#onSelectionSet">
+            <bind role="onSelection" component="menu3" />
+            <bind role="set" component="settings" interface="service.currentKeyMaster">
+                <bindParam name="value" value="personagens"/>
+            </bind>
+        </link>
+        
+
+
+         <link id="link_focoBeginInformacoes" xconnector="conBase#onSelectionSet">
+            <bind role="onSelection" component="menu4" />
+            <bind role="set" component="settings" interface="service.currentKeyMaster">
+                <bindParam name="value" value="informacoes"/>
+            </bind>
+        </link>
+        
+
+        
         
 		</context>
+
+
 
 
 
@@ -154,6 +195,7 @@
 			<bind role="start" component="menu"/>
 			<bind role="start" component="fundo"/>	
 			<bind role="start" component="sair"/>
+			<bind role="start" component="back"/>
 			<bind role="start" component="logo"/>			
 			<bind role="stop" component="icone"/>
 			 <bind role="set" component="video" interface="bounds">
