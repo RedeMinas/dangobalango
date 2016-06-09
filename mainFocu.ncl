@@ -5,15 +5,12 @@
 <ncl id="Dango_Balango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
 	<head>
 		<ruleBase>
-			<rule id="en" var="system.language" value="en" comparator="eq"/>
 			<rule id="rDicionario" var="service.currentFocus" value="2" comparator="eq"/>
 			<rule id="rJogos" var="service.currentFocus" value="3" comparator="eq"/>
 			<rule id="rPersonagens" var="service.currentFocus" value="4" comparator="eq"/>
 			<rule id="rInformacoes" var="service.currentFocus" value="5" comparator="eq"/>
 		</ruleBase>
-		 <!--<transitionBase>
-       
-        </transitionBase>-->
+
 		<transitionBase>
 			<transition id="trans1" type="fade" dur="1s"/>
 			<transition id="trans2" type="irisWipe" dur="1s"/>
@@ -122,11 +119,6 @@
 				<media id="informacoes" src="slideInfo.lua" descriptor="dLuaSlideInfo"/>
 
 			</switch>
-
-
-
-		
-		
 			
 			<link id="switch_opcoes" xconnector="conBase#onSelection_orSet_varStopStart">
 			  	<bind role="onSelection" component="menu1"/>
@@ -146,12 +138,7 @@
         
 		</context>
 
-    
 
-<!--CONTROLE DO FOCO -->
-
-
-<!--FIM DO CONTROLE DO FOCO -->
 
 		<link  id="Video" xconnector="conBase#onBeginStart_delay">
 			<bind role="onBegin" component="video"/>
