@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Exemplo de uso de objeto NCLua -->
 
-
 <ncl id="Dango_Balango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
 	<head>
 		<ruleBase>
@@ -19,6 +18,7 @@
 			<transition id="efeitoInicio" type="fade" dur="0.8s"/>
             <transition id="efeitoFIm" type="barWipe" dur="0.8s"/>
 		</transitionBase>
+
 		<regionBase>
 			<region id="fundoReg" width="100%" height="100%" zIndex="2">
 				<region id="screenReg" width="100%" height="100%" zIndex="3"/>
@@ -31,15 +31,13 @@
 				<region id="rgMenu2" left="7.50%" top="51%" width="26%" height="11.67%" zIndex="3"/>
 				<region id="rgMenu3" left="7.50%" top="62%" width="26%" height="14.72%" zIndex="3"/>
 				<region id="rgMenu4" left="7.50%" top="76%" width="26%" height="17.20%" zIndex="3"/>
-				
 				<region id="rgBtnSair" left="2%"   top="92%"  width="5%" height="3%" zIndex="4"/>
 				<region id="rgLuaSlideDic" left="57.3%" top="44%"  width="35%" height="53%" zIndex="5"/>
 				<region id="rgLuaSlideInfo" left="57.3%" top="44%"  width="35%" height="53%" zIndex="5"/>
             	<region id="rgLuaGameDango" left="57.3%" top="45%"  width="35%" height="45%" zIndex="5"/>
  				<region id="rgLuaSlidePerso" left="57.3%" top="44%"  width="35%" height="48%" zIndex="5"/>
-		
-				 <region id="rgFundoGame2" left="57.9%" top="45%"  width="31%" height="45%" zIndex="4"/>
-				 <region id="rgFundoGame" left="57.3%" top="45%"  width="35%" height="45%" zIndex="4"/>
+				<region id="rgFundoGame2" left="57.9%" top="45%"  width="31%" height="45%" zIndex="4"/>
+				<region id="rgFundoGame" left="57.3%" top="45%"  width="35%" height="45%" zIndex="4"/>
  			</region>
 		</regionBase>
 		<descriptorBase>
@@ -47,9 +45,7 @@
 			<descriptor id="screenDesc" region="screenReg"/>
 			<descriptor id="deLogo" region="rgLogoMenu"/>
 			<descriptor id="dFundoGame2" region="rgFundoGame2"/>
-
 			<descriptor id="deIconMenu" region="rgIconMenu"/>
-
 			<descriptor id="deSair" region="rgBtnSair"/>
 			<descriptor id="formDesc" region="formReg" focusIndex="1" explicitDur="15s"/>
 			<descriptor id="deMenu1" region="rgMenu1" focusIndex="2" moveDown="3" moveUp="5" moveRight="6" focusBorderWidth="0" focusSelSrc="media/menu/1a.png" focusSrc="media/menu/1a.png"/>
@@ -121,7 +117,7 @@
 				<media id="jogos"  src="media/gamedango/game.lua" descriptor="dLuaGameDango"/>
 				<media id="personagens" src="slidePersonagens.lua" descriptor="dLuaSlidePerso" />
 				<media id="informacoes" src="slideInfo.lua" descriptor="dLuaSlideInfo"/>
-			<media id="newSettings" refer="settings" instance="newInstance"/>
+				<media id="newSettings" refer="settings" instance="newInstance"/>
 			</switch>
 			
 			<link id="switch_opcoes" xconnector="conBase#onSelection_orSet_varStopStart">
@@ -172,14 +168,7 @@
             </bind>
         </link>
         
-
-        
-        
 		</context>
-
-
-
-
 
 		<link  id="Video" xconnector="conBase#onBeginStart_delay">
 			<bind role="onBegin" component="video"/>

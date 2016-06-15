@@ -8,6 +8,24 @@
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
             </causalConnector>
 
+             <causalConnector id="onEndStart">
+                <simpleCondition role="onEnd"/>
+                <simpleAction role="start" max="unbounded" qualifier="par"/>
+            </causalConnector>
+
+            <causalConnector id="onEndStop">
+                <simpleCondition role="onEnd"/>
+                <simpleAction role="stop" max="unbounded" qualifier="par"/>
+            </causalConnector>
+
+            <causalConnector id="onEndStartStart">
+                <simpleCondition role="onEnd"/>
+                 <compoundAction operator="seq">
+                 <simpleAction role="start" max="unbounded" qualifier="par"/>
+                <simpleAction role="stop" max="unbounded" qualifier="par"/>
+                </compoundAction>
+            </causalConnector>
+
             <causalConnector id="onEndVideoBeginLoop">
                 <simpleCondition role="onEnd"/>
                 <simpleAction role="start" max="unbounded" qualifier="par"/>
@@ -140,11 +158,29 @@
                 </compoundAction>               
             </causalConnector>
 
+            <causalConnector id="onSelectionSetStart">
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                   <simpleAction role="set" value="$value"/>
+                    <simpleAction role="start" max="unbounded" qualifier="par"/>    
+                </compoundAction>               
+            </causalConnector>
+               <causalConnector id="onSelectionSetStartStop">
+                <simpleCondition role="onSelection"/>
+                <compoundAction operator="seq">
+                   <simpleAction role="set" value="$value"/>
+                    <simpleAction role="start" max="unbounded" qualifier="par"/>  
+                    <simpleAction role="stop" max="unbounded" qualifier="par"/>  
+                </compoundAction>               
+            </causalConnector>
+
             <causalConnector id="onEndSet">
                 <connectorParam name="value"/>
                 <simpleCondition role="onEnd"/>
                 <simpleAction role="set" value="$value"/>
             </causalConnector>
+
+        
 
             <causalConnector id="onEndSetStopStart">
                 <connectorParam name="value"/>
