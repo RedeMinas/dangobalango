@@ -9,14 +9,13 @@
 		</ruleBase>
 
 		<transitionBase>
-			
 			<transition id="efeitoInicio" type="fade" dur="0.8s"/>
             <transition id="efeitoFIm" type="barWipe" dur="0.8s"/>
 		</transitionBase>
 
 		<regionBase>
-			<region id="fundoReg" width="100%" height="100%" zIndex="2">
-			<region id="rgLua" width="100%" height="100%" />
+				<region id="fundoReg" width="100%" height="100%" zIndex="2">
+				<region id="rgLua" width="100%" height="100%" />
 				<region id="screenReg" width="100%" height="100%" zIndex="3"/>
 				<region id="rgIconMenu" left="89.5%" top="3.7%"  width="8.45%" height="6.7%" zIndex="4"/>
 				<region id="rgLogoMenu" left="7.50%" top="2%"  width="26%" height="31.20%" zIndex="3"/>
@@ -42,21 +41,20 @@
 			<descriptor id="dFundoGame2" region="rgFundoGame2"/>
 			<descriptor id="deIconMenu" region="rgIconMenu"/>
 			<descriptor id="deSair" region="rgBtnSair"/>
-			<descriptor id="deMenu1" region="rgMenu1" focusIndex="2" moveDown="3" moveUp="5" moveRight="6" focusBorderWidth="0" focusSelSrc="media/menu/1a.png" focusSrc="media/menu/1a.png"/>
-			<descriptor id="deMenu2" region="rgMenu2" focusIndex="3" moveDown="4" moveUp="2" moveRight="7" focusBorderWidth="0" focusSelSrc="media/menu/2a.png" focusSrc="media/menu/2a.png"/>
-			<descriptor id="deMenu3" region="rgMenu3" focusIndex="4" moveDown="5" moveUp="3" moveRight="8" focusBorderWidth="0" focusSelSrc="media/menu/3a.png" focusSrc="media/menu/3a.png"/>
-			<descriptor id="deMenu4" region="rgMenu4" focusIndex="5" moveDown="2" moveUp="4" moveRight="9" focusBorderWidth="0" focusSelSrc="media/menu/4a.png" focusSrc="media/menu/4a.png"/>
-			<descriptor id="dLuaSlideDic" region="rgLuaSlideDic"  focusIndex="6" moveLeft="2" />
-			<descriptor id="dLuaGameDango" region="rgLuaGameDango"   focusIndex="7" moveLeft="3" />
-			<descriptor id="dLuaSlidePerso" region="rgLuaSlidePerso"  focusIndex="8" moveLeft="4" />
-			<descriptor id="dLuaSlideInfo" region="rgLuaSlideInfo"  focusIndex="9" moveLeft="5" />
+			<descriptor id="deMenu1" region="rgMenu1" focusIndex="2" moveDown="3" moveUp="5"  focusBorderWidth="0" focusSelSrc="media/menu/1a.png" focusSrc="media/menu/1a.png"/>
+			<descriptor id="deMenu2" region="rgMenu2" focusIndex="3" moveDown="4" moveUp="2"  focusBorderWidth="0" focusSelSrc="media/menu/2a.png" focusSrc="media/menu/2a.png"/>
+			<descriptor id="deMenu3" region="rgMenu3" focusIndex="4" moveDown="5" moveUp="3"  focusBorderWidth="0" focusSelSrc="media/menu/3a.png" focusSrc="media/menu/3a.png"/>
+			<descriptor id="deMenu4" region="rgMenu4" focusIndex="5" moveDown="2" moveUp="4"  focusBorderWidth="0" focusSelSrc="media/menu/4a.png" focusSrc="media/menu/4a.png"/>
+			<descriptor id="dLuaSlideDic" region="rgLuaSlideDic"/>
+			<descriptor id="dLuaGameDango" region="rgLuaGameDango"/>
+			<descriptor id="dLuaSlidePerso" region="rgLuaSlidePerso"/>
+			<descriptor id="dLuaSlideInfo" region="rgLuaSlideInfo"/>
 			<descriptor id="dFundoGame" region="rgFundoGame" transIn="efeitoInicio" transOut="efeitoFim"><descriptorParam name="transparency" value="0.1"/></descriptor>
 		</descriptorBase>
 		<connectorBase>
 			<importBase documentURI="connector.ncl" alias="conBase"/>
 		</connectorBase>
 	</head>
-
 	<body>
 		<port id="entry" component="video"/>
 		<media id="fundo" src="media/fundo.png" descriptor="fundoDesc"/>
@@ -66,18 +64,15 @@
 		<media id="sair" src="media/sair.png" descriptor="deSair"/>
 		<media id="fundoGame" src="media/fundoPreto.jpg" descriptor="dFundoGame"/>
 		<media id="fundoGame2" src="media/fundoPreto.jpg" descriptor="dFundoGame2"/>
-		<media id="newMenu" refer="menu" instance="newInstance"/>
-	
-
-
-		<context id="menu">
 		
+	<!-- MENU -->
+		<context id="menu">
 			<port id="pMenu1" component="menu1"/>
 			<port id="pMenu2" component="menu2"/>
 			<port id="pMenu3" component="menu3"/>
 			<port id="pMenu4" component="menu4"/>
 			<port id="pSettings" component="settings"/>
-
+		<!-- MIDIAS DO CONTEXTO -->
 			<media id="menu1" src="media/menu/1.png" descriptor="deMenu1"/>
 			<media id="menu2" src="media/menu/2.png" descriptor="deMenu2"/>
 			<media id="menu3" src="media/menu/3.png" descriptor="deMenu3"/>
@@ -86,14 +81,8 @@
             <property name="service.currentKeyMaster" value=""/>
 			</media>
 
-			<link  id="dd" xconnector="conBase#onBeginStart">
-				<bind role="onBegin" component="menu"/>
-				<bind role="start" component="voltar"/>			
-			
-			</link>
 				<media id="variavel"  descriptor="dLuaSlideDic">
 					<property name="opc" value="1"/>
-					<property name="service.currentFocus" value=""/>
 				</media>
 				<media id="variavel2"  descriptor="dLuaGameDango">
 					<property name="opc" value="0"/>
@@ -159,41 +148,17 @@
             	</bind>
         	</link>
 
-         	<link id="link_focoEndDicionario" xconnector="conBase#onSelectionKeySet">
-            	<bind role="onSelection" component="dicionario">
-            		<bindParam name="keyCode" value="BACK"/>
-            	</bind>
-            	<bind role="set" component="settings" interface="service.currentFocus">
-                	<bindParam name="value" value="menu1"/>
-            	</bind>
-        	</link>
-
  			<link id="link_focoBeginGameDangoBalango" xconnector="conBase#onSelectionSet">
             	<bind role="onSelection" component="menu2" />
             	<bind role="set" component="settings" interface="service.currentKeyMaster">
             	    <bindParam name="value" value="jogos"/>
             	</bind>
         	</link>
-        
-			<link id="link_focoEndjogos" xconnector="conBase#onEndSet">
-            	<bind role="onEnd" component="jogos"/>
-            	<bind role="set" component="settings" interface="service.currentKeyMaster">
-            	    <bindParam name="value" value="menu2"/>
-            	</bind>
-        	</link>
-   
 
         	<link id="link_focoBeginPersonagens" xconnector="conBase#onSelectionSet">
             	<bind role="onSelection" component="menu3" />
             	<bind role="set" component="settings" interface="service.currentKeyMaster">
             	    <bindParam name="value" value="personagens"/>
-            	</bind>
-        	</link>
-
-      	  	<link id="link_focoEndPersonagens" xconnector="conBase#onEndSet">
-      	    	<bind role="onEnd" component="personagens"/>
-            	<bind role="set" component="settings" interface="service.currentKeyMaster">
-                	<bindParam name="value" value="menu3"/>
             	</bind>
         	</link>
 
@@ -203,16 +168,8 @@
             	    <bindParam name="value" value="informacoes"/>
             	</bind>
         	</link>
-
-        	<link id="link_focoEndInformacoes" xconnector="conBase#onEndSet">
-            	<bind role="onEnd" component="informacoes"/>
-            	<bind role="set" component="settings" interface="service.currentKeyMaster">
-                	<bindParam name="value" value="menu4"/>
-            	</bind>
-        	</link>
-        
 		</context>
-
+	<!-- FIM MENU -->	
 		<link  id="Video" xconnector="conBase#onBeginStart_delay">
 			<bind role="onBegin" component="video"/>
 			<bind role="start" component="icone">			
@@ -233,8 +190,6 @@
             	<bindParam name="var" value="50.97%, 2.33%, 45.22%, 41.87%"/>
             </bind>			
 		</link>
-
-
 
 		<link  id="SelecaoFundoImg1" xconnector="conBase#onSelectionStartStop">
 			<bind role="onSelection" component="menu" interface="pMenu1"/>
