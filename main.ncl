@@ -81,16 +81,16 @@
             <property name="service.currentKeyMaster" value=""/>
             </media>
 
-                <media id="variavel"  descriptor="dLuaSlideDic">
+                <media id="variavel"  type="application/x-ginga-NCLua" descriptor="dLuaSlideDic">
                     <property name="opc" value="1"/>
                 </media>
-                <media id="variavel2"  descriptor="dLuaGameDango">
+                <media id="variavel2"  type="application/x-ginga-NCLua" descriptor="dLuaGameDango">
                     <property name="opc" value="0"/>
                 </media>
-                <media id="variavel3"  descriptor="dLuaSlidePerso">
+                <media id="variavel3"  type="application/x-ginga-NCLua" descriptor="dLuaSlidePerso">
                     <property name="opc" value="0"/>
                 </media>
-                <media id="variavel4"  descriptor="dLuaSlideInfo">
+                <media id="variavel4"  type="application/x-ginga-NCLua" descriptor="dLuaSlideInfo">
                 <property name="opc" value="0"/>
                 </media>
             
