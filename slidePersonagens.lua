@@ -19,8 +19,9 @@ function showImage(images, index)
   if #images > 0 then
     canvas:drawRect('fill', 0, 0, canvas:attrSize());
     img = canvas:new(images[index])
-    canvas:compose(10, 10, img)
+    canvas:compose(0, 0, img)
     registerTimer()
+   
     canvas:flush()
   end
 end

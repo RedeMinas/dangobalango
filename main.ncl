@@ -13,8 +13,9 @@
             <transition id="efeitoFIm" type="barWipe" dur="0.8s"/>
         </transitionBase>
 
-        <regionBase>
-                <region id="fundoReg" width="100%" height="100%" zIndex="2">
+     
+        	 <regionBase>
+         <region id="fundoReg" width="100%" height="100%" zIndex="2">
                 <region id="rgLua" width="100%" height="100%" />
                 <region id="screenReg" width="100%" height="100%" zIndex="3"/>
                 <region id="rgIconMenu" left="89.5%" top="3.7%"  width="8.45%" height="6.7%" zIndex="4"/>
@@ -25,20 +26,21 @@
                 <region id="rgMenu2" left="7.50%" top="51%" width="26%" height="11.67%" zIndex="3"/>
                 <region id="rgMenu3" left="7.50%" top="62%" width="26%" height="14.72%" zIndex="3"/>
                 <region id="rgMenu4" left="7.50%" top="76%" width="26%" height="17.20%" zIndex="3"/>
-                <region id="rgBtnSair" left="2%"   top="92%"  width="5%" height="3%" zIndex="4"/>
-                <region id="rgLuaSlideDic" left="57.3%" top="44%"  width="35%" height="53%" zIndex="5"/>
-                <region id="rgLuaSlideInfo" left="57.3%" top="44%"  width="35%" height="53%" zIndex="5"/>
-                <region id="rgLuaGameDango" left="57.3%" top="45%"  width="35%" height="45%" zIndex="5"/>
-                <region id="rgLuaSlidePerso" left="57.3%" top="44%"  width="35%" height="48%" zIndex="5"/>
-                <region id="rgFundoGame2" left="57.9%" top="45%"  width="31%" height="45%" zIndex="4"/>
-                <region id="rgFundoGame" left="57.3%" top="45%"  width="35%" height="45%" zIndex="4"/>
+                <region id="rgBtnSair" left="2%"   top="88%"  width="7%" height="7%" zIndex="4"/>
+				<region id="rgBtnVoltar" left="2%"   top="78%"  width="7%" height="7%" zIndex="4"/>
+                <region id="rgLuaSlideDic" left="50.97%" top="50%"  width="45.10%" height="41.67%" zIndex="5"/>
+                <region id="rgLuaSlideInfo" left="50.97%" top="50%"  width="45.10%" height="41.67%" zIndex="5"/>
+                <region id="rgLuaGameDango" left="50.97%" top="50%"  width="45.10%" height="41.67%" zIndex="5"/>
+                <region id="rgLuaSlidePerso" left="50.97%" top="50%"  width="45.10%" height="41.67%" zIndex="5"/>
+                <region id="rgFundoGame" left="50.97%" top="50%"  width="45.10%" height="41.67%" zIndex="4"/>
             </region>
         </regionBase>
+       
         <descriptorBase>
             <descriptor id="fundoDesc" region="fundoReg"/>
             <descriptor id="screenDesc" region="screenReg"/>
             <descriptor id="deLogo" region="rgLogoMenu"/>
-            <descriptor id="dFundoGame2" region="rgFundoGame2"/>
+
             <descriptor id="deIconMenu" region="rgIconMenu"/>
             <descriptor id="deSair" region="rgBtnSair"/>
             <descriptor id="deMenu1" region="rgMenu1" focusIndex="2" moveDown="3" moveUp="5"  focusBorderWidth="0" focusSelSrc="media/menu/1a.png" focusSrc="media/menu/1a.png"/>
@@ -63,7 +65,7 @@
         <media id="logo" src="media/menu/5.png" descriptor="deLogo"/>
         <media id="sair" src="media/sair.png" descriptor="deSair"/>
         <media id="fundoGame" src="media/fundoPreto.jpg" descriptor="dFundoGame"/>
-        <media id="fundoGame2" src="media/fundoPreto.jpg" descriptor="dFundoGame2"/>
+ 
         
     <!-- MENU -->
         <context id="menu">
@@ -191,29 +193,30 @@
             </bind>         
         </link>
 
-        <link  id="SelecaoFundoImg1" xconnector="conBase#onSelectionStartStop">
+        <link  id="SelecaoFundoImg1" xconnector="conBase#onSelectionStop">
             <bind role="onSelection" component="menu" interface="pMenu1"/>
-            <bind role="start" component="fundoGame2"/> 
+         
             <bind role="stop" component="fundoGame"/>       
         </link>
 
-        <link  id="SelecaoFundoImg2" xconnector="conBase#onSelectionStartStop">
+        <link  id="SelecaoFundoImg2" xconnector="conBase#onSelectionStart">
             <bind role="onSelection" component="menu" interface="pMenu2"/>
-            <bind role="stop" component="fundoGame2"/>  
+         
             <bind role="start" component="fundoGame"/>  
         </link>
 
         <link  id="SelecaoFundoImg3" xconnector="conBase#onSelectionStop">
             <bind role="onSelection" component="menu" interface="pMenu3"/>
-            <bind role="stop" component="fundoGame2"/>  
+       
             <bind role="stop" component="fundoGame"/>       
         </link>
 
         <link  id="SelecaoFundoImg4" xconnector="conBase#onSelectionStop">
             <bind role="onSelection" component="menu" interface="pMenu4"/>
-            <bind role="stop" component="fundoGame2"/>  
+       
             <bind role="stop" component="fundoGame"/>       
         </link>
+   
 
         <link id="link_btnExitSelectResizeVideo" xconnector="conBase#onKeySelectionSetStopStart">
             <bind role="onSelection" component="sair">
@@ -225,7 +228,7 @@
             <bind role="stop" component="menu"/>
             <bind role="stop" component="sair"/>
             <bind role="stop" component="fundoGame"/>
-            <bind role="stop" component="fundoGame2"/>
+         
             <bind role="set" component="video" interface="bounds">
                 <bindParam name="var" value="0%,0%,100%,100%"/>
             </bind>

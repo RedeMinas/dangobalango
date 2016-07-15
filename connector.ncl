@@ -41,8 +41,8 @@
                 <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
                 <compoundAction operator="seq">
                     <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
-                    <simpleAction role="stop"/>
-                    <simpleAction role="start"/>
+                    <simpleAction role="stop" value="$var" max="unbounded" qualifier="par"/>
+                    <simpleAction role="start" value="$var" max="unbounded" qualifier="par"/>
                 </compoundAction>
             </causalConnector>
 
@@ -119,6 +119,10 @@
                 <connectorParam name="delay"/>
                 <simpleCondition role="onBegin"/>
                 <simpleAction role="start" delay="$delay" max="unbounded" qualifier="par"/>
+            </causalConnector>
+            <causalConnector id="onBeginStop">
+                <simpleCondition role="onBegin"/>
+                <simpleAction role="stop" delay="$delay" max="unbounded" qualifier="par"/>
             </causalConnector>
 
             <causalConnector id="onKeySelectionSetStopStart">
