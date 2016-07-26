@@ -1,9 +1,9 @@
 function findImagesSlide()
---    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
---    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
---    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
---    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
---    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
+    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
+    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
+    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
+    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
+    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
 
     local imagesMenu = {}
 

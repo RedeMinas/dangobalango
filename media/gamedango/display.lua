@@ -29,7 +29,7 @@ Display = {
    walls = nil,
 
    -- Actors animations current frame.
-   dango_frame = 1,
+   dango_frame = 2,
    ghosts_frame = nil,
 }
 
@@ -56,8 +56,7 @@ local ACTORS_PATHS = {
 }
 
 -- Used to convert Ghost numbers to Ghost names.
-local GHOSTS_NAMES = { 'ghost_blue', 'ghost_red', 'ghost_purple',
-                       'ghost_green', 'ghost_orange', }
+local GHOSTS_NAMES = { 'capablack', 'capadbrown','capalbrown'}
 
 -- dango animations.
 local DANGO = {}
@@ -84,7 +83,7 @@ local GHOST_FROZEN = {}
 do
    for _, dir in pairs (DIRS) do
       GHOST_FROZEN[dir] =
-         canvas:new (ACTORS_PATHS[dir]:gsub('%%s', 'ghost_frozen', 1))
+         canvas:new (ACTORS_PATHS[dir]:gsub('%%s', 'capawhite', 1))
    end
 end
 
@@ -99,8 +98,7 @@ do
    local suffixes = { '', 't', 'b', 'l', 'r', 'tb', 'lr', 'bl', 'blr', 'br',
                       'tbl', 'tblr', 'tbr', 'tl', 'tlr', 'tr' }
    for i = 1, #suffixes do
-      TILES['wall_'..suffixes[i]] = canvas:new ('media/wall_'
-                                               ..suffixes[i]..'.png')
+      TILES['wall_'..suffixes[i]] = canvas:new ('media/wall_'..suffixes[i]..'.png')
    end
 end
 
