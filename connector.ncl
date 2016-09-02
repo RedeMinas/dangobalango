@@ -224,11 +224,21 @@
                 </compoundAction>
             </causalConnector>
             
-              <causalConnector id="onSelectionStartStop">
+            <causalConnector id="onSelectionStartStop">
                 <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
                 <compoundAction operator="seq">
                   <simpleAction role="start" max="unbounded"/>
                    <simpleAction role="stop" max="unbounded"/>
+                </compoundAction>               
+            </causalConnector>
+            
+            <causalConnector id="onSelectionStartStopSet">
+            	<connectorParam name="var"/>
+                <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
+                <compoundAction operator="seq">
+                  <simpleAction role="start" max="unbounded"/>
+                   <simpleAction role="stop" max="unbounded"/>
+                   <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
                 </compoundAction>               
             </causalConnector>
             
