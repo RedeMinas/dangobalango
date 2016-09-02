@@ -56,8 +56,11 @@ local ACTORS_PATHS = {
 }
 
 -- Used to convert Ghost numbers to Ghost names.
-local GHOSTS_NAMES = { 'ghost_blue', 'ghost_red', 'ghost_purple',
-                       'ghost_green', 'ghost_orange', }
+local GHOSTS_NAMES = { 'capablack', 'capadbrown', 'capalbrown',
+   'capablack', 'capadbrown', }
+
+--local GHOSTS_NAMES = { 'capablack', 'capabrown','ghost_green', 'ghost_blue','ghost_green'  }
+
 
 -- dango animations.
 local DANGO = {}
@@ -84,7 +87,7 @@ local GHOST_FROZEN = {}
 do
    for _, dir in pairs (DIRS) do
       GHOST_FROZEN[dir] =
-         canvas:new (ACTORS_PATHS[dir]:gsub('%%s', 'ghost_frozen', 1))
+         canvas:new (ACTORS_PATHS[dir]:gsub('%%s', 'capawhite', 1))
    end
 end
 
@@ -207,7 +210,7 @@ end
 function Display:draw_scoreboard (level, lives)
    canvas:attrColor('yellow')
    canvas:attrFont('vera', 18)
-   local text = 'Nível '.. level
+   local text = 'Druzilas:\nNível '.. level
    local textw = canvas:measureText (text)
    local totalw = textw + 80
    local pad_left = self.gameboard.pad_left + 5

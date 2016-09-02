@@ -85,8 +85,8 @@ function ActorDango:collisions ()
       end
    end
 end
-
 
+
 function ActorDango:set_state (name)
 
    -- Load state data.
