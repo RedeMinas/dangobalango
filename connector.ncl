@@ -133,9 +133,9 @@
 
             <causalConnector id="onSelectionSet">
             	<connectorParam name="value"/>
-                <simpleCondition role="onSelection"/>
+                <simpleCondition role="onSelection" qualifier="or" max="unbounded"/>
                 <compoundAction operator="seq">
-                   <simpleAction role="set" value="$value"/>
+                   <simpleAction role="set" value="$value" max="unbounded"/>
                 </compoundAction>               
             </causalConnector>
 
@@ -161,7 +161,7 @@
             <causalConnector id="onEndSet">
                 <connectorParam name="value"/>
                 <simpleCondition role="onEnd" max="unbounded" qualifier="or"/>
-                <simpleAction role="set" value="$value" max="unbounded" qualifier="par"/>
+                <simpleAction role="set" value="$value" max="unbounded" qualifier="seq"/>
             </causalConnector>
 
             <causalConnector id="onSelectionIconMenuResizeVideo">
@@ -278,6 +278,8 @@
 					<simpleAction role="stop" />
 				</compoundAction>
 			</causalConnector>
+			
+			
             
 
         </connectorBase>
