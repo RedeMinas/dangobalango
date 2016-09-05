@@ -121,11 +121,13 @@
                 <simpleAction role="set" value="$value"/>
             </causalConnector>
 
- 			<causalConnector id="onSelectionStop">
+ 			<causalConnector id="onSelectionStopSet">
  				<connectorParam name="value"/>
+ 				<connectorParam name="var"/>
                 <simpleCondition role="onSelection" key="$value"/>
                 <compoundAction operator="seq">
                   <simpleAction role="stop" max="unbounded" qualifier="par"/>
+                  <simpleAction role="set" value="$var" max="unbounded" qualifier="par"/>
                 </compoundAction>               
             </causalConnector>
 
