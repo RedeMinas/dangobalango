@@ -1,9 +1,9 @@
 function findImagesSlide()
-    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
-    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
-    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.jpg > imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.jpeg >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.bmp >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.gif >> imagelistSlide.txt")
+--    os.execute("find media/personagens -name *.png >> imagelistSlide.txt")
 
     local imagesMenu = {}
 
@@ -19,7 +19,7 @@ function showImage(images, index)
   if #images > 0 then
     canvas:drawRect('fill', 0, 0, canvas:attrSize());
     img = canvas:new(images[index])
-    canvas:compose(0, 0, img)
+    canvas:compose(10, 10, img)
     registerTimer()
    
     canvas:flush()

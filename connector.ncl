@@ -272,10 +272,10 @@
             </causalConnector>
 			
 			<causalConnector id="onEndStartStop">
-				<simpleCondition role="onEnd"/>
+				<simpleCondition role="onEnd" qualifier="or" max="unbounded"/>
 				<compoundAction operator="par">
-					<simpleAction role="start" />
-					<simpleAction role="stop" />
+					<simpleAction role="start" max="unbounded"/>
+					<simpleAction role="stop" max="unbounded"/>
 				</compoundAction>
 			</causalConnector>
 			
