@@ -1,361 +1,372 @@
-<?xml version="1.0" encoding="UTF-8"?>
-	<!--PROJETO: Dangobalando
-	EMPRESA: Rede Minas
-	AUTOR:	 Alessandro Cézar-->
-<ncl id="Dango_Balango">
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ncl id="DangoBalango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
     <head>
-
-        <transitionBase>
-            <transition id="efeitoInicio" type="fade" dur="0.8s"/>
-            <transition id="efeitoFim"    type="barWipe" dur="0.8s"/>
-        </transitionBase>
-
-        <regionBase>
-        		<region id="rgPixelControle" left="50%" top="50%" width="1%" height="1%" zIndex="5">
-		        	
-		        </region>
-        	
-                <region id="fundoReg"                                  	width="100%"   height="100%"   zIndex="2"/>
-                <region id="fundoReg2"                                  width="100%"   height="100%"   zIndex="4"/>
-                <region id="rgNavegacao"                                width="100%"   height="9.63%"  zIndex="5"/>
-                
-                <region id="rgLogoMenu"      left="7.50%"   top="2%"     width="26%"    height="31.20%" zIndex="3"/>
-                <region id="rgFrame"         left="5%"      top="6.7%"   width="18.5%"  height="18.5%"  zIndex="3"/>
-                <region id="intReg"          left="92.5%"   top="91.7%"  width="5.07%"  height="6.51%"  zIndex="3"/>
-                
-                <region id="rgMenu1"         left="7.50%"   top="33.1%"  width="26%"    height="18.52%" zIndex="3"/>
-                <region id="rgMenu2"         left="7.50%"   top="51%"    width="26%"    height="11.67%" zIndex="3"/>
-                <region id="rgMenu3"         left="7.50%"   top="62%"    width="26%"    height="14.72%" zIndex="3"/>
-                <region id="rgMenu4"         left="7.50%"   top="76%"    width="26%"    height="17.20%" zIndex="3"/>
-
-                <region id="rgIconMenu"      left="89.5%"   top="3.7%"   width="8.45%"  height="6.7%"     zIndex="5"/>
-                <region id="rgScreen"                                 	width="100%"   height="100%"   	  zIndex="5"/>
-                <region id="rgVoltar"   	 left="50%"    top="84%"    width="8.142%"  height="9%" 	  zIndex="5"/>
-                <region id="rgBtnSair"       left="2%"      top="85%"    width="8%"     height="8%"       zIndex="5"/>
-				<region id="rgMenunT"   	 left="5%"     top="4%"     width="17%"  height="16%"  		  zIndex="5"/>
-				
-                <region id="rgLua" 	 left="4.9%"   top="27.5%" width="60%" 	 height="60.648%" zIndex="5"/>
-                
-                
-                <region id="rgFundoGame2"    left="57.9%"  top="45%"     width="31%"     height="45%"     zIndex="4"/>
-                <region id="rgFundoGame"     left="57.3%"  top="45%"     width="35%"     height="45%"     zIndex="3"/>
+      <regionBase>
+        	<region id="rgBackGroundImage"                              width="100%"        height="100%"    zIndex="1"/>
+            <region id="rgFullScreenMedia"                              width="100%"        height="100%"    zIndex="3"/>
+            <region id="rgIconInteract"         left="95%" top="8%"  	width="2.55%"       height="4.44%"    zIndex="3"/>
+            <region id="rgFrameRed"             left="8%"  top="32%"  	width="15.52%"      height="15.55%"   zIndex="8"/>
+            <region id="rgFrameGreen"           left="8%"  top="48%"    width="14.53%"      height="10.74%"    zIndex="8"/>
+            <region id="rgFrameYellow"          left="8%"  top="60%"  	width="13.38%"      height="13.61%"   zIndex="8"/>
+            <region id="rgFrameBlue"            left="8%"  top="75%"  	width="11.82%"      height="8.61%"   zIndex="8"/>
             
+            <region id="rgFrameRedOff"          left="8%"  top="32%"    width="15.52%"      height="15.55%"     zIndex="7"/>
+            <region id="rgFrameGreenOff"        left="8%"  top="48%"   	width="14.53%"      height="10.74%"    zIndex="7"/>
+            <region id="rgFrameYellowOff"       left="8%"  top="60%"  	width="13.38%"      height="13.61%"   zIndex="7"/>
+            <region id="rgFrameBlueOff"         left="8%"  top="75%"  	width="11.82%"      height="8.61%"    zIndex="7"/>
+            <region id="rgLogo"         		left="3%" 	top="1%" width="22.08%" 	   height="84.16%"     zIndex="4"/>
+            <region id="rgMenuAux"              left="4.69%"  top="54.63%" width="42.92%"      height="39.815%" zIndex="3"/>
+            <region id="rgFaixaBotoes"    		left="51.77%" top="10.19%" width="42.92%"      height="0.39%"   zIndex="6"/>
+            <region id="rgFrameTelaInicial"     left="51.77%" top="10.56%" width="42.92%"      height="75.56%"  zIndex="5"/>
+            <region id="rgMenuAuxLua"           left="4.7%"   top="52%"    width="45.4%"       height="40%"     zIndex="4"/>
+            <region id="rgBotaoEsc"             left="65.78%" top="90.28%" width="2.14%"       height="3.8%"    zIndex="8"/>
+            <region id="rgBotaoDir"             left="68.96%" top="90.28%" width="2.14%"       height="3.8%"    zIndex="8"/>
+            <region id="rgBotaoCima"            left="75.36%" top="90.28%" width="2.14%"       height="3.8%"    zIndex="8"/>
+            <region id="rgBotaoBaixo"           left="78.54%" top="90.28%" width="2.14%"       height="3.8%"    zIndex="8"/>
+            <region id="rgBtnExit"              left="88.75%" top="90.28%" width="5.94%"       height="3.8%"    zIndex="8"/>
+            <region id="rgFaixaTelaInicial"     left="54.94%" top="9.5%"   width="41.4583%"    height="0.8%"    zIndex="8"/>
         </regionBase>
-        
+
         <descriptorBase>
-            <!--<descriptor id="voltarDesc"     region="rgVoltar"/>-->
-            <descriptor id="dePixelControle" region="rgPixelControle">
-            	
-            </descriptor>
-            <descriptor id="menunTDesc"    region="rgMenunT"/>
-            <descriptor id="fundoDesc"      region="fundoReg"/>
-            <descriptor id="fundoDesc2"     region="fundoReg2"/>
-            <descriptor id="screenDesc"     region="rgScreen"/>
-            <descriptor id="deLogo"         region="rgLogoMenu"/>
-            <descriptor id="dFundoGame2"    region="rgFundoGame2"/>
-            <descriptor id="deIconMenu"     region="rgIconMenu"/>
-            <descriptor id="deMenu1"        region="rgMenu1"  focusIndex="2" moveDown="3" 
-            	moveUp="5"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/1.png" focusSrc="media/menu/tela1/1a.png">
-            </descriptor>
-            <descriptor id="deMenu2"        region="rgMenu2"  focusIndex="3" moveDown="4" 
-	            moveUp="2"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/2.png" focusSrc="media/menu/tela1/2a.png">
-            </descriptor>
-            <descriptor id="deMenu3"        region="rgMenu3"  focusIndex="4" moveDown="5" 
-	            moveUp="3"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/3.png" focusSrc="media/menu/tela1/3a.png">
-            </descriptor>
-            <descriptor id="deMenu4"        region="rgMenu4"  focusIndex="5" moveDown="2" 
-	            moveUp="4"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/4.png" focusSrc="media/menu/tela1/4a.png">
-            </descriptor>
-            <descriptor id="dLuaSlideDic"   region="rgLua" focusIndex="6" focusBorderWidth="0"  />
-            <descriptor id="dLuaGameDango"  region="rgLua" focusIndex="7" focusBorderWidth="0"  />
-            <descriptor id="dLuaSlidePerso" region="rgLua" focusIndex="8" focusBorderWidth="0"  />
-            <descriptor id="dLuaSlideInfo"  region="rgLua" focusIndex="9" focusBorderWidth="0"  />
-            <descriptor id="dNavegacao"     region="rgNavegacao"/>
-            <descriptor id="dFundoGame"     region="rgFundoGame"     transIn="efeitoInicio" transOut="efeitoFim">
-            	<descriptorParam name="transparency" value="0.1"/>
-            </descriptor>
-            
-        </descriptorBase>
+            <descriptor id="deBackGroundImage"      region="rgBackGroundImage"/>
+            <descriptor id="deFullScreenMedia"      region="rgFullScreenMedia"/>
+            <descriptor id="deFaixaTelaInicial"     region="rgFaixaTelaInicial"/>
+            <descriptor id="deFrame"      			region="rgFrameTelaInicial"/>
+            <descriptor id="deIconInteract"         region="rgIconInteract"/>
+     
+            <descriptor id="deMenuRed"              region="rgFrameRed"/>
+            <descriptor id="deMenuGreen"            region="rgFrameGreen"/>
+            <descriptor id="deMenuYellow"           region="rgFrameYellow"/>
+            <descriptor id="deMenuBlue"             region="rgFrameBlue"/>
+            <descriptor id="deMenuRedOff"           region="rgFrameRedOff"/>
+            <descriptor id="deMenuGreenOff"         region="rgFrameGreenOff"/>
+            <descriptor id="deMenuYellowOff"        region="rgFrameYellowOff"/>
+            <descriptor id="deMenuBlueOff"          region="rgFrameBlueOff"/>
+            <descriptor id="deBtnExit"              region="rgBtnExit"/>
+            <descriptor id="deMenuAuxLua"           region="rgMenuAuxLua"/>
+            <descriptor id="deMenuAux"              region="rgMenuAux"/>
+            <descriptor id="deLogo"         		region="rgLogo"/>      
         
+            <descriptor id="deBotaoDireito"         region="rgBotaoDir"/>
+            <descriptor id="deBotaoEsquerdo"        region="rgBotaoEsc"/>
+            <descriptor id="deBotaoCima"         	region="rgBotaoCima"/>
+            <descriptor id="deBotaoBaixo"        	region="rgBotaoBaixo"/>
+            <descriptor id="deFaixaBotoes"          region="rgFaixaBotoes"/>
+        </descriptorBase>
+
+        <!-- library of used connectors -->
         <connectorBase>
             <importBase documentURI="connector.ncl" alias="conBase"/>
         </connectorBase>
-        
     </head>
-    
+
     <body>
-        <port id="entry" component="mediaVideo"/>
-        
-        <media id="menu1newTab"	src="media/menu/tela2/abaVermelha.png" descriptor="menunTDesc" />
-        <media id="menu2newTab"	src="media/menu/tela2/abaVerde.png"    descriptor="menunTDesc" />
-        <media id="menu3newTab"	src="media/menu/tela2/abaAmarela.png"  descriptor="menunTDesc" />
-        <media id="menu4newTab"	src="media/menu/tela2/abaAzul.png" 	   descriptor="menunTDesc" />
-        
-        <media id="dicionario"  src="slideDic.lua" 			   descriptor="dLuaSlideDic"/>
-        <media id="jogos"  		src="media/gamedango/game.lua" descriptor="dLuaGameDango"/>
-        <media id="personagens" src="slidePersonagens.lua" 	   descriptor="dLuaSlidePerso"/>
-        <media id="informacoes" src="slideInfo.lua"			   descriptor="dLuaSlideInfo"/>
-        
-        <media id="fundo"      src="media/menu/tela1/fundo.png" 	 descriptor="fundoDesc"/>
-        <media id="fundo2"     src="media/menu/tela2/fundo2.png"     descriptor="fundoDesc2"/>
-        <media id="navegacao2" src="media/menu/tela2/navegacao2.png" descriptor="dNavegacao"/>
-        
-        	
-        
-        <media id="mediaVideo" src="sbtvd-ts://video" descriptor="screenDesc">
-            <area id="aIcone" begin="2s"/>
+
+        <port id="pInicia" component="mediaVideo"/>
+        <!-- Extra -->
+        <media id="backGroundImage"     src="media/menu/tela1/fundo.png"        								    descriptor="deBackGroundImage"/>
+       <!--  <media id="botaoDir"       src="Media/menu/direita.png"      	  							    descriptor="deBotaoDireito"/>
+        <media id="botaoEsquerdo"       src="Media/menu/esquerda.png"     	  								descriptor="deBotaoEsquerdo"/>
+        <media id="botaoCima"       	src="Media/menu/cima.png"     		  								descriptor="deBotaoCima"/>
+        <media id="botaoBaixo" 		    src="Media/menu/baixo.png"     	 				 					descriptor="deBotaoBaixo"/>
+        <media id="Exit"                src="Media/extra/sair.png"         	  								descriptor="deBtnExit"/> -->
+        <media id="iconInteract"        src="media/menu/icon.png"         	  								descriptor="deIconInteract"/>
+        <media id="mediaVideo" src="sbtvd-ts://video" descriptor="deFullScreenMedia">
+            <area id="icon" begin="2s"/>
             <property name="bounds"/>
             <property name="zIndex" value="3"/>
         </media>
-        
-        <media id="icone" src="media/menu/icon.png" 				descriptor="deIconMenu"/>
-        <media id="fundoGame" src="media/fundoPreto.jpg" 			descriptor="dFundoGame"/>
-        <media id="logo" src="media/menu/tela1/0.png" 				descriptor="deLogo"/>
-        <media id="menu1"  src="media/menu/tela1/1.png" 			descriptor="deMenu1"/>
-        <media id="menu2"  src="media/menu/tela1/2.png" 			descriptor="deMenu2"/>
-        <media id="menu3"  src="media/menu/tela1/3.png" 			descriptor="deMenu3"/>
-        <media id="menu4"  src="media/menu/tela1/4.png" 			descriptor="deMenu4"/>
-        <media id="settings" type="application/x-ncl-settings">
-        	<property name="service.currentKeyMaster" value=""/>
-        	<property name="service.currentFocus" value=""/>
+        <media id="settings" type="application/x-ginga-settings" >
+            <property name="service.currentKeyMaster" value=""/>
         </media>
+        <!-- Frame Red -->
+        <media id="menuRedOff"   		src="media/menu/tela1/1.png"     descriptor="deMenuRedOff"/>
+        <media id="menuRedOn"    		src="media/menu/tela1/1a.png"        descriptor="deMenuRed"/>
         
-        	<!--INICIO-->
-         <link  id="Video" xconnector="conBase#onBeginStart_delay">
-            <bind role="onBegin" component="mediaVideo"/>
-            <bind role="start" component="icone">           
-                <bindParam name="delay" value="0.5s"/>
+        <!-- Frame Green -->
+        <media id="menuGreenOff"  		src="media/menu/tela1/2.png"   descriptor="deMenuGreenOff"/>
+        <media id="menuGreenOn"    		src="media/menu/tela1/2a.png"     descriptor="deMenuGreen"/>
+
+        	
+        <!-- Frame Yellow -->
+        <media id="menuYellowOff"       src="media/menu/tela1/3.png"  			 descriptor="deMenuYellowOff"/>
+        <media id="menuYellowOn"        src="media/menu/tela1/3a.png"     			 descriptor="deMenuYellow"/>
+        >
+        <!-- Frame Blue -->
+        <media id="menuBlueOff"  src="media/menu/tela1/4.png"       			descriptor="deMenuBlueOff"/>
+        <media id="menuBlueOn"   src="media/menu/tela1/4a.png"          			descriptor="deMenuBlue"/>
+          <media id="logo"   		src="media/menu/tela1/0.png"     descriptor="deLogo"/>
+         <!-- Link Icon Interact -->
+        <link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
+            <bind role="onBegin" component="mediaVideo"  interface="icon"/>
+            <bind role="start"   component="iconInteract" />
+        </link>
+        <!-- Link Start Interface -->
+        <link id="link_iconMenuSelect" xconnector="conBase#onSelectionIconMenuResizeVideo">
+            <bind role="onSelection" component="iconInteract">
+                <bindParam name="keyCode" value="ENTER"/>
             </bind>
+            <bind role="set" component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="4.69%, 5.56%, 44.58%,44.58%"/>
+            </bind>
+            <bind role="start" component="backGroundImage"/>
+            <bind role="stop"  component="iconInteract"/>
         </link>
 
-        <link  id="MenuInterativo" xconnector="conBase#onKeySelectionSetStopStart">
-            <bind role="onSelection" component="icone">
-            <bindParam name="keyCode" value="ENTER"/>
-            </bind> 
-            <bind role="start" component="fundo"/>
-            <bind role="start" component="menu1"/>
-            <bind role="start" component="menu2"/>
-            <bind role="start" component="menu3"/>
-            <bind role="start" component="menu4"/>
-            <bind role="start" component="navegacao2"/>
-            <bind role="start" component="logo"/>           
-            <bind role="stop" component="icone"/>
-            
-            <bind role="set" component="mediaVideo" interface="bounds">
-                <bindParam name="var" value="37%, 4%, 60%, 60%"/>
+        <link id="link_onBeginStart" xconnector="conBase#onBeginStart">
+            <bind role="onBegin" component="backGroundImage"/>
+            <bind role="start"   component="menuRedOff"/>
+            <bind role="start"   component="menuGreenOff"/>
+            <bind role="start"   component="menuYellowOff"/>
+            <bind role="start"   component="menuBlueOff"/>
+            <bind role="start"   component="menuRedOn"/>
+            <bind role="start"   component="logo"/>
+         
+        </link>
+        <!--ASCENDE TAG PELOS BOTOES COLORIDOS-->
+        <link id="Ir_Para_RedOn_TelaInicial" xconnector="conBase#onSelectionStart">
+            <bind role="onSelection" component="menuRedOff">
+                <bindParam name="keyCode" value="RED"/>
             </bind>
-                 
+            <bind role="start" component="menuRedOn"/>
         </link>
-        
-        <!--INICIA MENU 1-->
-        <link xconnector="conBase#onSelectionStartStop">
-        	<bind role="onSelection" component="menu1"/>
-        	
-        	<bind role="start" component="menu1newTab"/>
-        	<bind role="start" component="dicionario"/>
-        	<bind role="stop" component="navegacao2"/>
+        <link id="Ir_Para_GreenOn_TelaInicial" xconnector="conBase#onSelectionStart">
+            <bind role="onSelection" component="menuGreenOff">
+                <bindParam name="keyCode" value="GREEN"/>
+            </bind>
+            <bind role="start" component="menuGreenOn"/>
         </link>
-        
-        <!--INICIA MENU 2-->
-        <link xconnector="conBase#onSelectionStartStop">
-        	<bind role="onSelection" component="menu2"/>
-        	<bind role="start" component="menu2newTab"/>
-        	<bind role="start" component="jogos"/>
-        	<bind role="stop" component="navegacao2"/>
+        <link id="Ir_Para_YellowOn_TelaInicial" xconnector="conBase#onSelectionStart">
+            <bind role="onSelection" component="menuYellowOff">
+                <bindParam name="keyCode" value="YELLOW"/>
+            </bind>
+            <bind role="start" component="menuYellowOn"/>
         </link>
-        
-        <!--INICIA MENU 3-->
-        <link xconnector="conBase#onSelectionStartStop">
-        	<bind role="onSelection" component="menu3"/>
-        	<bind role="start" component="menu3newTab"/>
-        	<bind role="start" component="personagens"/>
-        	<bind role="stop" component="navegacao2"/>
-        	
-        </link>
-        
-        <!--INICIA MENU 4-->
-        <link xconnector="conBase#onSelectionStartStop">
-        	<bind role="onSelection" component="menu4"/>
-        	
-        	<bind role="start" component="menu4newTab"/>
-        	<bind role="start" component="informacoes"/>
-        	<bind role="stop" component="navegacao2"/>
-        	
-        </link>
-        
-        <!--PARA APLICAÇÕES LUA E VOLTA AO MENU INICIAL AO APERTAR EXIT-->
-        <link xconnector="conBase#onSelectionStopSet">
-        	<bind role="onSelection" component="navegacao2">
-	        	<bindParam name="value" value="EXIT"/>
+        <link id="Ir_Para_BlueOn_TelaInicial" xconnector="conBase#onSelectionStart">
+	        <bind role="onSelection" component="menuBlueOff">
+	            <bindParam name="keyCode" value="BLUE"/>
 	        </bind>
-	        
-	        <bind role="stop" component="dicionario"/>
-	        <bind role="stop" component="jogos"/>
-	        <bind role="stop" component="fundoGame"/>
-	        <bind role="stop" component="personagens"/>
-	        <bind role="stop" component="informacoes"/>
-	        
-	        <bind role="stop" component="menu1newTab"/>
-	        <bind role="stop" component="menu2newTab"/>
-	        <bind role="stop" component="menu3newTab"/>
-	        <bind role="stop" component="menu4newTab"/>
-	        <bind role="stop" component="navegacao2"/>
-	        
-	        <bind role="set" component="mediaVideo" interface="bounds">
-                <bindParam name="var" value="37%, 4%, 60%, 60%"/>
-            </bind>
+        	<bind role="start" component="menuBlueOn"/>
         </link>
         
-       <link xconnector="conBase#onEndStart">
-        	<bind role="onEnd" component="navegacao2"/>
-        	<bind role="start" component="menu1"/>
-            <bind role="start" component="menu2"/>
-            <bind role="start" component="menu3"/>
-            <bind role="start" component="menu4"/>  
-            <bind role="start" component="navegacao2"/>
-            <bind role="start" component="logo"/>
+        <!--ASCENDE TAG PELAS SETAS DIRECIONAIS (ESC/DIR)-->
+        <!-- Red -->
+        <link id="link_frameRedLeft" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuRedOn">
+                <bindParam name="keyCode" value="CURSOR_UP"/>
+            </bind>
+            <bind role="start" component="menuBlueOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuGreenOff"/>
         </link>
-        <!-- 
-        <link xconnector="conBase#onEndStop">
-			<bind role="onEnd" component="dicionario"/>
-			<bind role="onEnd" component="jogos"/>
-			<bind role="onEnd" component="personagens"/>
-			<bind role="onEnd" component="informacoes"/>
-			<bind role="stop" component="fundoGame"/>
-		</link>--> 
-		
-		<!--troca para fundo2 ao selecionar um dos menus-->
-		<link xconnector="conBase#onSelectionStartStopSet">
-			<bind role="onSelection" component="menu1"/>
-			<bind role="onSelection" component="menu2"/>
-			<bind role="onSelection" component="menu3"/>
-			<bind role="onSelection" component="menu4"/>
-			
-			<bind role="stop" component="fundo"/>
-			<bind role="start" component="fundo2"/>
-			
-			<bind role="set" component="mediaVideo" interface="bounds">
-                <bindParam name="var" value="61.5%, 53.55%, 29.9%, 30%"/>
-            </bind>
-			
-		</link>
-		
-		<!--troca para fundo ao finalizar aplicação-->
-		<link xconnector="conBase#onEndStartStop">
-			<bind role="onEnd" component="dicionario"/>
-			<bind role="onEnd" component="jogos"/>
-			<bind role="onEnd" component="personagens"/>
-			<bind role="onEnd" component="informacoes"/>
-			<bind role="stop" component="fundo2"/>
-			<bind role="start" component="fundo"/>
-		</link>
         
-        <!--CONTROLE LUA DICIONARIO-->
-        <link xconnector="conBase#onBeginSet">
-			<bind role="onBegin" component="dicionario"/>
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value="dicionario"/>
-			</bind>
-		</link>
-		
-		<!--CONTROLE LUA JOGOS-->
-		<link xconnector="conBase#onBeginSet">
-			<bind role="onBegin" component="jogos" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value="jogos"/>
-			</bind>
-		</link>
-        
-        <!--CONTROLE LUA PERSONAGENS-->
-        <link xconnector="conBase#onBeginSet">
-			<bind role="onBegin" component="personagens"/>
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value="personagens"/>
-			</bind>
-		</link>
-		
-		<!--CONTROLE LUA INFORMAÇÕES-->
-		<link xconnector="conBase#onBeginSet">
-			<bind role="onBegin" component="informacoes" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value="informacoes"/>
-			</bind>
-		</link>
-		
-		<!--VOLTA DO FOCO PARA BOTOES AO ENCERRAR APLICAÇÕES LUA-->
-		
-		<link xconnector="conBase#onEndSet">
-			<bind role="onEnd" component="dicionario" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value=""/>
-			</bind>
-			<bind role="set" component="settings" interface="service.currentFocus">
-				<bindParam name="value" value="2"/>
-			</bind>
-		</link>
-		
-		<link xconnector="conBase#onEndSet">
-			<bind role="onEnd" component="jogos" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value=""/>
-			</bind>
-			<bind role="set" component="settings" interface="service.currentFocus">
-				<bindParam name="value" value="3"/>
-			</bind>
-		</link>
-		
-		<link xconnector="conBase#onEndSet">
-			<bind role="onEnd" component="personagens" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value=""/>
-			</bind>
-			<bind role="set" component="settings" interface="service.currentFocus">
-				<bindParam name="value" value="4"/>
-			</bind>
-		</link>
-		
-		<link xconnector="conBase#onEndSet">
-			<bind role="onEnd" component="informacoes" />
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value=""/>
-			</bind>
-			<bind role="set" component="settings" interface="service.currentFocus" >
-				<bindParam name="value" value="5"/>
-			</bind>
-		</link>
-		
-		<!--mantem o foco no vermelho ao iniciar-->
-		
-		<link xconnector="conBase#onBeginSet">
-			<bind role="onBegin" component="menu1"/>
-			<bind role="set" component="settings" interface="service.currentKeyMaster">
-				<bindParam name="value" value=""/>
-			</bind>
-			<bind role="set" component="settings" interface="service.currentFocus">
-				<bindParam name="value" value="2"/>
-			</bind>
-		</link>
-        
-        <link id="link_btnExitSelectResizeVideo" xconnector="conBase#onKeySelectionSetStopStart">
-            <bind role="onSelection" component="navegacao2">
-                <bindParam name="keyCode" value="EXIT"/>
+        <link id="link_frameRedRight" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuRedOn">
+                <bindParam name="keyCode" value="CURSOR_DOWN"/>
             </bind>
-            <bind role="start" component="icone"/>
-            <bind role="stop" component="fundo"/>
-            <bind role="stop" component="logo"/>
-            <bind role="stop" component="navegacao2"/>
-            <bind role="stop" component="menu1"/>
-            <bind role="stop" component="menu2"/>
-            <bind role="stop" component="menu3"/>
-            <bind role="stop" component="menu4"/>
-            <bind role="stop" component="dicionario"/>
-            <bind role="stop" component="jogos"/>
-            <bind role="stop" component="personagens"/>
-            <bind role="stop" component="informacoes"/>
-            <bind role="set" component="mediaVideo" interface="bounds">
-                <bindParam name="var" value="0%,0%,100%,100%"/>
-            </bind>
+            <bind role="start" component="menuGreenOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuBlueOff"/>
         </link>
+        <!-- Green -->
+       <link id="link_frameGreenLeft" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuGreenOn">
+                <bindParam name="keyCode" value="CURSOR_UP"/>
+            </bind>
+            <bind role="start" component="menuRedOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuBlueOff"/>
+        </link>
+        <link id="link_frameGreenRight" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuGreenOn">
+                <bindParam name="keyCode" value="CURSOR_DOWN"/>
+            </bind>
+            <bind role="start" component="menuYellowOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuBlueOff"/>
+            <bind role="start" component="menuGreenOff"/>
+        </link>
+        <!-- Yellow -->
+        <link id="link_frameYellowLeft" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuYellowOn">
+                <bindParam name="keyCode" value="CURSOR_UP"/>
+            </bind>
+            <bind role="start" component="menuGreenOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuBlueOff"/>
+        </link>
+        <link id="link_frameYellowRight" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuYellowOn">
+                <bindParam name="keyCode" value="CURSOR_DOWN"/>
+            </bind>
+            <bind role="start" component="menuBlueOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuGreenOff"/>
+        </link>
+        <!-- Blue -->
+        <link id="link_frameBlueLeft" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuBlueOn">
+                <bindParam name="keyCode" value="CURSOR_UP"/>
+            </bind>
+            <bind role="start" component="menuYellowOn"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="menuBlueOff"/>
+            <bind role="start" component="menuGreenOff"/>
+        </link>
+        <link id="link_frameBlueRight" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuBlueOn">
+                <bindParam name="keyCode" value="CURSOR_DOWN"/>
+            </bind>
+            <bind role="start" component="menuRedOn"/>
+            <bind role="stop" component="menuBlueOn"/>
+            <bind role="stop" component="menuYellowOn"/>
+            <bind role="stop" component="menuGreenOn"/>
+            <bind role="start" component="menuBlueOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuGreenOff"/>
+        </link>
+<!--
+        <link id="aoAparecerRED_ON" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="menuRedOn"/>
+
+            <bind role="onBegin" component="menuGreenOn"/>
+            <bind role="start"   component="faixaVerde"/>
+            <bind role="start"   component="greenBtn1"/>
+            <bind role="start"   component="greenAux1"/>
+            <bind role="stop"    component="menuRedOn"/>
+            <bind role="stop"    component="menuYellowOn"/>
+            <bind role="stop"    component="menuBlueOn"/>
+        </link>
+        <link id="aoAparecerYellow_ON" xconnector="conBase#onBeginStartStop">
+            <bind role="onBegin" component="menuYellowOn"/>
+            <bind role="start"   component="faixaAmarela"/>
+            <bind role="start"   component="yellowBtn1"/>
+            <bind role="start"   component="yellowAux1"/>
+            <bind role="stop"    component="menuRedOn"/>
+            <bind role="stop"    component="menuGreenOn"/>
+            <bind role="stop"    component="menuBlueOn"/>
+        </link>
+        <link id="aoAparecerBlue_ON" xconnector="conBase#onBeginStartStop">
+            <bind role="onBegin" component="menuBlueOn"/>
+            <bind role="start"   component="QRcodeAzul"/>
+            <bind role="start"   component="faixaAzul"/>
+            <bind role="stop"    component="menuRedOn"/>
+            <bind role="stop"    component="menuGreenOn"/>
+            <bind role="stop"    component="menuYellowOn"/>
+        </link>
+
+       
+        
+     
+       <link id="onEndRed" xconnector="conBase#onEndStop">
+            <bind role="onEnd" component="menuRedOn"/>
+            <bind role="stop"  component="telaInicial"/>
+            <bind role="stop"  component="textoInicial"/>
+            <bind role="stop"  component="faixaVermelha"/>
+        </link>
+        <link id="onEndGreen" xconnector="conBase#onEndStop">
+            <bind role="onEnd" component="menuGreenOn"/>
+            <bind role="stop"  component="greenBtn1"/>
+            <bind role="stop"  component="greenBtn2"/>
+            <bind role="stop"  component="greenBtn3"/>
+            <bind role="stop"  component="greenBtn4"/>
+            <bind role="stop"  component="greenAux1"/>
+            <bind role="stop"  component="greenAux2"/>
+            <bind role="stop"  component="greenAux3"/>
+            <bind role="stop"  component="greenAux4"/>
+            <bind role="stop"  component="faixaVerde"/>
+        </link>
+        <link id="onEndYellowStopBtn" xconnector="conBase#onEndStop">
+            <bind role="onEnd" component="menuYellowOn"/>
+            <bind role="stop"  component="faixaAmarela"/>
+            <bind role="stop"  component="yellowBtn1"/>
+            <bind role="stop"  component="yellowBtn2"/>
+            <bind role="stop"  component="yellowBtn3"/>
+            <bind role="stop"  component="yellowBtn4"/>
+            <bind role="stop"  component="yellowBtn5"/>
+            <bind role="stop"  component="yellowBtn6"/>
+            <bind role="stop"  component="yellowBtn7"/>
+            <bind role="stop"  component="yellowBtn8"/>
+            <bind role="stop"  component="yellowBtn9"/>
+            <bind role="stop"  component="yellowBtn10"/>
+            <bind role="stop"  component="yellowBtn11"/>
+            <bind role="stop"  component="yellowBtn12"/>
+            <bind role="stop"  component="yellowBtn13"/>
+            <bind role="stop"  component="yellowBtn14"/>
+            <bind role="stop"  component="yellowBtn15"/>
+            <bind role="stop"  component="yellowBtn16"/>
+            <bind role="stop"  component="yellowBtn17"/>
+            <bind role="stop"  component="yellowBtn18"/>
+            <bind role="stop"  component="yellowBtn19"/>
+            <bind role="stop"  component="yellowBtn20"/>
+            <bind role="stop"  component="yellowBtn21"/>
+            <bind role="stop"  component="yellowBtn22"/>
+            <bind role="stop"  component="yellowBtn23"/>
+            <bind role="stop"  component="yellowBtn24"/>
+            <bind role="stop"  component="yellowBtn25"/>
+            <bind role="stop"  component="yellowBtn26"/>
+        </link>
+        <link id="onEndYellowStopAux" xconnector="conBase#onEndStop">
+            <bind role="onEnd" component="menuYellowOn"/>
+            <bind role="stop"  component="yellowAux1"/>
+            <bind role="stop"  component="yellowAux2"/>
+            <bind role="stop"  component="yellowAux3"/>
+            <bind role="stop"  component="yellowAux4"/>
+            <bind role="stop"  component="yellowAux5"/>
+            <bind role="stop"  component="yellowAux6"/>
+            <bind role="stop"  component="yellowAux7"/>
+            <bind role="stop"  component="yellowAux8"/>
+            <bind role="stop"  component="yellowAux9"/>
+            <bind role="stop"  component="yellowAux10"/>
+            <bind role="stop"  component="yellowAux11"/>
+            <bind role="stop"  component="yellowAux12"/>
+            <bind role="stop"  component="yellowAux13"/>
+            <bind role="stop"  component="yellowAux14"/>
+            <bind role="stop"  component="yellowAux15"/>
+            <bind role="stop"  component="yellowAux16"/>
+            <bind role="stop"  component="yellowAux17"/>
+            <bind role="stop"  component="yellowAux18"/>
+            <bind role="stop"  component="yellowAux19"/>
+            <bind role="stop"  component="yellowAux20"/>
+            <bind role="stop"  component="yellowAux21"/>
+            <bind role="stop"  component="yellowAux22"/>
+            <bind role="stop"  component="yellowAux23"/>
+            <bind role="stop"  component="yellowAux24"/>
+            <bind role="stop"  component="yellowAux25"/>
+            <bind role="stop"  component="yellowAux26"/>
+        </link>
+        <link id="onEndBlue" xconnector="conBase#onEndStop">
+            <bind role="onEnd" component="menuBlueOn"/>
+            <bind role="stop"  component="QRcodeAzul"/>
+            <bind role="stop"  component="faixaAzul"/>
+        </link>
+        -->
+        
     </body>
-    
 </ncl>
