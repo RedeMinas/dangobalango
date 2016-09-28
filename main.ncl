@@ -17,6 +17,7 @@
         	
                 <region id="fundoReg"                                  	width="100%"   height="100%"   zIndex="2"/>
                 <region id="fundoReg2"                                  width="100%"   height="100%"   zIndex="4"/>
+                <region id="rgNavegacao"                                width="100%"   height="9.63%"  zIndex="5"/>
                 
                 <region id="rgLogoMenu"      left="7.50%"   top="2%"     width="26%"    height="31.20%" zIndex="3"/>
                 <region id="rgFrame"         left="5%"      top="6.7%"   width="18.5%"  height="18.5%"  zIndex="3"/>
@@ -53,19 +54,27 @@
             <descriptor id="deLogo"         region="rgLogoMenu"/>
             <descriptor id="dFundoGame2"    region="rgFundoGame2"/>
             <descriptor id="deIconMenu"     region="rgIconMenu"/>
-            <descriptor id="deSair"         region="rgBtnSair"/>
-            <descriptor id="deMenu1"        region="rgMenu1"         focusIndex="2" moveDown="3" moveUp="5"  focusBorderWidth="0" focusSelSrc="media/menu/1.png" focusSrc="media/menu/1a.png"/>
-            <descriptor id="deMenu2"        region="rgMenu2"         focusIndex="3" moveDown="4" moveUp="2"  focusBorderWidth="0" focusSelSrc="media/menu/2.png" focusSrc="media/menu/2a.png"/>
-            <descriptor id="deMenu3"        region="rgMenu3"         focusIndex="4" moveDown="5" moveUp="3"  focusBorderWidth="0" focusSelSrc="media/menu/3.png" focusSrc="media/menu/3a.png"/>
-            <descriptor id="deMenu4"        region="rgMenu4"         focusIndex="5" moveDown="2" moveUp="4"  focusBorderWidth="0" focusSelSrc="media/menu/4.png" focusSrc="media/menu/4a.png"/>
-            <descriptor id="deVoltar"  		region="rgVoltar"/>
-            <descriptor id="dLuaSlideDic"   region="rgLua"	focusIndex="6" focusBorderWidth="0"  />
-            <descriptor id="dLuaGameDango"  region="rgLua"  focusIndex="7" focusBorderWidth="0"  />
-            <descriptor id="dLuaSlidePerso" region="rgLua"  focusIndex="8" focusBorderWidth="0"  />
-            <descriptor id="dLuaSlideInfo"  region="rgLua"  focusIndex="9" focusBorderWidth="0"  />
+            <descriptor id="deMenu1"        region="rgMenu1"  focusIndex="2" moveDown="3" 
+            	moveUp="5"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/1.png" focusSrc="media/menu/tela1/1a.png">
+            </descriptor>
+            <descriptor id="deMenu2"        region="rgMenu2"  focusIndex="3" moveDown="4" 
+	            moveUp="2"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/2.png" focusSrc="media/menu/tela1/2a.png">
+            </descriptor>
+            <descriptor id="deMenu3"        region="rgMenu3"  focusIndex="4" moveDown="5" 
+	            moveUp="3"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/3.png" focusSrc="media/menu/tela1/3a.png">
+            </descriptor>
+            <descriptor id="deMenu4"        region="rgMenu4"  focusIndex="5" moveDown="2" 
+	            moveUp="4"  focusBorderWidth="0" focusSelSrc="media/menu/tela1/4.png" focusSrc="media/menu/tela1/4a.png">
+            </descriptor>
+            <descriptor id="dLuaSlideDic"   region="rgLua" focusIndex="6" focusBorderWidth="0"  />
+            <descriptor id="dLuaGameDango"  region="rgLua" focusIndex="7" focusBorderWidth="0"  />
+            <descriptor id="dLuaSlidePerso" region="rgLua" focusIndex="8" focusBorderWidth="0"  />
+            <descriptor id="dLuaSlideInfo"  region="rgLua" focusIndex="9" focusBorderWidth="0"  />
+            <descriptor id="dNavegacao"     region="rgNavegacao"/>
             <descriptor id="dFundoGame"     region="rgFundoGame"     transIn="efeitoInicio" transOut="efeitoFim">
             	<descriptorParam name="transparency" value="0.1"/>
             </descriptor>
+            
         </descriptorBase>
         
         <connectorBase>
@@ -75,39 +84,37 @@
     </head>
     
     <body>
-        <port id="entry" component="video2"/>
+        <port id="entry" component="mediaVideo"/>
         
-        <media id="menu1newTab"		  src="media/menu/abaVermelha.png" 		descriptor="menunTDesc" />
-        <media id="menu2newTab"		  src="media/menu/abaVerde.png" 		descriptor="menunTDesc" />
-        <media id="menu3newTab"		  src="media/menu/abaAmarelo.png" 		descriptor="menunTDesc" />
-        <media id="menu4newTab"		  src="media/menu/abaAzul.png" 			descriptor="menunTDesc" />
+        <media id="menu1newTab"	src="media/menu/tela2/abaVermelha.png" descriptor="menunTDesc" />
+        <media id="menu2newTab"	src="media/menu/tela2/abaVerde.png"    descriptor="menunTDesc" />
+        <media id="menu3newTab"	src="media/menu/tela2/abaAmarela.png"  descriptor="menunTDesc" />
+        <media id="menu4newTab"	src="media/menu/tela2/abaAzul.png" 	   descriptor="menunTDesc" />
         
-        <media id="dicionario"    src="slideDic.lua" 				descriptor="dLuaSlideDic"/>
-        <media id="jogos"  		  src="media/gamedango/game.lua" 	descriptor="dLuaGameDango"/>
-        <media id="personagens"   src="slidePersonagens.lua" 		descriptor="dLuaSlidePerso"/>
-        <media id="informacoes"   src="slideInfo.lua"				descriptor="dLuaSlideInfo"/>
+        <media id="dicionario"  src="slideDic.lua" 			   descriptor="dLuaSlideDic"/>
+        <media id="jogos"  		src="media/gamedango/game.lua" descriptor="dLuaGameDango"/>
+        <media id="personagens" src="slidePersonagens.lua" 	   descriptor="dLuaSlidePerso"/>
+        <media id="informacoes" src="slideInfo.lua"			   descriptor="dLuaSlideInfo"/>
         
-        <media id="fundo" src="media/fundo.png" 					descriptor="fundoDesc"/>
-        <media id="fundo2" src="media/menu/fundo.png" 				descriptor="fundoDesc2"/>
+        <media id="fundo"      src="media/menu/tela1/fundo.png" 	 descriptor="fundoDesc"/>
+        <media id="fundo2"     src="media/menu/tela2/fundo2.png"     descriptor="fundoDesc2"/>
+        <media id="navegacao2" src="media/menu/tela2/navegacao2.png" descriptor="dNavegacao"/>
+        
         	
         
-        <media id="video" src="sbtvd-ts://video" descriptor="screenDesc">
+        <media id="mediaVideo" src="sbtvd-ts://video" descriptor="screenDesc">
             <area id="aIcone" begin="2s"/>
             <property name="bounds"/>
             <property name="zIndex" value="3"/>
         </media>
-        <media id="video2" src="media/video.mp4" descriptor="screenDesc">
-        	<property name="bounds"/>
-        </media>
+        
         <media id="icone" src="media/menu/icon.png" 				descriptor="deIconMenu"/>
-        <media id="logo" src="media/menu/5.png" 					descriptor="deLogo"/>
-        <media id="voltar" src="media/voltaroff.png"				descriptor="deVoltar"/>
-        <media id="sair" src="media/sair.png" 						descriptor="deSair"/>
         <media id="fundoGame" src="media/fundoPreto.jpg" 			descriptor="dFundoGame"/>
-        <media id="menu1" src="media/menu/1.png" 					descriptor="deMenu1"/>
-        <media id="menu2"  src="media/menu/2.png" 					descriptor="deMenu2"/>
-        <media id="menu3"  src="media/menu/3.png" 					descriptor="deMenu3"/>
-        <media id="menu4"  src="media/menu/4.png" 					descriptor="deMenu4"/>
+        <media id="logo" src="media/menu/tela1/0.png" 				descriptor="deLogo"/>
+        <media id="menu1"  src="media/menu/tela1/1.png" 			descriptor="deMenu1"/>
+        <media id="menu2"  src="media/menu/tela1/2.png" 			descriptor="deMenu2"/>
+        <media id="menu3"  src="media/menu/tela1/3.png" 			descriptor="deMenu3"/>
+        <media id="menu4"  src="media/menu/tela1/4.png" 			descriptor="deMenu4"/>
         <media id="settings" type="application/x-ncl-settings">
         	<property name="service.currentKeyMaster" value=""/>
         	<property name="service.currentFocus" value=""/>
@@ -115,7 +122,7 @@
         
         	<!--INICIO-->
          <link  id="Video" xconnector="conBase#onBeginStart_delay">
-            <bind role="onBegin" component="video2"/>
+            <bind role="onBegin" component="mediaVideo"/>
             <bind role="start" component="icone">           
                 <bindParam name="delay" value="0.5s"/>
             </bind>
@@ -130,11 +137,11 @@
             <bind role="start" component="menu2"/>
             <bind role="start" component="menu3"/>
             <bind role="start" component="menu4"/>
-            <bind role="start" component="sair"/>
+            <bind role="start" component="navegacao2"/>
             <bind role="start" component="logo"/>           
             <bind role="stop" component="icone"/>
             
-            <bind role="set" component="video2" interface="bounds">
+            <bind role="set" component="mediaVideo" interface="bounds">
                 <bindParam name="var" value="37%, 4%, 60%, 60%"/>
             </bind>
                  
@@ -146,31 +153,23 @@
         	
         	<bind role="start" component="menu1newTab"/>
         	<bind role="start" component="dicionario"/>
-        	<bind role="start" component="voltar"/>
-        	
-        	<bind role="stop" component="sair"/>
+        	<bind role="stop" component="navegacao2"/>
         </link>
         
         <!--INICIA MENU 2-->
         <link xconnector="conBase#onSelectionStartStop">
         	<bind role="onSelection" component="menu2"/>
-        	
         	<bind role="start" component="menu2newTab"/>
         	<bind role="start" component="jogos"/>
-        	<bind role="start" component="voltar"/>
-        	
-        	<bind role="stop" component="sair"/>
+        	<bind role="stop" component="navegacao2"/>
         </link>
         
         <!--INICIA MENU 3-->
         <link xconnector="conBase#onSelectionStartStop">
         	<bind role="onSelection" component="menu3"/>
-        	
         	<bind role="start" component="menu3newTab"/>
         	<bind role="start" component="personagens"/>
-        	<bind role="start" component="voltar"/>
-        	<bind role="stop" component="sair"/>
-        	
+        	<bind role="stop" component="navegacao2"/>
         	
         </link>
         
@@ -180,14 +179,13 @@
         	
         	<bind role="start" component="menu4newTab"/>
         	<bind role="start" component="informacoes"/>
-        	<bind role="start" component="voltar"/>
-        	<bind role="stop" component="sair"/>
+        	<bind role="stop" component="navegacao2"/>
         	
         </link>
         
         <!--PARA APLICAÇÕES LUA E VOLTA AO MENU INICIAL AO APERTAR EXIT-->
         <link xconnector="conBase#onSelectionStopSet">
-        	<bind role="onSelection" component="voltar">
+        	<bind role="onSelection" component="navegacao2">
 	        	<bindParam name="value" value="EXIT"/>
 	        </bind>
 	        
@@ -201,20 +199,20 @@
 	        <bind role="stop" component="menu2newTab"/>
 	        <bind role="stop" component="menu3newTab"/>
 	        <bind role="stop" component="menu4newTab"/>
-	        <bind role="stop" component="voltar"/>
+	        <bind role="stop" component="navegacao2"/>
 	        
-	        <bind role="set" component="video2" interface="bounds">
+	        <bind role="set" component="mediaVideo" interface="bounds">
                 <bindParam name="var" value="37%, 4%, 60%, 60%"/>
             </bind>
         </link>
         
        <link xconnector="conBase#onEndStart">
-        	<bind role="onEnd" component="voltar"/>
+        	<bind role="onEnd" component="navegacao2"/>
         	<bind role="start" component="menu1"/>
             <bind role="start" component="menu2"/>
             <bind role="start" component="menu3"/>
             <bind role="start" component="menu4"/>  
-            <bind role="start" component="sair"/>
+            <bind role="start" component="navegacao2"/>
             <bind role="start" component="logo"/>
         </link>
         <!-- 
@@ -236,7 +234,7 @@
 			<bind role="stop" component="fundo"/>
 			<bind role="start" component="fundo2"/>
 			
-			<bind role="set" component="video2" interface="bounds">
+			<bind role="set" component="mediaVideo" interface="bounds">
                 <bindParam name="var" value="61.5%, 53.55%, 29.9%, 30%"/>
             </bind>
 			
@@ -283,8 +281,6 @@
 				<bindParam name="value" value="informacoes"/>
 			</bind>
 		</link>
-		
-		
 		
 		<!--VOLTA DO FOCO PARA BOTOES AO ENCERRAR APLICAÇÕES LUA-->
 		
@@ -339,18 +335,15 @@
 				<bindParam name="value" value="2"/>
 			</bind>
 		</link>
-		
-		
         
         <link id="link_btnExitSelectResizeVideo" xconnector="conBase#onKeySelectionSetStopStart">
-            <bind role="onSelection" component="sair">
+            <bind role="onSelection" component="navegacao2">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
             <bind role="start" component="icone"/>
             <bind role="stop" component="fundo"/>
             <bind role="stop" component="logo"/>
-            <bind role="stop" component="sair"/>
-            <bind role="stop" component="voltar"/>
+            <bind role="stop" component="navegacao2"/>
             <bind role="stop" component="menu1"/>
             <bind role="stop" component="menu2"/>
             <bind role="stop" component="menu3"/>
@@ -359,7 +352,7 @@
             <bind role="stop" component="jogos"/>
             <bind role="stop" component="personagens"/>
             <bind role="stop" component="informacoes"/>
-            <bind role="set" component="video2" interface="bounds">
+            <bind role="set" component="mediaVideo" interface="bounds">
                 <bindParam name="var" value="0%,0%,100%,100%"/>
             </bind>
         </link>
