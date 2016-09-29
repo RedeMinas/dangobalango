@@ -16,6 +16,10 @@
         <simpleCondition role="onEnd"/>
         <simpleAction role="stop" max="unbounded" qualifier="par"/>
       </causalConnector>
+      <causalConnector id="onEndStart">
+        <simpleCondition role="onEnd"/>
+        <simpleAction role="start" max="unbounded" qualifier="par"/>
+      </causalConnector>
       
       <causalConnector id="onSelectionStartStopSet">
         <connectorParam name="keyCode"/>

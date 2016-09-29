@@ -123,11 +123,18 @@
             <bind role="start"   component="menuGreenOff"/>
             <bind role="start"   component="menuYellowOff"/>
             <bind role="start"   component="menuBlueOff"/>
-            <bind role="start"   component="menuRedOn"/>
+            
             <bind role="start"   component="logo"/>
             <bind role="start"   component="btnExit1"/>
-         
         </link>
+        
+        <link id="link_onEndIconStart" xconnector="conBase#onEndStart">
+            <bind role="onEnd" component="iconInteract"/>
+            <bind role="start"   component="menuRedOn"/>
+    
+        </link>
+        
+        
         <!--ASCENDE TAG PELOS BOTOES COLORIDOS-->
         <link id="Ir_Para_RedOn_TelaInicial" xconnector="conBase#onSelectionStart">
             <bind role="onSelection" component="menuRedOff">
@@ -346,8 +353,8 @@
             <bind role="stop" component="btnExit1"/>
         </link>
          
-        <link id="link_Sair2" xconnector="conBase#onSelectionStartStop">
-            <bind role="onSelection" component="btnExit2">
+        <link id="link_RedSair2" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="btnRedSelec">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
             <bind role="stop" component="btnRedSelec"/>
@@ -356,16 +363,74 @@
             <bind role="stop" component="btnBlueSelec"/>  
             <bind role="stop" component="backGroundImage2"/>
             <bind role="stop" component="btnExit2"/>
-            <bind role="start" component="menuRedOn"/>          
-            <bind role="start" component="menuBlueOff"/>
-            <bind role="start" component="menuYellowOff"/>
-            <bind role="start" component="menuGreenOff"/>
-            <bind role="start" component="menuRedOff"/>
-            <bind role="start" component="logo"/>
+            
             <bind role="start" component="backGroundImage"/>
-            <bind role="start" component="btnExit1"/>
+            <bind role="start"   component="menuRedOn"/>
+            <bind role="start"   component="menuGreenOff"/>
+            <bind role="start"   component="menuYellowOff"/>
+            <bind role="start"   component="menuBlueOff"/>
+            <bind role="start"   component="logo"/>
+            <bind role="start"   component="btnExit1"/>
         </link>
         
+        <link id="link_GreenSair2" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="btnGreenSelec">
+                <bindParam name="keyCode" value="EXIT"/>
+            </bind>
+            <bind role="stop" component="btnRedSelec"/>
+            <bind role="stop" component="btnGreenSelec"/>
+            <bind role="stop" component="btnYellowSelec"/>
+            <bind role="stop" component="btnBlueSelec"/>  
+            <bind role="stop" component="backGroundImage2"/>
+            <bind role="stop" component="btnExit2"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="start" component="backGroundImage"/>
+            <bind role="start"   component="menuRedOff"/>
+            <bind role="start"   component="menuGreenOn"/>
+            <bind role="start"   component="menuYellowOff"/>
+            <bind role="start"   component="menuBlueOff"/>
+            <bind role="start"   component="logo"/>
+            <bind role="start"   component="btnExit1"/>
+        </link>
+        
+          <link id="link_YellowSair2" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="btnYellowSelec">
+                <bindParam name="keyCode" value="EXIT"/>
+            </bind>
+            <bind role="stop" component="btnRedSelec"/>
+            <bind role="stop" component="btnGreenSelec"/>
+            <bind role="stop" component="btnYellowSelec"/>
+            <bind role="stop" component="btnBlueSelec"/>  
+            <bind role="stop" component="backGroundImage2"/>
+            <bind role="stop" component="btnExit2"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="start" component="backGroundImage"/>
+            <bind role="start"   component="menuRedOff"/>
+            <bind role="start"   component="menuGreenOff"/>
+            <bind role="start"   component="menuYellowOn"/>
+            <bind role="start"   component="menuBlueOff"/>
+            <bind role="start"   component="logo"/>
+            <bind role="start"   component="btnExit1"/>
+        </link>
+         <link id="link_BlueSair2" xconnector="conBase#onSelectionStartStop">
+            <bind role="onSelection" component="btnBlueSelec">
+                <bindParam name="keyCode" value="EXIT"/>
+            </bind>
+            <bind role="stop" component="btnRedSelec"/>
+            <bind role="stop" component="btnGreenSelec"/>
+            <bind role="stop" component="btnYellowSelec"/>
+            <bind role="stop" component="btnBlueSelec"/>  
+            <bind role="stop" component="backGroundImage2"/>
+            <bind role="stop" component="btnExit2"/>
+            <bind role="stop" component="menuRedOn"/>
+            <bind role="start" component="backGroundImage"/>
+            <bind role="start"   component="menuRedOff"/>
+            <bind role="start"   component="menuGreenOff"/>
+            <bind role="start"   component="menuYellowOff"/>
+            <bind role="start"   component="menuBlueOn"/>
+            <bind role="start"   component="logo"/>
+            <bind role="start"   component="btnExit1"/>
+        </link>
     
     </body>
 </ncl>
