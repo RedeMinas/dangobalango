@@ -246,7 +246,7 @@
             <bind role="onSelection" component="menuYellowOn">
             	<bindParam name="keyCode" value="ENTER"/>
             </bind>
-            <bind role="start" component="backGroundImage2"/>
+         <bind role="start" component="backGroundImage2"/>
             <bind role="stop" component="backGroundImage"/>
             <bind role="stop" component="menuYellowOff"/>
             <bind role="stop" component="menuGreenOff"/>
@@ -255,6 +255,8 @@
             <bind role="stop" component="menuRedOff"/>
             <bind role="stop" component="logo"/>
             <bind role="start" component="btnYellowSelec"/>
+            <bind role="stop" component="btnExit1"/>
+            <bind role="start" component="btnExit2"/>
         </link>
         
         <link id="link_frameYellowLeft" xconnector="conBase#onSelectionStartStop">
@@ -348,14 +350,20 @@
             <bind role="onSelection" component="btnExit2">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
-            <bind role="start" component="iconInteract"/>
             <bind role="stop" component="btnRedSelec"/>
             <bind role="stop" component="btnGreenSelec"/>
             <bind role="stop" component="btnYellowSelec"/>
             <bind role="stop" component="btnBlueSelec"/>  
             <bind role="stop" component="backGroundImage2"/>
-            <bind role="stop" component="backGroundImage"/>
             <bind role="stop" component="btnExit2"/>
+            <bind role="start" component="menuRedOn"/>          
+            <bind role="start" component="menuBlueOff"/>
+            <bind role="start" component="menuYellowOff"/>
+            <bind role="start" component="menuGreenOff"/>
+            <bind role="start" component="menuRedOff"/>
+            <bind role="start" component="logo"/>
+            <bind role="start" component="backGroundImage"/>
+            <bind role="start" component="btnExit1"/>
         </link>
         
     
