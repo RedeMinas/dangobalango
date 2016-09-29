@@ -24,13 +24,13 @@
             <region id="rgMenuAuxLua"           left="4.7%"   top="52%"    width="45.4%"       height="40%"     zIndex="4"/>
            
             <region id="rgBtnExit"             				  top="89%"  width="100%"       height="9.6%"    zIndex="8"/>
-            <region id="rgFaixaTelaInicial"     left="54.94%" top="9.5%"   width="41.4583%"    height="0.8%"    zIndex="8"/>
+           <region id="rgLuaDicTupi"     		left="15%" top="9.5%"   width="29.16%"    height="41.01%"    zIndex="8"/>
         </regionBase>
 
         <descriptorBase>
             <descriptor id="deBackGroundImage"      region="rgBackGroundImage"/>
             <descriptor id="deFullScreenMedia"      region="rgFullScreenMedia"/>
-            <descriptor id="deFaixaTelaInicial"     region="rgFaixaTelaInicial"/>
+ 
             <descriptor id="deFrame"      			region="rgFrameTelaInicial"/>
             <descriptor id="deIconInteract"         region="rgIconInteract"/>
      		<descriptor id="deMenuRed"              region="rgFrameRed"/>
@@ -163,7 +163,7 @@
         
         <!--ASCENDE TAG PELAS SETAS DIRECIONAIS (ESC/DIR)-->
         <!-- Red -->
-           <link id="link_frameRedSelection" xconnector="conBase#onSelectionStartStop">
+           <link id="link_frameRedSelection" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="menuRedOn">
             	<bindParam name="keyCode" value="ENTER"/>
             </bind>
@@ -179,7 +179,11 @@
             <bind role="stop" component="logo"/>
             <bind role="stop" component="btnExit1"/>
             <bind role="start" component="btnExit2"/>
+             <bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="61%, 52%, 31%, 32%"/>
+            </bind>
         </link>
+        
         
         <link id="link_frameRedLeft" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuRedOn">
@@ -207,7 +211,7 @@
             <bind role="start" component="menuBlueOff"/>
         </link>
         <!-- Green -->
-           <link id="link_frameGreenSelection" xconnector="conBase#onSelectionStartStop">
+           <link id="link_frameGreenSelection" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="menuGreenOn">
             	<bindParam name="keyCode" value="ENTER"/>
             </bind>
@@ -222,7 +226,11 @@
             <bind role="start" component="btnGreenSelec"/>
             <bind role="stop" component="btnExit1"/>
             <bind role="start" component="btnExit2"/>
+             <bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="61%, 52%, 31%, 32%"/>
+            </bind>
         </link>
+      
         
        <link id="link_frameGreenLeft" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuGreenOn">
@@ -249,7 +257,7 @@
             <bind role="start" component="menuGreenOff"/>
         </link>
         <!-- Yellow -->
-           <link id="link_frameYellowSelection" xconnector="conBase#onSelectionStartStop">
+           <link id="link_frameYellowSelection" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="menuYellowOn">
             	<bindParam name="keyCode" value="ENTER"/>
             </bind>
@@ -264,7 +272,11 @@
             <bind role="start" component="btnYellowSelec"/>
             <bind role="stop" component="btnExit1"/>
             <bind role="start" component="btnExit2"/>
+             <bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="61%, 52%, 31%, 32%"/>
+            </bind>
         </link>
+     
         
         <link id="link_frameYellowLeft" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuYellowOn">
@@ -291,7 +303,7 @@
             <bind role="start" component="menuGreenOff"/>
         </link>
         <!-- Blue -->
-           <link id="link_frameBlueSelection" xconnector="conBase#onSelectionStartStop">
+           <link id="link_frameBlueSelection" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="menuBlueOn">
             	<bindParam name="keyCode" value="ENTER"/>
             </bind>
@@ -306,6 +318,9 @@
             <bind role="start" component="btnBlueSelec"/>
             <bind role="stop" component="btnExit1"/>
             <bind role="start" component="btnExit2"/>
+            <bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="61%, 52%, 31%, 32%"/>
+            </bind>
         </link>
         
         <link id="link_frameBlueLeft" xconnector="conBase#onSelectionStartStop">
@@ -335,7 +350,7 @@
             <bind role="start" component="btnExit2"/>
         </link>
         
-        <link id="link_Sair" xconnector="conBase#onSelectionStartStop">
+        <link id="link_Sair" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="btnExit1">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
@@ -351,9 +366,12 @@
             <bind role="stop" component="logo"/>
             <bind role="stop" component="backGroundImage"/>
             <bind role="stop" component="btnExit1"/>
+			<bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="0%,0%,100%,100%"/>
+            </bind>
         </link>
          
-        <link id="link_RedSair2" xconnector="conBase#onSelectionStartStop">
+        <link id="link_RedSair2" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="btnRedSelec">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
@@ -371,9 +389,12 @@
             <bind role="start"   component="menuBlueOff"/>
             <bind role="start"   component="logo"/>
             <bind role="start"   component="btnExit1"/>
+            	<bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="50.97%, 2.33%, 45.22%, 41.87%"/>
+            </bind>
         </link>
         
-        <link id="link_GreenSair2" xconnector="conBase#onSelectionStartStop">
+        <link id="link_GreenSair2" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="btnGreenSelec">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
@@ -391,9 +412,12 @@
             <bind role="start"   component="menuBlueOff"/>
             <bind role="start"   component="logo"/>
             <bind role="start"   component="btnExit1"/>
+            	<bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="50.97%, 2.33%, 45.22%, 41.87%"/>
+            </bind>
         </link>
         
-          <link id="link_YellowSair2" xconnector="conBase#onSelectionStartStop">
+          <link id="link_YellowSair2" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="btnYellowSelec">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
@@ -411,8 +435,11 @@
             <bind role="start"   component="menuBlueOff"/>
             <bind role="start"   component="logo"/>
             <bind role="start"   component="btnExit1"/>
+            	<bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="50.97%, 2.33%, 45.22%, 41.87%"/>
+            </bind>
         </link>
-         <link id="link_BlueSair2" xconnector="conBase#onSelectionStartStop">
+         <link id="link_BlueSair2" xconnector="conBase#onSelectionIconMenuResizeVideo">
             <bind role="onSelection" component="btnBlueSelec">
                 <bindParam name="keyCode" value="EXIT"/>
             </bind>
@@ -430,6 +457,9 @@
             <bind role="start"   component="menuBlueOn"/>
             <bind role="start"   component="logo"/>
             <bind role="start"   component="btnExit1"/>
+ 			<bind role="set"  component="mediaVideo" interface="bounds">
+                <bindParam name="varSet" value="50.97%, 2.33%, 45.22%, 41.87%"/>
+            </bind>
         </link>
     
     </body>
