@@ -22,7 +22,6 @@ media/entrevista/06a.png
 media/entrevista/06b.png
 media/entrevista/06c.png
 media/entrevista/06d.png
-media/entrevista/06e.png
 media/entrevista/07a.png
 media/entrevista/07b.png
 media/entrevista/07c.png
