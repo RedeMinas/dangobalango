@@ -33,7 +33,7 @@ Board = {
 
 -- Public methods.
 
-
+
 --  Creates a new board object and load it with PATHNAME level-file contents.
 
 require 'parser'
@@ -76,21 +76,21 @@ function Board:new (pathname)
    return o
 end
 
-
+
 -- Returns Ghosts array.
 
 function Board:get_ghosts ()
    return self.ghosts
 end
 
-
+
 -- Returns Dango.
 
 function Board:get_dango ()
    return self.dango
 end
 
-
+
 -- Returns the coordinates of (I,J)'s next cell in direction DIR.
 
 function Board:next (i, j, dir)
@@ -106,7 +106,7 @@ function Board:next (i, j, dir)
    return i, j
 end
 
-
+
 -- Reset all actors to their initial configuration.
 
 function Board:reset ()

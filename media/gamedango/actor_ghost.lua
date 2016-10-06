@@ -36,7 +36,7 @@ local GHOST_STATES = {
 
 -- Actor interface implementation.
 
-
+
 function ActorGhost:new (i, j, board)
    assert (i > 0 and j > 0 and board, 'Invalid constructor parameters')
    local o = {}
@@ -54,12 +54,12 @@ function ActorGhost:new (i, j, board)
    return o
 end
 
-
+
 function ActorGhost:collect ()
    -- Nothing to do.
 end
 
-
+
 -- Check for collisions with dango.
 
 function ActorGhost:collisions ()
@@ -84,7 +84,7 @@ function ActorGhost:collisions ()
 
 end
 
-
+
 function ActorGhost:set_state (name)
 
    -- Load state data.
@@ -109,14 +109,14 @@ function ActorGhost:set_state (name)
    end
 end
 
-
+
 function ActorGhost:reset ()
    self.dir = 'NONE'
    self.pos = { i = self.start_pos.i, j = self.start_pos.j }
    self:set_state ('WAITING')
 end
 
-
+
 -- Updates Ghost direction using a.i.
 
 function ActorGhost:update_dir ()
@@ -186,7 +186,7 @@ function ActorGhost:update_dir ()
    self.dir = dir
 end
 
-
+
 function ActorGhost:update_state ()
 
    -- Update state timer.

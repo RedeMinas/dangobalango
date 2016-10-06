@@ -1,8 +1,7 @@
-media/personagens/04.png
-media/personagens/05.png
-media/personagens/02.png
-media/personagens/03.png
-media/personagens/06.png
-media/personagens/07.png
-media/personagens/08.png
-media/personagens/01.png
+media/personagens/1.png
+media/personagens/2.png
+media/personagens/3.png
+media/personagens/4.png
+media/personagens/5.png
+media/personagens/6.png
+media/personagens/7.png

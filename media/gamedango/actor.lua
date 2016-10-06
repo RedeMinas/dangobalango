@@ -24,7 +24,7 @@ Actor = {
 
 -- Public methods.
 
-
+
 -- Constructor.
 
 function Actor:new ()
@@ -34,7 +34,7 @@ function Actor:new ()
    return o
 end
 
-
+
 -- Returns an array containing all possible directions.
 
 function Actor:get_possible_dirs ()
@@ -50,7 +50,7 @@ function Actor:get_possible_dirs ()
    return dirs
 end
 
-
+
 -- Returns true if actor cannot transpose TILE.
 
 function Actor:is_barrier (tile)
@@ -62,7 +62,7 @@ function Actor:is_barrier (tile)
    return false
 end
 
-
+
 -- Updates actor configuration.
 
 function Actor:move ()
@@ -73,7 +73,7 @@ function Actor:move ()
    self:collisions ()
 end
 
-
+
 -- Updates actor position according to its current direction.
 
 function Actor:update_pos ()
@@ -87,49 +87,49 @@ end
 
 -- `Abstract' methods.  Specializations must implement these.
 
-
+
 -- Collect items.
 
 function Actor:collect ()
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Check for collisions.
 
 function Actor:collisions ()
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Sets actor state to NAME.
 
 function Actor:set_state (name)
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Returns a snapshot (shallow copy) of this actor.
 
 function Actor:snapshot ()
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Reset actor to its initial configuration.
 
 function Actor:reset ()
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Updates actor direction.
 
 function Actor:update_dir ()
    assert (false, 'This method must be implemented')
 end
 
-
+
 -- Updates actor current state.
 
 function Actor:update_state ()

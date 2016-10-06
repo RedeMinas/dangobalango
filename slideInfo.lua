@@ -1,9 +1,9 @@
 function findImagesSlide()
 --    os.execute("find media/tupi -name *.jpg > imagelistSlide.txt")
- --   os.execute("find media/tupi -name *.jpeg >> imagelistSlide.txt")
-  --  os.execute("find media/tupi -name *.bmp >> imagelistSlide.txt")
-   -- os.execute("find media/tupi -name *.gif >> imagelistSlide.txt")
-    --os.execute("find media/tupi -name *.png >> imagelistSlide.txt")
+--    os.execute("find media/tupi -name *.jpeg >> imagelistSlide.txt")
+--    os.execute("find media/tupi -name *.bmp >> imagelistSlide.txt")
+--    os.execute("find media/tupi -name *.gif >> imagelistSlide.txt")
+--    os.execute("find media/tupi -name *.png >> imagelistSlide.txt")
 
     local imagesMenu = {}
 
@@ -19,7 +19,7 @@ function showImage(images, index)
   if #images > 0 then
     canvas:drawRect('fill', 0, 0, canvas:attrSize());
     img = canvas:new(images[index])
-    canvas:compose(0, 0, img)
+    canvas:compose(10, 10, img)
     registerTimer()
   
     canvas:flush()
@@ -51,7 +51,7 @@ end
 
 function registerTimer()
 
-  local timeout = 50000
+  local timeout = 5000
 
 
   if cancelTimerFunc then

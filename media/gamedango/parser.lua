@@ -38,7 +38,7 @@ do
    end
 end
 
-
+
 -- Remove non-mapped symbols from STR.  Returns the cleaned string.
 
 local function clean (str)
@@ -54,14 +54,14 @@ local function clean (str)
    return str
 end
 
-
+
 -- Split STR into lines.  Returns the lines table.
 
 local function lines (str)
    return { str:match ((str:gsub ("[^\n]*\n", "([^\n]*)\n"))) }
 end
 
-
+
 -- Parse level STR.  Returns level grid.
 
 local function _parse (str)
@@ -100,7 +100,7 @@ end
 
 -- Exported functions.
 
-
+
 -- Parse level file.  Returns the level grid.
 
 local function parse (pathname)

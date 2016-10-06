@@ -29,7 +29,7 @@ Display = {
    walls = nil,
 
    -- Actors animations current frame.
-   dango_frame = 1,
+   dango_frame = 2,
    ghosts_frame = nil,
 }
 
@@ -102,14 +102,13 @@ do
    local suffixes = { '', 't', 'b', 'l', 'r', 'tb', 'lr', 'bl', 'blr', 'br',
                       'tbl', 'tblr', 'tbr', 'tl', 'tlr', 'tr' }
    for i = 1, #suffixes do
-      TILES['wall_'..suffixes[i]] = canvas:new ('media/wall_'
-                                               ..suffixes[i]..'.png')
+      TILES['wall_'..suffixes[i]] = canvas:new ('media/wall_'..suffixes[i]..'.png')
    end
 end
 
 -- Exported functions.
 
-
+
 -- Constructor.
 
 function Display:new (board)
@@ -185,7 +184,7 @@ function Display:new (board)
    return o
 end
 
-
+
 -- Draws an animation into gameboard at cell (I,J)
 
 function Display:draw_anim (cvs, frame, i, j)
@@ -195,7 +194,7 @@ function Display:draw_anim (cvs, frame, i, j)
    canvas:compose (x, y, cvs)
 end
 
-
+
 -- Draws a static image into gameboard at cell (I,J).
 
 function Display:draw_img (cvs, i, j)
@@ -204,7 +203,7 @@ function Display:draw_img (cvs, i, j)
    canvas:compose (x, y, cvs)
 end
 
-
+
 -- Draws scoreboard.
 
 function Display:draw_scoreboard (level, lives)
@@ -224,7 +223,7 @@ function Display:draw_scoreboard (level, lives)
    end
 end
 
-
+
 -- Shows win/lose end message.
 
 local function end_message (win)
@@ -262,7 +261,7 @@ local function end_message (win)
 end
 Display.end_message = end_message
 
-
+
 -- Redraw everything.
 
 function Display:redraw (level, lives)

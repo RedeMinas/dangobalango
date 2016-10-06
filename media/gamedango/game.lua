@@ -14,7 +14,7 @@ local GAME_DELAY = 175
 -- Level files pathname.  `%s' will be replaced by the level number.
 local LEVEL_PATH = 'levels/%s.txt'
 
-
+
 -- Returns true if PATHNAME exists.
 
 local function exists (pathname)
@@ -26,14 +26,14 @@ local function exists (pathname)
    return true
 end
 
-
+
 -- Game main loop.
 
 local GAME = nil
 do
    GAME = coroutine.create (
       function ()
-         local level = 1       -- Initial level.
+         local level = 3       -- Initial level.
          local lives = 3       -- Player lives.
          local pathname = LEVEL_PATH:gsub ('%%s', level, 1)
 
@@ -90,7 +90,7 @@ do
    )
 end
 
-
+
 -- Event handler.
 
 local TIMER = GAME_DELAY

@@ -26,7 +26,7 @@ local DANGO_STATES = {
 
 -- Actor interface implementation.
 
-
+
 function ActorDango:new (i, j, board)
    assert (i > 0 and j > 0 and board, 'Invalid constructor parameters')
    local o = {}
@@ -44,7 +44,7 @@ function ActorDango:new (i, j, board)
    return o
 end
 
-
+
 function ActorDango:collect ()
    if self.state.name ~= 'OK' then return end
 
@@ -73,7 +73,7 @@ function ActorDango:collect ()
    end
 end
 
-
+
 function ActorDango:collisions ()
    if self.state.name ~= 'OK' then return end
 
@@ -85,7 +85,7 @@ function ActorDango:collisions ()
       end
    end
 end
-
+
 
 function ActorDango:set_state (name)
 
@@ -107,14 +107,14 @@ function ActorDango:set_state (name)
    end
 end
 
-
+
 function ActorDango:reset ()
    self.dir = 'NONE'
    self.pos = { i = self.start_pos.i, j = self.start_pos.j }
    self:set_state ('OK')
 end
 
-
+
 -- Updates Dango direction using user input.
 
 require 'input'
@@ -137,7 +137,7 @@ function ActorDango:update_dir ()
    end
 end
 
-
+
 function ActorDango:update_state ()
 
    -- Update state timer.

@@ -15,7 +15,7 @@ local KEY_TO_DIR = {
    ['CURSOR_RIGHT'] = 'EAST',
 }
 
-
+
 -- Handles key-press events.
 
 local function keypress_handler (evt)
@@ -27,7 +27,7 @@ event.register (keypress_handler)
 
 -- Exported functions.
 
-
+
 -- Returns the last selected direction.
 
 local function get_dir ()
@@ -38,7 +38,7 @@ local function get_dir ()
 end
 Input.get_dir = get_dir
 
-
+
 -- Release input handler.
 
 local function unregister ()
