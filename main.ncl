@@ -42,17 +42,15 @@
             <descriptor id="deMenuBlueOff"          region="rgFrameBlueOff"/>
             <descriptor id="deLogo"         		region="rgLogo"/>      
             <descriptor id="deFundoPretoOpaco"      region="rgFundoPreto"/>
-            <descriptor id="dLuaSlideDic"   region="rgLua" focusIndex="6" focusBorderWidth="0"/>
-            <descriptor id="dLuaGameDango"  region="rgLua" focusIndex="7" focusBorderWidth="0"/>
-            <descriptor id="dLuaSlidePerso" region="rgLua" focusIndex="8" focusBorderWidth="0"/>
-            <descriptor id="dLuaSlideInfo"  region="rgLua" focusIndex="9" focusBorderWidth="0"/>
+	        <descriptor id="dLua"   				region="rgLua" focusIndex="0" focusBorderWidth="0"/>
+       		
         </descriptorBase>
         <!-- library of used connectors -->
         <connectorBase>
             <importBase documentURI="connector.ncl" alias="conBase"/>
         </connectorBase>
     </head>
-
+    
     <body>
         <port id="pInicia" component="mediaVideo"/>
         <!-- Extra -->
@@ -73,6 +71,8 @@
         <media id="menuRedOff"      src="media/menu/tela1/1.png"  descriptor="deMenuRedOff"/>
         <media id="menuRedOn"       src="media/menu/tela1/1a.png" descriptor="deMenuRed"/>
         <media id="btnRedSelec"     src="media/menu/tela1/1a.png" descriptor="deFrameRedBtnSelect"/>
+        <media id="dicionarioTupi"  src="slideDic.lua" 			  descriptor="dLua"/>
+        
         <!-- Frame Green -->
         <media id="menuGreenOff"    src="media/menu/tela1/2.png"  descriptor="deMenuGreenOff"/>
         <media id="menuGreenOn"     src="media/menu/tela1/2a.png" descriptor="deMenuGreen"/>
@@ -81,10 +81,13 @@
         <media id="menuYellowOff"   src="media/menu/tela1/3.png"  descriptor="deMenuYellowOff"/>
         <media id="menuYellowOn"    src="media/menu/tela1/3a.png" descriptor="deMenuYellow"/>
         <media id="btnYellowSelec"  src="media/menu/tela1/3a.png" descriptor="deFrameYellowBtnSelect"/>
+        <media id="personagens"  src="slidePersonagens.lua"       descriptor="dLua"/>
+       
         <!-- Frame Blue -->
         <media id="menuBlueOff"  src="media/menu/tela1/4.png"     descriptor="deMenuBlueOff"/>
         <media id="menuBlueOn"   src="media/menu/tela1/4a.png"    descriptor="deMenuBlue"/>
         <media id="btnBlueSelec" src="media/menu/tela1/4a.png"    descriptor="deFrameBlueBtnSelect"/>
+        <media id="informacoes"    src="slideInfo.lua"           descriptor="dLua"/>
         
          <!-- Link Icon Interact -->
         <link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
@@ -147,7 +150,7 @@
             	<bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
             </bind> 
         </link>
-        <!-- específico RED -->
+        <!-- especifico RED -->
         <link id="link_frameRedSelection" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuRedOn">
             	<bindParam name="keyCode" value="ENTER"/>
@@ -158,11 +161,15 @@
             <bind role="start" component="btnRedSelec"/>
             <bind role="stop" component="menuRedOn"/>
         </link>
+        <link xconnector="conBase#onBeginStart">
+        	<bind role="onBegin" component="btnRedSelec"/>
+        	<bind role="start" component="dicionarioTupi"/>
+        </link>
         <link xconnector="conBase#onEndStart">
         	<bind role="onEnd" component="btnRedSelec"/>
         	<bind role="start" component="menuRedOn"/>
         </link>
-        <!-- específico GREEN -->
+        <!-- especifico GREEN -->
         <link id="link_frameGreenSelection" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuGreenOn">
             	<bindParam name="keyCode" value="ENTER"/>
@@ -177,7 +184,7 @@
         	<bind role="onEnd" component="btnGreenSelec"/>
         	<bind role="start" component="menuGreenOn"/>
         </link>
-        <!-- específico YELLOW -->
+        <!-- especifico YELLOW -->
         <link id="link_frameYellowSelection" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuYellowOn">
             	<bindParam name="keyCode" value="ENTER"/>
@@ -186,13 +193,15 @@
             	<bindParam name="keyCode" value="YELLOW"/>
             </bind>
             <bind role="start" component="btnYellowSelec"/>
+            <bind role="start" component="personagens"/>
             <bind role="stop" component="menuYellowOn"/>
         </link>
+        
         <link xconnector="conBase#onEndStart">
         	<bind role="onEnd" component="btnYellowSelec"/>
         	<bind role="start" component="menuYellowOn"/>
         </link>
-        <!-- específico BLUE -->
+        <!-- especifico BLUE -->
         <link id="link_frameBlueSelection" xconnector="conBase#onSelectionStartStop">
             <bind role="onSelection" component="menuBlueOn">
             	<bindParam name="keyCode" value="ENTER"/>
@@ -201,8 +210,10 @@
             	<bindParam name="keyCode" value="BLUE"/>
             </bind>
             <bind role="start" component="btnBlueSelec"/>
+            <bind role="start" component="informacoes"/>
             <bind role="stop" component="menuBlueOn"/>
         </link>
+        
         <link xconnector="conBase#onEndStart">
         	<bind role="onEnd" component="btnBlueSelec"/>
         	<bind role="start" component="menuBlueOn"/>
@@ -316,11 +327,63 @@
             <bind role="stop"  component="btnYellowSelec"/>
             <bind role="stop"  component="btnBlueSelec"/>
             <bind role="stop"  component="fundoPreto"/>
+            <bind role="stop"  component="dicionarioTupi"/>
+            <bind role="stop"  component="informacoes"/>
+            <bind role="stop"  component="personagens"/>
             <bind role="stop"  component="backGroundImage2"/>
             <bind role="start" component="backGroundImage"/>
             <bind role="set"   component="mediaVideo" interface="bounds">
                 <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
             </bind>
         </link>
+        <link id="link_focoBeginDicionario" xconnector="conBase#onBeginSet">
+                <bind role="onBegin" component="btnRedSelec" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value="dicionarioTupi"/>
+                </bind>
+            </link>
+            <link id="link_focoEndDicionario" xconnector="conBase#onEndSet">
+                <bind role="onEnd" component="dicionarioTupi" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value=""/>
+                </bind>
+            </link>
+            <!--<link id="link_focoBeginGameDango" xconnector="conBase#onBeginSet">
+                <bind role="onBegin" component="btnGreenSelec" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value="gameDango"/>
+                </bind>
+            </link>
+            <link id="link_focoEndGameDango" xconnector="conBase#onEndSet">
+                <bind role="onEnd" component="gameDango" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value=""/>
+                </bind>
+            </link> -->
+            <link id="link_focoBeginPersonagens" xconnector="conBase#onBeginSet">
+                <bind role="onBegin" component="btnYellowSelec" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value="personagens"/>
+                </bind>
+            </link>
+            <link id="link_focoEndPersonagens" xconnector="conBase#onEndSet">
+                <bind role="onEnd" component="personagens" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value=""/>
+                </bind>
+            </link>
+            <link id="link_focoBeginInformacoes" xconnector="conBase#onBeginSet">
+                <bind role="onBegin" component="btnBlueSelec" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value="informacoes"/>
+                </bind>
+            </link>
+
+            <link id="link_focoEndInformacoes" xconnector="conBase#onEndSet">
+                <bind role="onEnd" component="informacoes" />
+                <bind role="set" component="settings" interface="service.currentKeyMaster">
+                    <bindParam name="value" value=""/>
+                </bind>
+            </link>
     </body>
 </ncl>

@@ -115,8 +115,6 @@
         </compoundAction>
       </causalConnector>
 
-      
-
 
       <causalConnector id="onBeginSet">
         <connectorParam name="value"/>
