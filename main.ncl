@@ -10,10 +10,10 @@
             <region id="rgFrameGreen"           left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="5"/>
             <region id="rgFrameYellow"          left="8%"     top="60%"    width="13.38%" height="13.61%"  zIndex="5"/>
             <region id="rgFrameBlue"            left="8%"     top="75%"    width="11.82%" height="8.61%"   zIndex="5"/>
-            <region id="rgFrameRedBtnSelect"    left="22%"     top="75%"    width="15.52%" height="15.55%"  zIndex="7"/>
-            <region id="rgFrameGreenBtnSelect"  left="22%"     top="75%"    width="14.53%" height="10.74%"  zIndex="7"/>
-            <region id="rgFrameYellowBtnSelect" left="22%"     top="75%"    width="13.38%" height="13.61%"  zIndex="7"/>
-            <region id="rgFrameBlueBtnSelect"   left="22%"     top="75%"    width="11.82%" height="8.61%"  zIndex="7"/>
+            <region id="rgFrameRedBtnSelect"    left="22%"    top="73%"    width="15.52%" height="15.55%"  zIndex="7"/>
+            <region id="rgFrameGreenBtnSelect"  left="22%"    top="75%"    width="14.53%" height="10.74%"  zIndex="7"/>
+            <region id="rgFrameYellowBtnSelect" left="22%"    top="75%"    width="13.38%" height="13.61%"  zIndex="7"/>
+            <region id="rgFrameBlueBtnSelect"   left="23.5%"    top="77%"    width="11.82%" height="8.61%"  zIndex="7"/>
             <region id="rgLogo"         		left="3%" 	  top="1%"     width="22.08%" height="84.16%"  zIndex="3"/>
             <region id="rgFrameRedOff"          left="8%"     top="32%"    width="15.52%" height="15.55%"  zIndex="4"/>
             <region id="rgFrameGreenOff"        left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="4"/>
