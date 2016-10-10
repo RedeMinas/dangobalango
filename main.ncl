@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<ncl id="DangoBalango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
+<ncl id="DangoBalango">
     <head>
       <regionBase>
         	<region id="rgBackGroundImage"                                 width="100%"   height="100%"    zIndex="1"/>
@@ -19,7 +19,7 @@
             <region id="rgFrameGreenOff"        left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="4"/>
             <region id="rgFrameYellowOff"       left="8%"     top="60%"    width="13.38%" height="13.61%"  zIndex="4"/>
             <region id="rgFrameBlueOff"         left="8%"     top="75%"    width="11.82%" height="8.61%"   zIndex="4"/>
-            <region id="rgLua"                  left="4.99%"  top="13.6%" width="48%"    height="59%" zIndex="8"/>
+            <region id="rgLua"                  left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="8"/>
             <region id="rgFundoPreto"           left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="7"/>
         </regionBase>
         
@@ -52,14 +52,13 @@
     </head>
     
     <body>
-        <port id="pInicia" component="mediaVideo"/>
+        <port id="pInicia" component="iconInteract"/>
         <!-- Extra -->
         <media id="backGroundImage"     src="media/menu/tela1/fundo.png"    descriptor="deBackGroundImage"/>
         <media id="backGroundImage2"    src="media/menu/tela2/fundo2.png"   descriptor="deBackGroundImage2"/>
         <media id="fundoPreto"          src="media/fundoPreto.png"          descriptor="deFundoPretoOpaco"/>
         <media id="iconInteract"        src="media/menu/icon.png"         	descriptor="deIconInteract"/>
-        <media id="mediaVideo" src="sbtvd-ts://video" descriptor="deFullScreenMedia">
-            <area id="icon" begin="2s"/>
+        <media id="mediaVideo" src="sbtvd-ts://0" descriptor="deFullScreenMedia">
             <property name="bounds"/>
             <property name="zIndex" value="7"/>
         </media>
@@ -91,8 +90,8 @@
         
          <!-- Link Icon Interact -->
         <link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
-            <bind role="onBegin" component="mediaVideo"  interface="icon"/>
-            <bind role="start"   component="iconInteract" />
+            <bind role="onBegin" component="iconInteract"/>
+            <bind role="start"   component="mediaVideo" />
         </link>
         <!-- Link Start Interface -->
         <link id="link_iconMenuSelect" xconnector="conBase#onSelectionIconMenuResizeVideo">
