@@ -77,9 +77,10 @@
         <media id="btnRedSelec"     src="media/menu/tela1/1a.png" descriptor="deFrameRedBtnSelect"/>
         <media id="dicionarioTupi"  src="slideDic.lua" 			  descriptor="dLua"/>
         <!-- Frame Green -->
-        <media id="menuGreenOff"    src="media/menu/tela1/2.png"  descriptor="deMenuGreenOff"/>
-        <media id="menuGreenOn"     src="media/menu/tela1/2a.png" descriptor="deMenuGreen"/>
-		<media id="btnGreenSelec"   src="media/menu/tela1/2a.png" descriptor="deFrameGreenBtnSelect"/>
+        <media id="menuGreenOff"    src="media/menu/tela1/2.png"   descriptor="deMenuGreenOff"/>
+        <media id="menuGreenOn"     src="media/menu/tela1/2a.png"  descriptor="deMenuGreen"/>
+		<media id="btnGreenSelec"   src="media/menu/tela1/2a.png"  descriptor="deFrameGreenBtnSelect"/>
+		<media id="gameDango" 		src="media/gamedango/game.lua" descriptor="dLua"/>
         <!-- Frame Yellow -->
         <media id="menuYellowOff"   src="media/menu/tela1/3.png"  descriptor="deMenuYellowOff"/>
         <media id="menuYellowOn"    src="media/menu/tela1/3a.png" descriptor="deMenuYellow"/>
@@ -180,6 +181,10 @@
             </bind>
             <bind role="start" component="btnGreenSelec"/>
             <bind role="stop" component="menuGreenOn"/>
+        </link>
+        <link xconnector="conBase#onBeginStart">
+        	<bind role="onBegin" component="btnGreenSelec"/>
+        	<bind role="start" component="gameDango"/>
         </link>
         <link xconnector="conBase#onEndStart">
         	<bind role="onEnd" component="btnGreenSelec"/>
@@ -325,6 +330,7 @@
             <bind role="stop"  component="btnBlueSelec"/>
             <bind role="stop"  component="fundoPreto"/>
             <bind role="stop"  component="dicionarioTupi"/>
+            <bind role="stop" component="gameDango"/>
             <bind role="stop"  component="backGroundImage2"/>
             <bind role="start" component="backGroundImage"/>
             <bind role="set"   component="mediaVideo" interface="bounds">
@@ -342,6 +348,20 @@
                 <bind role="set" component="settings" interface="service.currentKeyMaster">
                     <bindParam name="value" value=""/>
                 </bind>
+            </link>
+            
+            <link id="link_focoBeginGameDango" xconnector="conBase#onBeginSet">
+            	<bind role="onBegin" component="btnGreenSelec"/>
+            	<bind role="set" component="settings" interface="service.currentKeyMaster">
+            		<bindParam name="value" value="gameDango"/>
+            	</bind>
+            </link>
+            
+            <link id="link_focoEndGameDango" xconnector="conBase#onEndSet">
+            	<bind role="onEnd" component="gameDango"/>
+            	<bind role="set" component="settings" interface="service.currentKeyMaster">
+            		<bindParam name="value" value=""/>
+            	</bind>
             </link>
             
 
