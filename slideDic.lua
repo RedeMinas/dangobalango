@@ -1,3 +1,5 @@
+local fundo2 = canvas:new('midia/menu/tela2/fundo2.png')
+local btnVermSel = canvas:new('midia/menu/tela1/1a.png')
 function findImagesSlide()
 --    os.execute("find media/tupi -name *.jpg > imagelistSlide.txt")
  --   os.execute("find media/tupi -name *.jpeg >> imagelistSlide.txt")
@@ -19,7 +21,9 @@ function showImage(images, index)
   if #images > 0 then
     canvas:drawRect('fill', 0, 0, canvas:attrSize());
     img = canvas:new(images[index])
-    canvas:compose(10, 10, img)
+    canvas:compose(0, 0, fundo2)
+    canvas:compose(400,800, btnVermSel)
+    canvas:compose(105, 160, img)
     registerTimer()
     canvas:flush()
   end
@@ -72,7 +76,7 @@ function handler(evt)
       elseif evt.key == "CURSOR_LEFT" then
          index = moveImageIndex(images, index, false)
       elseif evt.key == "EXIT" then
-        print ('chegou!')
+        system('pause')
 
       end
 
