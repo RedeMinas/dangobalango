@@ -1,5 +1,8 @@
+assert(loadfile("main.lua")("a"))
 local fundo2 = canvas:new('midia/menu/tela2/fundo2.png')
 local btnVermSel = canvas:new('midia/menu/tela1/1a.png')
+
+
 function findImagesSlide()
 --    os.execute("find media/tupi -name *.jpg > imagelistSlide.txt")
  --   os.execute("find media/tupi -name *.jpeg >> imagelistSlide.txt")
@@ -24,7 +27,6 @@ function showImage(images, index)
     canvas:compose(0, 0, fundo2)
     canvas:compose(400,800, btnVermSel)
     canvas:compose(105, 160, img)
-    registerTimer()
     canvas:flush()
   end
 end
@@ -52,16 +54,6 @@ function autoForward()
   showImage(images, index)
 end
 
-function registerTimer()
-
-  local timeout = 5000
-
-
-  if cancelTimerFunc then
-     cancelTimerFunc()
-  end
-  cancelTimerFunc = event.timer(timeout, autoForward)
-end
 
 function handler(evt)
 
@@ -75,16 +67,20 @@ function handler(evt)
         index = moveImageIndex(images, index, true)
       elseif evt.key == "CURSOR_LEFT" then
          index = moveImageIndex(images, index, false)
-      elseif evt.key == "EXIT" then
-        system('pause')
+       end
+
+      if evt.key == "EXIT" then
+        canvas:clear()
+        canvas:flush()
+        event.unregister(handler)
+        assert(dofile("main.lua")("a"))
+
+        --sair = dofile("main.lua")
+        canvas:flush()
 
       end
-
-    elseif evt.class == "ncl" and evt.type=="presentation" and evt.action=="start" then
-      autoForward()
-
+      
     end
-
 end
 
 event.register(handler)
