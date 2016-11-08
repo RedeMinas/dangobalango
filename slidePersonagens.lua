@@ -1,4 +1,4 @@
-assert(loadfile("main.lua")("c"))
+
 local fundo2 = canvas:new('midia/menu/tela2/fundo2.png')
 local btnAmaSel = canvas:new('midia/menu/tela1/3a.png')
 function findImagesSlide()
@@ -73,7 +73,7 @@ function handler(evt)
         canvas:clear()
         canvas:flush()
         event.unregister(handler)
-        sair = dofile("main.lua")
+       assert(loadfile("main.lua")("c"))
         canvas:flush()
 
       end

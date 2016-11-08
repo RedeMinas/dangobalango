@@ -1,4 +1,4 @@
-assert(loadfile("main.lua")("a"))
+
 local fundo2 = canvas:new('midia/menu/tela2/fundo2.png')
 local btnVermSel = canvas:new('midia/menu/tela1/1a.png')
 
@@ -70,11 +70,12 @@ function handler(evt)
        end
 
       if evt.key == "EXIT" then
+
+  event.unregister(handler)
         canvas:clear()
         canvas:flush()
-        event.unregister(handler)
-        assert(dofile("main.lua")("a"))
-
+        assert(loadfile("main.lua")("a"))
+	
         --sair = dofile("main.lua")
         canvas:flush()
 

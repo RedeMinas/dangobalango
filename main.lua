@@ -17,33 +17,34 @@ local posicao  = 0
 
 local dx,dy = canvas:attrSize()
 
-function menuPrincipal(arg)
+function menuPrincipal(argv)
     print("argumentos em menuPrincipal:")
-    print(arg)
+    print(argv)
 		canvas:clear()
-        canvas:flush()
+        	canvas:flush()
 		posicao = posicao + 1
 		canvas:compose(0,0,fundo)
 		canvas:compose(40,60,logo)
-        if arg == "a" then    
+ 
+        if argv == 'a' then    
             canvas:compose(135,370,btnVermSel)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAma)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
-        elseif arg == "b" then
+        elseif argv == 'b' then
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerdSel)            
             canvas:compose(142,680,btnAma)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
-        elseif arg == "c" then
+        elseif argv == 'c' then
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAmaSel)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
-        elseif arg == "d" then
+        elseif argv == 'd' then
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAma)       
@@ -58,7 +59,8 @@ function menuPrincipal(arg)
 		canvas:flush()
 end
 
-menuPrincipal(arg)
+menuPrincipal(argv)
+
 
 function handler(evt)  
 
