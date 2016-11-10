@@ -27,24 +27,28 @@ function menuPrincipal(argv)
 		canvas:compose(40,60,logo)
  
         if argv == 'a' then    
+            posicao = 1
             canvas:compose(135,370,btnVermSel)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAma)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
         elseif argv == 'b' then
+            posicao = 2
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerdSel)            
             canvas:compose(142,680,btnAma)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
         elseif argv == 'c' then
+            posicao = 3
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAmaSel)
             canvas:compose(145,840,btnAzul)
             canvas:flush()
         elseif argv == 'd' then
+            posicao = 4
             canvas:compose(135,370,btnVerm)
             canvas:compose(142,550,btnVerd)
             canvas:compose(142,680,btnAma)       
@@ -52,11 +56,13 @@ function menuPrincipal(argv)
             canvas:flush()
         else 
             canvas:compose(135,370,btnVermSel)
+            canvas:compose(142,550,btnVerd)
+            canvas:compose(142,680,btnAma)
+            canvas:compose(145,840,btnAzul)
+            canvas:flush()
         end
-		canvas:compose(142,550,btnVerd)
-		canvas:compose(142,680,btnAma)
-		canvas:compose(145,840,btnAzul)
-		canvas:flush()
+		
+		
 end
 
 menuPrincipal(argv)

@@ -73,7 +73,7 @@ function handler(evt)
         canvas:clear()
         canvas:flush()
         event.unregister(handler)
-       assert(loadfile("main.lua")("c"))
+       loadfile("main.lua")("c")
         canvas:flush()
 
       end

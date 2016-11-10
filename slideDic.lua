@@ -74,7 +74,7 @@ function handler(evt)
   event.unregister(handler)
         canvas:clear()
         canvas:flush()
-        assert(loadfile("main.lua")("a"))
+        loadfile("main.lua")("a")
 	
         --sair = dofile("main.lua")
         canvas:flush()
