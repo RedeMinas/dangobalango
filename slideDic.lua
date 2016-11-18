@@ -27,6 +27,7 @@ function showImage(images, index)
     canvas:compose(0, 0, fundo2)
     canvas:compose(400,800, btnVermSel)
     canvas:compose(105, 160, img)
+    
     canvas:flush()
   end
 end
@@ -71,7 +72,7 @@ function handler(evt)
 
       if evt.key == "EXIT" then
 
-  event.unregister(handler)
+      event.unregister(handler)
         canvas:clear()
         canvas:flush()
         loadfile("main.lua")("a")

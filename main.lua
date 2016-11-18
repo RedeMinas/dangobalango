@@ -121,26 +121,52 @@ function handler(evt)
         	end
 	end
         if evt.key == "ENTER"  then
+         
+  
 			if posicao == 1 then
                 event.unregister(handler)
-        	   dicTupi  = dofile("slideDic.lua")
+                dicTupi  = dofile("slideDic.lua")
+               canvas:flush()
+           
+        	  
+                
         	   canvas:flush()
         	end
          	if posicao == 2 then
                 event.unregister(handler)
-                gameDango = dofile("slideDic.lua")
+                 gameDango = dofile("slideDic.lua")
+                 canvas:flush()
+            
                 canvas:flush()
         	end
         	if posicao == 3 then
                event.unregister(handler)
-        	   Personagens  = dofile("slidePersonagens.lua")
+               Personagens  = dofile("slidePersonagens.lua")
+               canvas:flush()
+              
+        	   
         	   canvas:flush()
         	end
         	if posicao == 4 then
                 event.unregister(handler)
                 Informacoes  = dofile("slideInfo.lua")
+                canvas:flush()
+               
+         
                 canvas:flush() 
         	end
+        else
+            if evt.key == "EXIT"  then
+               
+                evt = {class='ncl', type='press', key='EXIT'} 
+                    print(evt)
+        --event.post(evt)
+       -- return
+             
+
+                end
+
+
         end	
          
       

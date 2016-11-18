@@ -15,7 +15,22 @@
         	<simpleAction role="set" max="unbounded" qualifier="seq" value="$valueSet"/>
         </compoundAction>
       </causalConnector>
-
+ 
+    <causalConnector id="onEndPresentationStartStop">
+        <connectorParam name="var"/>
+        <simpleCondition role="onEndPresentation"/>
+         <compoundAction operator="seq">
+          <simpleAction role="start" max="unbounded" qualifier="par"/>
+          <simpleAction role="stop" max="unbounded" qualifier="par"/>
+        </compoundAction>
+      </causalConnector>     
+      
+<causalConnector id="onSelectionSet">
+        <connectorParam name="var"/>
+        <simpleCondition role="onSelection"/>
+        <simpleAction role="set" value="$var" max="unbounded"/>
+      </causalConnector>
+      
       <causalConnector id="onBeginStop">
         <simpleCondition role="onBegin"/>
         <simpleAction role="stop" max="unbounded" qualifier="par"/>
@@ -28,6 +43,13 @@
       <causalConnector id="onEndStart">
         <simpleCondition role="onEnd"/>
         <simpleAction role="start" max="unbounded" qualifier="par"/>
+      </causalConnector>
+      <causalConnector id="onEndStopStart">
+        <simpleCondition role="onEnd"/>
+        <compoundAction operator="seq">
+        <simpleAction role="stop" max="unbounded" qualifier="par"/>
+        <simpleAction role="start" max="unbounded" qualifier="par"/>
+         </compoundAction>
       </causalConnector>
       
       <causalConnector id="onSelectionStartStopSet">
@@ -119,7 +141,7 @@
       <causalConnector id="onBeginSet">
         <connectorParam name="value"/>
         <simpleCondition role="onBegin"/>
-        <simpleAction role="set" value="$value"/>
+        <simpleAction role="set" value="$value" max="unbounded"/>
       </causalConnector>
       
       <causalConnector id="onBeginStartStop">
@@ -133,7 +155,7 @@
       <causalConnector id="onEndSet">
         <connectorParam name="value"/>
         <simpleCondition role="onEnd"/>
-        <simpleAction role="set" value="$value"/>
+        <simpleAction role="set" value="$value" max="unbounded"/>
       </causalConnector>
     </connectorBase>
   </head>
