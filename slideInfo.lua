@@ -68,7 +68,7 @@ function handler(evt)
          index = moveImageIndex(images, index, false)
       end
 
-      if evt.key == "EXIT" then
+      if evt.key == "CURSOR_UP" then
         canvas:clear()
         canvas:flush()
         event.unregister(handler)

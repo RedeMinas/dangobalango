@@ -2,6 +2,7 @@ local argv = ...
 print("argumentos:")
 print(argv)
 
+
 local fundo = canvas:new('midia/menu/tela1/fundo.png')
 local logo  = canvas:new('midia/menu/tela1/0.png')
 local btnVerm  = canvas:new('midia/menu/tela1/1.png')
@@ -74,6 +75,7 @@ function handler(evt)
 	 if (evt.class == 'key' and evt.type == 'press') then
 
 
+
       if evt.key == "CURSOR_DOWN" then      			
       		if posicao == 1 then
             	canvas:compose(135,370,btnVerm)
@@ -121,52 +123,44 @@ function handler(evt)
         	end
 	end
         if evt.key == "ENTER"  then
-         
-  
+          event.post {class='ncl', type='selection',name='propriedadea'} 
+           
 			if posicao == 1 then
                 event.unregister(handler)
+
                 dicTupi  = dofile("slideDic.lua")
                canvas:flush()
            
-        	  
-                
-        	   canvas:flush()
         	end
          	if posicao == 2 then
                 event.unregister(handler)
                  gameDango = dofile("slideDic.lua")
                  canvas:flush()
             
-                canvas:flush()
         	end
         	if posicao == 3 then
                event.unregister(handler)
                Personagens  = dofile("slidePersonagens.lua")
                canvas:flush()
-              
-        	   
-        	   canvas:flush()
+
         	end
         	if posicao == 4 then
                 event.unregister(handler)
                 Informacoes  = dofile("slideInfo.lua")
                 canvas:flush()
-               
-         
-                canvas:flush() 
+
         	end
         else
-            if evt.key == "EXIT"  then
+            if evt.key == "CURSOR_BACKSPACE"  then
                
-                evt = {class='ncl', type='press', key='EXIT'} 
-                    print(evt)
+               canvas:clear()
+               canvas:flush()
+                 --   print(evt)
         --event.post(evt)
        -- return
              
 
-                end
-
-
+               end
         end	
          
       

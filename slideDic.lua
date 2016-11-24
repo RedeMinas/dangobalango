@@ -70,13 +70,13 @@ function handler(evt)
          index = moveImageIndex(images, index, false)
        end
 
-      if evt.key == "EXIT" then
+      if evt.key == "CURSOR_UP" then
 
       event.unregister(handler)
         canvas:clear()
         canvas:flush()
         loadfile("main.lua")("a")
-	
+	     
         --sair = dofile("main.lua")
         canvas:flush()
 
