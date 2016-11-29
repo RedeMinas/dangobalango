@@ -70,15 +70,13 @@
             </bind>
     	</link>
 
- 	<link id="link_V" xconnector="conBase#onSelectionSet">
-        <bind role="onSelection" component="script" interface="propriedadea">
-     	 <bindParam name="keyCode" value="ENTER"/> 
-            </bind>
-          
-            	 <bind role="set" component="video" interface="bounds">
-            	 <bindParam name="var" value="61.40%,53.5%,30%,30%"/>
-            </bind>
-    	</link>
+ 	<link xconnector="conBase#onBeginSet">
+      <bind role="onBegin" component="script" interface="propriedadea"/>
+      <bind role="set" component="video" interface="bounds">
+        <bindParam name="value" value="61.40%,53.5%,30%,30%"/>
+      </bind>
+    
+    </link>
 
 </body>
 </ncl>

@@ -14,7 +14,11 @@ local btnVerdSel  = canvas:new('midia/menu/tela1/2a.png')
 local btnAmaSel  = canvas:new('midia/menu/tela1/3a.png')
 local btnAzulSel  = canvas:new('midia/menu/tela1/4a.png')
 local posicao  = 0
-
+local evento = {
+   class = 'ncl',
+   type  = 'attribution',
+   name  = 'propriedadea',
+}
 
 local dx,dy = canvas:attrSize()
 
@@ -80,6 +84,7 @@ function handler(evt)
       		if posicao == 1 then
             	canvas:compose(135,370,btnVerm)
             	canvas:compose(142,550,btnVerdSel)
+
             	canvas:flush()
         	end
         	if posicao == 2 then        		
@@ -123,13 +128,16 @@ function handler(evt)
         	end
 	end
         if evt.key == "ENTER"  then
-          event.post {class='ncl', type='selection',name='propriedadea'} 
+           evento.action = 'set'; event.post(evento)
+        
            
 			if posicao == 1 then
                 event.unregister(handler)
 
                 dicTupi  = dofile("slideDic.lua")
+                
                canvas:flush()
+               
            
         	end
          	if posicao == 2 then

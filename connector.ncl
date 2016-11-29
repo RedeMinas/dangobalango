@@ -24,7 +24,11 @@
           <simpleAction role="stop" max="unbounded" qualifier="par"/>
         </compoundAction>
       </causalConnector>     
-      
+      <causalConnector id="onEndAttributionSet">
+        <connectorParam name="var"/>
+        <simpleCondition role="onEndAttribution"/>
+        <simpleAction role="set" value="$var"/>
+      </causalConnector>   
 <causalConnector id="onSelectionSet">
         <connectorParam name="var"/>
         <simpleCondition role="onSelection"/>
