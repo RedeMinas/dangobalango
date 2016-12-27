@@ -5,7 +5,7 @@
       <region id="rgBgd"                                 width="100%"   height="100%"    zIndex="1"/>
       <region id="rgBgd2"                                width="100%"   height="100%"    zIndex="6"/>
       <region id="rgVideo"                                 width="100%"   height="100%"    zIndex="7"/>
-      <region id="rgIcon"         left="95%"    top="8%"     width="2.55%"  height="4.44%"   zIndex="8"/>
+      <region id="rgIcon"         left="89%"    top="90%"     width="10.677%"  height="9.259%"   zIndex="8"/>
       <region id="rgFrameRed"             left="8%"     top="32%"    width="15.52%" height="15.55%"  zIndex="5"/>
       <region id="rgFrameGreen"           left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="5"/>
       <region id="rgFrameYellow"          left="8%"     top="60%"    width="13.38%" height="13.61%"  zIndex="5"/>
@@ -19,42 +19,46 @@
       <region id="rgFrameGreenOff"        left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="4"/>
       <region id="rgFrameYellowOff"       left="8%"     top="60%"    width="13.38%" height="13.61%"  zIndex="4"/>
       <region id="rgFrameBlueOff"         left="8%"     top="75%"    width="11.82%" height="8.61%"   zIndex="4"/>
-      <region id="rgLua"                  left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="8"/>
-      <region id="rgFundoPreto"           left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="7"/>
+      <region id="rgSlide"                left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="8"/>
+      <region id="rgGame"                left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="8"/>
+      <region id="rgBgdBlack"           left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="7"/>
     </regionBase>
     
     <descriptorBase>
-      <descriptor id="deBgd"                  region="rgBgd"/>
-      <descriptor id="deBgd2"                 region="rgBgd2"/>
-      <descriptor id="deFullScreenMedia"      region="rgVideo"/>
-      <descriptor id="deIcon"                 region="rgIcon"/>
-     	<descriptor id="deMenuRed"              region="rgFrameRed"/>
-      <descriptor id="deFrameRedBtnSelect"    region="rgFrameRedBtnSelect"/>
-      <descriptor id="deFrameGreenBtnSelect"  region="rgFrameGreenBtnSelect"/>
-      <descriptor id="deFrameYellowBtnSelect" region="rgFrameYellowBtnSelect"/>
-      <descriptor id="deFrameBlueBtnSelect"   region="rgFrameBlueBtnSelect"/>
-      <descriptor id="deMenuGreen"            region="rgFrameGreen"/>
-      <descriptor id="deMenuYellow"           region="rgFrameYellow"/>
-      <descriptor id="deMenuBlue"             region="rgFrameBlue"/>
-      <descriptor id="deMenuRedOff"           region="rgFrameRedOff"/>
-      <descriptor id="deMenuGreenOff"         region="rgFrameGreenOff"/>
-      <descriptor id="deMenuYellowOff"        region="rgFrameYellowOff"/>
-      <descriptor id="deMenuBlueOff"          region="rgFrameBlueOff"/>
-      <descriptor id="deLogo"         		region="rgLogo"/>      
-      <descriptor id="deFundoPreto"      region="rgFundoPreto"/>
-	    <descriptor id="dLua"   				region="rgLua" focusIndex="0" focusBorderWidth="0"/>
-      
+      <descriptor id="dBgd"                  region="rgBgd"/>
+      <descriptor id="dBgd2"                 region="rgBgd2"/>
+      <descriptor id="dVideo"                region="rgVideo"/>
+      <descriptor id="dIcon"                 region="rgIcon"/>
+
+      <descriptor id="dFrameRedBtnSelect"    region="rgFrameRedBtnSelect"/>
+      <descriptor id="dFrameGreenBtnSelect"  region="rgFrameGreenBtnSelect"/>
+      <descriptor id="dFrameYellowBtnSelect" region="rgFrameYellowBtnSelect"/>
+      <descriptor id="dFrameBlueBtnSelect"   region="rgFrameBlueBtnSelect"/>
+     	<descriptor id="dMenuRed"              region="rgFrameRed"/>
+      <descriptor id="dMenuGreen"            region="rgFrameGreen"/>
+      <descriptor id="dMenuYellow"           region="rgFrameYellow"/>
+      <descriptor id="dMenuBlue"             region="rgFrameBlue"/>
+      <descriptor id="dMenuRedOff"           region="rgFrameRedOff"/>
+      <descriptor id="dMenuGreenOff"         region="rgFrameGreenOff"/>
+      <descriptor id="dMenuYellowOff"        region="rgFrameYellowOff"/>
+      <descriptor id="dMenuBlueOff"          region="rgFrameBlueOff"/>
+      <descriptor id="dLogo"         		    region="rgLogo"/>      
+      <descriptor id="dBgdBlack"           region="rgBgdBlack"/>
+	    <descriptor id="dGame"   				        region="rgGame" focusIndex="0" focusBorderWidth="0"/>
+      <descriptor id="dSlide"   			       	region="rgSlide" focusIndex="0" focusBorderWidth="0"/>
     </descriptorBase>
+
     <!-- library of used connectors -->
     <connectorBase>
       <importBase documentURI="connector.ncl" alias="conBase"/>
     </connectorBase>
+
   </head>
   
   <body>
     <port id="pInicia" component="mIcon"/>
 
-    <media id="mVideo" src="sbtvd-ts://0" descriptor="deFullScreenMedia">
+    <media id="mVideo" src="sbtvd-ts://0" descriptor="dVideo">
       <property name="bounds"/>
       <property name="zIndex" value="7"/>
     </media>
@@ -63,33 +67,37 @@
       <property name="service.currentKeyMaster" value=""/>
     </media>
 
-    <media id="mBgd"     src="media/menu/tela1/fundo.png"    descriptor="deBgd"/>
-    <media id="mBgd2"    src="media/menu/tela2/fundo2.png"   descriptor="deBgd2"/>
-    <media id="fundoPreto"          src="media/fundoPreto.png"          descriptor="deFundoPreto"/>
-    <media id="mIcon"        src="media/menu/icon.png"         	descriptor="deIcon"/>
-    <media id="logo"   		    src="media/menu/tela1/0.png"  descriptor="deLogo"/>
+    <media id="mBgd"     src="media/menu/tela1/fundo.png"    descriptor="dBgd"/>
+    <media id="mBgd2"    src="media/menu/tela2/fundo2.png"   descriptor="dBgd2"/>
+    <media id="mBgdBlack"          src="media/fundoPreto.png"          descriptor="dBgdBlack"/>
+    <media id="mIcon"        src="media/menu/icon.png"         	descriptor="dIcon"/>
+    <media id="logo"   		    src="media/menu/tela1/0.png"  descriptor="dLogo"/>
 
     <!-- Medias Frame Red -->
-    <media id="menuRedOff"      src="media/menu/tela1/1.png"  descriptor="deMenuRedOff"/>
-    <media id="menuRedOn"       src="media/menu/tela1/1a.png" descriptor="deMenuRed"/>
-    <media id="btnRedSelec"     src="media/menu/tela1/1a.png" descriptor="deFrameRedBtnSelect"/>
-    <media id="dicionarioTupi"  src="slideDic.lua" 			  descriptor="dLua"/>
+    <media id="menuRedOff"      src="media/menu/tela1/1.png"  descriptor="dMenuRedOff"/>
+    <media id="menuRedOn"       src="media/menu/tela1/1a.png" descriptor="dMenuRed"/>
+    <media id="btnRedSelec"     src="media/menu/tela1/1a.png" descriptor="dFrameRedBtnSelect"/>
+    <media id="mSlideDic"       src="slideDic.lua" 			      descriptor="dSlide"/>
+
 
     <!-- Medias Frame Green -->
-    <media id="menuGreenOff"    src="media/menu/tela1/2.png"   descriptor="deMenuGreenOff"/>
-    <media id="menuGreenOn"     src="media/menu/tela1/2a.png"  descriptor="deMenuGreen"/>
-		<media id="btnGreenSelec"   src="media/menu/tela1/2a.png"  descriptor="deFrameGreenBtnSelect"/>
-		<media id="mGame" 		src="media/gamedango/game.lua" descriptor="dLua"/>
+    <media id="menuGreenOff"    src="media/menu/tela1/2.png"  descriptor="dMenuGreenOff"/>
+    <media id="menuGreenOn"     src="media/menu/tela1/2a.png" descriptor="dMenuGreen"/>
+		<media id="btnGreenSelec"   src="media/menu/tela1/2a.png" descriptor="dFrameGreenBtnSelect"/>
+		<media id="mGame" 		     src="media/gamedango/game.lua" descriptor="dGame"/>
 
     <!-- Media Frame Yellow -->
-    <media id="menuYellowOff"   src="media/menu/tela1/3.png"  descriptor="deMenuYellowOff"/>
-    <media id="menuYellowOn"    src="media/menu/tela1/3a.png" descriptor="deMenuYellow"/>
-    <media id="btnYellowSelec"  src="media/menu/tela1/3a.png" descriptor="deFrameYellowBtnSelect"/>
-    
+    <media id="menuYellowOff"   src="media/menu/tela1/3.png"  descriptor="dMenuYellowOff"/>
+    <media id="menuYellowOn"    src="media/menu/tela1/3a.png" descriptor="dMenuYellow"/>
+    <media id="btnYellowSelec"  src="media/menu/tela1/3a.png" descriptor="dFrameYellowBtnSelect"/>
+    <media id="mSlidePers"       src="slidePersonagens.lua" 			      descriptor="dSlide"/>
+
     <!-- Media Frame Blue -->
-    <media id="menuBlueOff"  src="media/menu/tela1/4.png"     descriptor="deMenuBlueOff"/>
-    <media id="menuBlueOn"   src="media/menu/tela1/4a.png"    descriptor="deMenuBlue"/>
-    <media id="btnBlueSelec" src="media/menu/tela1/4a.png"    descriptor="deFrameBlueBtnSelect"/>
+    <media id="menuBlueOff"  src="media/menu/tela1/4.png"     descriptor="dMenuBlueOff"/>
+    <media id="menuBlueOn"   src="media/menu/tela1/4a.png"    descriptor="dMenuBlue"/>
+    <media id="btnBlueSelec" src="media/menu/tela1/4a.png"    descriptor="dFrameBlueBtnSelect"/>
+    <media id="mSlideInfo"       src="slideInfo.lua" 			      descriptor="dSlide"/>
+
     
     <!-- Link Icon Interact -->
     <link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
@@ -105,10 +113,16 @@
       <bind role="set" component="mVideo" interface="bounds">
         <bindParam name="varSet" value="37.10%, 20.65%, 54%, 54%"/>
       </bind>
-      <bind role="start" component="mBgd"/>
       <bind role="stop"  component="mIcon"/>
+      <bind role="start" component="mBgd"/>
+      <bind role="start"   component="logo"/>
+      <bind role="start"   component="menuRedOff"/>
+      <bind role="start"   component="menuGreenOff"/>
+      <bind role="start"   component="menuYellowOff"/>
+      <bind role="start"   component="menuBlueOff"/>
+      <bind role="start" component="menuRedOn"/>
     </link>
-
+<!--
     <link id="link_onBeginStart" xconnector="conBase#onBeginStart">
       <bind role="onBegin" component="mBgd"/>
       <bind role="start"   component="logo"/>
@@ -118,56 +132,136 @@
       <bind role="start"   component="menuBlueOff"/>
     </link>
 
+
     <link id="link_onEndIconStart" xconnector="conBase#onEndStart">
       <bind role="onEnd" component="mIcon"/>
       <bind role="start" component="menuRedOn"/>
     </link>
+-->
 
-    <!-- especifico GREEN  game  -->
+    <!-- especifico Red  slide dicionario tupi   -->
 
-    <link id="link_frameSelection" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="menuGreenOn">
+    <link id="lEnterFrameRed" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="menuRedOn">
         <bindParam name="keyCode" value="ENTER"/>
       </bind>
-      <bind role="stop" component="menuGreenOn"/>
-      <bind role="stop" component="mBgd"/>
-      <bind role="start" component="mBgd2"/>
-<!--      <bind role="start" component="fundoPreto"/> -->
-      <bind role="start" component="btnGreenSelec"/>
-      <bind role="start" component="mGame"/>
+      <bind role="onSelection" component="logo">
+        <bindParam name="keyCode" value="RED"/>
+      </bind>
       <bind role="set" component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
       </bind> 
+      <bind role="stop" component="mBgd"/>
+      <bind role="stop"   component="logo"/>
+      <bind role="stop"   component="menuRedOff"/>
+      <bind role="stop"   component="menuGreenOff"/>
+      <bind role="stop"   component="menuYellowOff"/>
+      <bind role="stop"   component="menuBlueOff"/>
+      <bind role="stop"   component="menuRedOn"/>
+      <bind role="stop"   component="menuGreenOn"/>
+      <bind role="stop"   component="menuYellowOn"/>
+      <bind role="stop"   component="menuBlueOn"/>
+      <bind role="start" component="mBgd2"/>
+      <bind role="start" component="btnRedSelec"/>
+      <bind role="start" component="mSlideDic"/>
+    </link>
+    
+
+    <link id="lExitFrameRed" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="btnRedSelec">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="stop" component="mSlideDic"/>
+      <bind role="stop" component="btnRedSelec"/>
+      <bind role="stop"  component="mBgd2"/>
+      <bind role="start" component="mBgd"/>
+      <bind role="start"   component="logo"/>
+      <bind role="start"   component="menuRedOff"/>
+      <bind role="start"   component="menuGreenOff"/>
+      <bind role="start"   component="menuYellowOff"/>
+      <bind role="start"   component="menuBlueOff"/>
+      <bind role="start" component="menuRedOn"/>
+      <bind role="start" component="menuRedOn"/>
+
+      <bind role="set"   component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
+      </bind>
     </link>
 
+    <link id="lFocusBeginSlideDic" xconnector="conBase#onBeginSet">
+      <bind role="onBegin" component="mSlideDic" />
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value="mSlideDic"/>   
+      </bind>
+    </link>
+
+    <link id="lFocusEndSlideDic" xconnector="conBase#onEndSet">
+      <bind role="onEnd" component="mSlideDic"/>
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value=""/>
+      </bind>
+    </link>
+
+    <!-- especifico GREEN  game  -->
 
     <link id="link_frameGreenSelection" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="menuGreenOn">
+        <bindParam name="keyCode" value="ENTER"/>
+      </bind>
       <bind role="onSelection" component="logo">
         <bindParam name="keyCode" value="GREEN"/>
       </bind>
       <bind role="stop" component="menuGreenOn"/>
       <bind role="stop" component="mBgd"/>
       <bind role="start" component="mBgd2"/>
-<!--      <bind role="start" component="fundoPreto"/> -->
+      <bind role="start" component="mBgdBlack"/> 
       <bind role="start" component="btnGreenSelec"/>
-      <bind role="start" component="mGame"/>
-            <bind role="set" component="mVideo" interface="bounds">
+      <bind role="set" component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
       </bind> 
+      <bind role="start" component="mGame"/>
+
     </link>
 
 
 
+    <!--
+    <link id="link_frameGreenSelection" xconnector="conBase#onSelectionStopStart">
+      <bind role="onSelection" component="menuGreenOn">
+        <bindParam name="keyCode" value="ENTER"/>
+      </bind>
+      <bind role="onSelection" component="logo">
+        <bindParam name="keyCode" value="GREEN"/>
+      </bind>
+      <bind role="stop" component="menuGreenOn"/>
+      <bind role="stop" component="mBgd"/>
+      <bind role="stop" component="mVideo"/>
+      <bind role="stop"   component="logo"/>
+      <bind role="stop"   component="menuRedOff"/>
+      <bind role="stop"   component="menuGreenOff"/>
+      <bind role="stop"   component="menuYellowOff"/>
+      <bind role="stop"   component="menuBlueOff"/>
+      <bind role="stop"   component="menuRedOn"/>
+      <bind role="stop"   component="menuGreenOn"/>
+      <bind role="stop"   component="menuYellowOn"/>
+      <bind role="stop"   component="menuBlueOn"/>
 
-    <!--SAI DA TELA 2-->
-    <link id="sairTelaGreen" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="start" component="btnGreenSelec"/>
+      <bind role="start" component="mGame"/>
+
+
+    </link>
+    -->
+
+    <!--exit frame green - game -->
+    <link id="lExitFrameGreen" xconnector="conBase#onSelectionStartStopSet">
       <bind role="onSelection" component="btnGreenSelec">
         <bindParam name="keyCode" value="EXIT"/>
       </bind>
       <bind role="stop" component="mGame"/>
       <bind role="stop" component="btnGreenSelec"/>
       <bind role="stop"  component="mBgd2"/>
-      <bind role="stop"  component="fundopreto"/>
+      <bind role="stop"  component="mBgdBlack"/>
       <bind role="start" component="mBgd"/>
       <bind role="start" component="menuGreenOn"/>
 
@@ -176,7 +270,153 @@
       </bind>
     </link>
 
-		
+
+    <link id="lFocusBeginGame" xconnector="conBase#onBeginSet">
+      <bind role="onBegin" component="btnGreenSelec"/>
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value="mGame"/>
+      </bind>
+    </link>
+    
+    <link id="lFocusEndGame" xconnector="conBase#onEndSet">
+      <bind role="onEnd" component="mGame"/>
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value=""/>
+      </bind>
+    </link>
+
+
+
+
+    <!-- Yellow Frame  :  slide personagens   -->
+
+    <link id="lEnterFrameYellow" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="menuYellowOn">
+        <bindParam name="keyCode" value="ENTER"/>
+      </bind>
+      <bind role="onSelection" component="logo">
+        <bindParam name="keyCode" value="YELLOW"/>
+      </bind>
+      <bind role="set" component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
+      </bind> 
+      <bind role="stop" component="mBgd"/>
+      <bind role="stop"   component="logo"/>
+      <bind role="stop"   component="menuRedOff"/>
+      <bind role="stop"   component="menuGreenOff"/>
+      <bind role="stop"   component="menuYellowOff"/>
+      <bind role="stop"   component="menuBlueOff"/>
+      <bind role="stop"   component="menuRedOn"/>
+      <bind role="stop"   component="menuGreenOn"/>
+      <bind role="stop"   component="menuYellowOn"/>
+      <bind role="stop"   component="menuBlueOn"/>
+      <bind role="start" component="mBgd2"/>
+      <bind role="start" component="btnYellowSelec"/>
+      <bind role="start" component="mSlidePers"/>
+    </link>
+    
+
+    <link id="lExitFrameYellow" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="btnYellowSelec">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="stop" component="mSlidePers"/>
+      <bind role="stop" component="btnYellowSelec"/>
+      <bind role="stop"  component="mBgd2"/>
+      <bind role="start" component="mBgd"/>
+      <bind role="start"   component="logo"/>
+      <bind role="start"   component="menuRedOff"/>
+      <bind role="start"   component="menuGreenOff"/>
+      <bind role="start"   component="menuYellowOff"/>
+      <bind role="start"   component="menuBlueOff"/>
+      <bind role="start" component="menuYellowOn"/>
+
+      <bind role="set"   component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
+      </bind>
+    </link>
+
+    <link id="lFocusBeginSlidePers" xconnector="conBase#onBeginSet">
+      <bind role="onBegin" component="mSlidePers" />
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value="mSlidePers"/>   
+      </bind>
+    </link>
+
+    <link id="lFocusEndSlidePers" xconnector="conBase#onEndSet">
+      <bind role="onEnd" component="mSlidePers"/>
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value=""/>
+      </bind>
+    </link>
+
+
+    <!-- especifico blue  slide informacoes   -->
+
+    <link id="lEnterFrameBlue" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="menuBlueOn">
+        <bindParam name="keyCode" value="ENTER"/>
+      </bind>
+      <bind role="onSelection" component="logo">
+        <bindParam name="keyCode" value="BLUE"/>
+      </bind>
+      <bind role="set" component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
+      </bind> 
+      <bind role="stop" component="mBgd"/>
+      <bind role="stop" component="logo"/>
+      <bind role="stop" component="menuRedOff"/>
+      <bind role="stop" component="menuGreenOff"/>
+      <bind role="stop" component="menuYellowOff"/>
+      <bind role="stop" component="menuBlueOff"/>
+      <bind role="stop" component="menuRedOn"/>
+      <bind role="stop" component="menuGreenOn"/>
+      <bind role="stop" component="menuYellowOn"/>
+      <bind role="stop" component="menuBlueOn"/>
+      <bind role="start" component="mBgd2"/>
+      <bind role="start" component="btnBlueSelec"/>
+      <bind role="start" component="mSlideInfo"/>
+    </link>
+    
+
+    <link id="lExitFrameBlue" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="btnBlueSelec">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="stop" component="mSlideInfo"/>
+      <bind role="stop" component="btnBlueSelec"/>
+      <bind role="stop"  component="mBgd2"/>
+      <bind role="start" component="mBgd"/>
+      <bind role="start" component="logo"/>
+      <bind role="start" component="menuRedOff"/>
+      <bind role="start" component="menuGreenOff"/>
+      <bind role="start" component="menuYellowOff"/>
+      <bind role="start" component="menuBlueOff"/>
+      <bind role="start" component="menuBlueOn"/>
+
+      <bind role="set"   component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
+      </bind>
+    </link>
+
+    <link id="lFocusBeginSlideInfo" xconnector="conBase#onBeginSet">
+      <bind role="onBegin" component="mSlideInfo" />
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value="mSlideInfo"/>
+      </bind>
+    </link>
+
+    <link id="lFocusEndSlideInfo" xconnector="conBase#onEndSet">
+      <bind role="onEnd" component="mSlideInfo"/>
+      <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value=""/>
+      </bind>
+    </link>
+
+
+
+
+
     <!--ACENDE TAG PELAS SETAS DIRECIONAIS (UP/DOWN)-->
 
     <!-- RED -->
@@ -269,7 +509,19 @@
 		</link>
 
     <!--SAI DA TELA 1-->
-    <link id="sairTela1" xconnector="conBase#onSelectionStartStopSet">
+    <link id="lMainExit" xconnector="conBase#onSelectionStartStopSet">
+      <bind role="onSelection" component="menuRedOff">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="onSelection" component="menuGreenOff">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="onSelection" component="menuYellowOff">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="onSelection" component="menuBlueOff">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
       <bind role="onSelection" component="mBgd">
         <bindParam name="keyCode" value="EXIT"/>
       </bind>
@@ -283,7 +535,7 @@
       <bind role="stop" component="menuYellowOff"/>
       <bind role="stop" component="menuBlueOff"/>
       <bind role="stop" component="mBgd"/>
-            <bind role="stop" component="mBgd"/>
+      <!-- conferir -->
 			<bind role="set"  component="mvideo" interface="bounds">
         <bindParam name="valueSet" value="0%,0%,100%,100%"/>
       </bind>
@@ -298,26 +550,13 @@
         </bind>
         </link>
 
-<link id="link_focoEndDicionario" xconnector="conBase#onEndSet">
-<bind role="onEnd" component="dicionarioTupi" />
-<bind role="set" component="settings" interface="service.currentKeyMaster">
-<bindParam name="value" value=""/>
-</bind>
-</link>
+        <link id="link_focoEndDicionario" xconnector="conBase#onEndSet">
+        <bind role="onEnd" component="dicionarioTupi" />
+        <bind role="set" component="settings" interface="service.currentKeyMaster">
+        <bindParam name="value" value=""/>
+        </bind>
+        </link>
     -->
 
-    <link id="link_focoBeginGame" xconnector="conBase#onBeginSet">
-      <bind role="onBegin" component="btnGreenSelec"/>
-      <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="mGame"/>
-      </bind>
-    </link>
-    
-    <link id="link_focoEndGame" xconnector="conBase#onEndSet">
-      <bind role="onEnd" component="mGame"/>
-      <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value=""/>
-      </bind>
-    </link>
   </body>
 </ncl>

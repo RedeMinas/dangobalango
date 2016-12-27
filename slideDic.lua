@@ -1,18 +1,14 @@
 function findImagesSlide()
---    os.execute("find media/tupi -name *.jpg > imagelistSlide.txt")
- --   os.execute("find media/tupi -name *.jpeg >> imagelistSlide.txt")
-  --  os.execute("find media/tupi -name *.bmp >> imagelistSlide.txt")
-   -- os.execute("find media/tupi -name *.gif >> imagelistSlide.txt")
-    --os.execute("find media/tupi -name *.png >> imagelistSlide.txt")
+  --os.execute("find media/tupi -name *.png >> imagelistDic.txt")
 
-    local imagesMenu = {}
+  local imagesMenu = {}
 
-    for line in io.lines("imagelistDic.txt") do
-      print(#imagesMenu .. " - ".. line)
-      table.insert(imagesMenu, line)
-    end
+  for line in io.lines("imagelistDic.txt") do
+    print(#imagesMenu .. " - ".. line)
+    table.insert(imagesMenu, line)
+  end
 
-    return imagesMenu
+  return imagesMenu
 end
 
 function showImage(images, index)
@@ -27,15 +23,15 @@ end
 
 function moveImageIndex(images, index, forward)
   if forward then
-     index = index + 1
-     if index > #images then
-        index = 1
-     end
+    index = index + 1
+    if index > #images then
+      index = 1
+    end
   else
-     index = index - 1
-     if index <= 0 then
-        index = #images
-     end;
+    index = index - 1
+    if index <= 0 then
+      index = #images
+    end;
   end
   return index
 end
@@ -54,32 +50,32 @@ function registerTimer()
 
 
   if cancelTimerFunc then
-     cancelTimerFunc()
+    cancelTimerFunc()
   end
   cancelTimerFunc = event.timer(timeout, autoForward)
 end
 
 function handler(evt)
 
-    showImage(images, index)
-    print("Show Image: "..index)
+  showImage(images, index)
+  print("Show Image: "..index)
 
-    print("Evento disparado: " .. evt.class .. " " .. evt.type)
-    if (evt.class == 'key' and evt.type == 'press') then
+  print("Evento disparado: " .. evt.class .. " " .. evt.type)
+  if (evt.class == 'key' and evt.type == 'press') then
 
-      if evt.key == "CURSOR_RIGHT" then
-        index = moveImageIndex(images, index, true)
-      elseif evt.key == "CURSOR_LEFT" then
-         index = moveImageIndex(images, index, false)
-      elseif evt.key == "EXIT" then
-        print ('chegou!')
-
-      end
-
-    elseif evt.class == "ncl" and evt.type=="presentation" and evt.action=="start" then
-      autoForward()
+    if evt.key == "CURSOR_RIGHT" then
+      index = moveImageIndex(images, index, true)
+    elseif evt.key == "CURSOR_LEFT" then
+      index = moveImageIndex(images, index, false)
+    elseif evt.key == "EXIT" then
+      print ('chegou!')
 
     end
+
+  elseif evt.class == "ncl" and evt.type=="presentation" and evt.action=="start" then
+    autoForward()
+
+  end
 
 end
 

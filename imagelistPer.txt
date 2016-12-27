@@ -1,7 +1,7 @@
-media/personagens/01.jpg
-media/personagens/02.jpg
-media/personagens/03.jpg
-media/personagens/04.jpg
-media/personagens/05.jpg
-media/personagens/06.jpg
-media/personagens/07.jpg
+media/personagens/01.png
+media/personagens/02.png
+media/personagens/03.png
+media/personagens/04.png
+media/personagens/05.png
+media/personagens/06.png
+media/personagens/07.png
