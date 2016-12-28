@@ -44,8 +44,8 @@
       <descriptor id="dMenuBlueOff"          region="rgFrameBlueOff"/>
       <descriptor id="dLogo"         		    region="rgLogo"/>      
       <descriptor id="dBgdBlack"           region="rgBgdBlack"/>
-	    <descriptor id="dGame"   				        region="rgGame" focusIndex="0" focusBorderWidth="0"/>
-      <descriptor id="dSlide"   			       	region="rgSlide" focusIndex="0" focusBorderWidth="0"/>
+	    <descriptor id="dGame"   				        region="rgGame" focusIndex="luaIdx" focusBorderWidth="luaIdx"/>
+      <descriptor id="dSlide"   			       	region="rgSlide" focusIndex="luaIdx" focusBorderWidth="1"/>
     </descriptorBase>
 
     <!-- library of used connectors -->
@@ -64,7 +64,7 @@
     </media>
 
     <media id="settings" type="application/x-ginga-settings" >
-      <property name="service.currentKeyMaster" value=""/>
+      <property name="service.currentKeyMaster" value="luaIdx"/>
     </media>
 
     <media id="mBgd"     src="media/menu/tela1/fundo.png"    descriptor="dBgd"/>
@@ -122,22 +122,30 @@
       <bind role="start"   component="menuBlueOff"/>
       <bind role="start" component="menuRedOn"/>
     </link>
-<!--
-    <link id="link_onBeginStart" xconnector="conBase#onBeginStart">
-      <bind role="onBegin" component="mBgd"/>
-      <bind role="start"   component="logo"/>
-      <bind role="start"   component="menuRedOff"/>
-      <bind role="start"   component="menuGreenOff"/>
-      <bind role="start"   component="menuYellowOff"/>
-      <bind role="start"   component="menuBlueOff"/>
-    </link>
 
 
-    <link id="link_onEndIconStart" xconnector="conBase#onEndStart">
-      <bind role="onEnd" component="mIcon"/>
-      <bind role="start" component="menuRedOn"/>
+    <!-- Exit Main Menu-->
+   <link id="lMainExit" xconnector="conBase#onSelectionStartStopSet">
+
+      <bind role="onSelection" component="mBgd">
+        <bindParam name="keyCode" value="EXIT"/>
+      </bind>
+      <bind role="stop" component="logo"/>
+      <bind role="stop" component="menuRedOn"/>
+      <bind role="stop" component="menuGreenOn"/>
+      <bind role="stop" component="menuYellowOn"/>
+      <bind role="stop" component="menuBlueOn"/>
+      <bind role="stop" component="menuRedOff"/>
+      <bind role="stop" component="menuGreenOff"/>
+      <bind role="stop" component="menuYellowOff"/>
+      <bind role="stop" component="menuBlueOff"/>
+      <bind role="stop" component="mBgd"/>
+
+			<bind role="set"  component="mVideo" interface="bounds">
+        <bindParam name="valueSet" value="0%,0%,100%,100%"/>
+      </bind>
+      <bind role="start" component="mIcon"/>
     </link>
--->
 
     <!-- especifico Red  slide dicionario tupi   -->
 
@@ -211,31 +219,10 @@
       <bind role="onSelection" component="logo">
         <bindParam name="keyCode" value="GREEN"/>
       </bind>
-      <bind role="stop" component="menuGreenOn"/>
-      <bind role="stop" component="mBgd"/>
-      <bind role="start" component="mBgd2"/>
-      <bind role="start" component="mBgdBlack"/> 
-      <bind role="start" component="btnGreenSelec"/>
-      <bind role="set" component="mVideo" interface="bounds">
+            <bind role="set" component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
       </bind> 
-      <bind role="start" component="mGame"/>
-
-    </link>
-
-
-
-    <!--
-    <link id="link_frameGreenSelection" xconnector="conBase#onSelectionStopStart">
-      <bind role="onSelection" component="menuGreenOn">
-        <bindParam name="keyCode" value="ENTER"/>
-      </bind>
-      <bind role="onSelection" component="logo">
-        <bindParam name="keyCode" value="GREEN"/>
-      </bind>
-      <bind role="stop" component="menuGreenOn"/>
       <bind role="stop" component="mBgd"/>
-      <bind role="stop" component="mVideo"/>
       <bind role="stop"   component="logo"/>
       <bind role="stop"   component="menuRedOff"/>
       <bind role="stop"   component="menuGreenOff"/>
@@ -245,24 +232,25 @@
       <bind role="stop"   component="menuGreenOn"/>
       <bind role="stop"   component="menuYellowOn"/>
       <bind role="stop"   component="menuBlueOn"/>
-
+      <bind role="start" component="mBgd2"/>
       <bind role="start" component="btnGreenSelec"/>
-      <bind role="start" component="mGame"/>
-
-
+      <bind role="start"  component="mGame"/>
     </link>
-    -->
+    
 
-    <!--exit frame green - game -->
     <link id="lExitFrameGreen" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="btnGreenSelec">
+      <bind role="onSelection" component="mBgd2">
         <bindParam name="keyCode" value="EXIT"/>
       </bind>
       <bind role="stop" component="mGame"/>
       <bind role="stop" component="btnGreenSelec"/>
-      <bind role="stop"  component="mBgd2"/>
-      <bind role="stop"  component="mBgdBlack"/>
+      <bind role="stop" component="mBgd2"/>
       <bind role="start" component="mBgd"/>
+      <bind role="start"   component="logo"/>
+      <bind role="start"   component="menuRedOff"/>
+      <bind role="start"   component="menuGreenOff"/>
+      <bind role="start"   component="menuYellowOff"/>
+      <bind role="start"   component="menuBlueOff"/>
       <bind role="start" component="menuGreenOn"/>
 
       <bind role="set"   component="mVideo" interface="bounds">
@@ -270,9 +258,8 @@
       </bind>
     </link>
 
-
     <link id="lFocusBeginGame" xconnector="conBase#onBeginSet">
-      <bind role="onBegin" component="btnGreenSelec"/>
+      <bind role="onBegin" component="mGame"/>
       <bind role="set" component="settings" interface="service.currentKeyMaster">
         <bindParam name="value" value="mGame"/>
       </bind>
@@ -284,9 +271,6 @@
         <bindParam name="value" value=""/>
       </bind>
     </link>
-
-
-
 
     <!-- Yellow Frame  :  slide personagens   -->
 
@@ -414,10 +398,7 @@
     </link>
 
 
-
-
-
-    <!--ACENDE TAG PELAS SETAS DIRECIONAIS (UP/DOWN)-->
+    <!-- Turn on icons on main menu using keys (UP/DOWN)-->
 
     <!-- RED -->
     <link id="link_frameRedUp" xconnector="conBase#onSelectionStart">
@@ -507,56 +488,6 @@
 			<bind role="stop" component="menuGreenOn"/>
 			<bind role="stop" component="menuYellowOn"/>
 		</link>
-
-    <!--SAI DA TELA 1-->
-    <link id="lMainExit" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="menuRedOff">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
-      <bind role="onSelection" component="menuGreenOff">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
-      <bind role="onSelection" component="menuYellowOff">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
-      <bind role="onSelection" component="menuBlueOff">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
-      <bind role="onSelection" component="mBgd">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
-      <bind role="stop" component="logo"/>
-      <bind role="stop" component="menuRedOn"/>
-      <bind role="stop" component="menuGreenOn"/>
-      <bind role="stop" component="menuYellowOn"/>
-      <bind role="stop" component="menuBlueOn"/>
-      <bind role="stop" component="menuRedOff"/>
-      <bind role="stop" component="menuGreenOff"/>
-      <bind role="stop" component="menuYellowOff"/>
-      <bind role="stop" component="menuBlueOff"/>
-      <bind role="stop" component="mBgd"/>
-      <!-- conferir -->
-			<bind role="set"  component="mvideo" interface="bounds">
-        <bindParam name="valueSet" value="0%,0%,100%,100%"/>
-      </bind>
-      <bind role="start" component="mIcon"/>
-    </link>
-
-    <!--
-        <link id="link_focoBeginDicionario" xconnector="conBase#onBeginSet">
-        <bind role="onBegin" component="btnRedSelec" />
-        <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="dicionarioTupi"/>
-        </bind>
-        </link>
-
-        <link id="link_focoEndDicionario" xconnector="conBase#onEndSet">
-        <bind role="onEnd" component="dicionarioTupi" />
-        <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value=""/>
-        </bind>
-        </link>
-    -->
 
   </body>
 </ncl>
