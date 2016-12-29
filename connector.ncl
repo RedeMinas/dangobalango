@@ -45,7 +45,7 @@
         <connectorParam name="varSet"/>
         <connectorParam name="keyCode"/>
         <simpleCondition role="onSelection" key="$keyCode"/>
-        <compoundAction operator="par">
+        <compoundAction operator="seq">
           <simpleAction role="stop" max="unbounded" qualifier="par"/>
           <simpleAction role="start" max="unbounded" qualifier="par"/>
           <simpleAction role="set" max="unbounded"  value="$varSet"/>

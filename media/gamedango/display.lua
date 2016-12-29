@@ -209,7 +209,7 @@ end
 function Display:draw_scoreboard (level, lives)
    canvas:attrColor('yellow')
    canvas:attrFont('vera', 18)
-   local text = 'Mapa: '.. level
+   local text = 'Fase: '.. level
    local textw = canvas:measureText (text)
    local totalw = textw + 80
    local pad_left = self.gameboard.pad_left + 5
@@ -228,7 +228,7 @@ end
 
 local function end_message (win)
    -- Fill canvas with an transparent color.
-   canvas:attrColor (1, 1, 1, 200)
+   canvas:attrColor (1, 1, 1, 150)
    canvas:clear ()
 
    -- Player won.
@@ -266,7 +266,7 @@ Display.end_message = end_message
 
 function Display:redraw (level, lives)
    -- Fill canvas with black.
-   canvas:attrColor ('black')
+   canvas:attrColor (1,1,1,200)
    canvas:clear ()
 
    -- Draws gameboard.

@@ -13,8 +13,8 @@
       <region id="rgFrameRedBtnSelect"    left="22%"    top="73%"    width="15.52%" height="15.55%"  zIndex="7"/>
       <region id="rgFrameGreenBtnSelect"  left="22%"    top="75%"    width="14.53%" height="10.74%"  zIndex="7"/>
       <region id="rgFrameYellowBtnSelect" left="22%"    top="75%"    width="13.38%" height="13.61%"  zIndex="7"/>
-      <region id="rgFrameBlueBtnSelect"   left="23.5%"    top="77%"    width="11.82%" height="8.61%"  zIndex="7"/>
-      <region id="rgLogo"         		left="3%" 	  top="1%"     width="22.08%" height="84.16%"  zIndex="3"/>
+      <region id="rgFrameBlueBtnSelect"   left="23.5%"  top="77%"    width="11.82%" height="8.61%"  zIndex="7"/>
+      <region id="rgLogo"         		    left="3%" 	  top="1%"     width="22.08%" height="84.16%"  zIndex="3"/>
       <region id="rgFrameRedOff"          left="8%"     top="32%"    width="15.52%" height="15.55%"  zIndex="4"/>
       <region id="rgFrameGreenOff"        left="8%"     top="48%"    width="14.53%" height="10.74%"  zIndex="4"/>
       <region id="rgFrameYellowOff"       left="8%"     top="60%"    width="13.38%" height="13.61%"  zIndex="4"/>
@@ -173,7 +173,6 @@
       <bind role="start" component="btnRedSelec"/>
       <bind role="start" component="mSlideDic"/>
     </link>
-    
 
     <link id="lExitFrameRed" xconnector="conBase#onSelectionStartStopSet">
       <bind role="onSelection" component="btnRedSelec">
@@ -216,10 +215,10 @@
       <bind role="onSelection" component="menuGreenOn">
         <bindParam name="keyCode" value="ENTER"/>
       </bind>
-      <bind role="onSelection" component="logo">
+            <bind role="onSelection" component="mBgd">
         <bindParam name="keyCode" value="GREEN"/>
       </bind>
-            <bind role="set" component="mVideo" interface="bounds">
+      <bind role="set" component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="61.40%,53.5%,30%,30%"/>
       </bind> 
       <bind role="stop" component="mBgd"/>
@@ -234,12 +233,11 @@
       <bind role="stop"   component="menuBlueOn"/>
       <bind role="start" component="mBgd2"/>
       <bind role="start" component="btnGreenSelec"/>
-      <bind role="start"  component="mGame"/>
+      <bind role="start"  component="mGame">/
     </link>
-    
 
     <link id="lExitFrameGreen" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="mBgd2">
+      <bind role="onSelection" component="btnGreenSelec">
         <bindParam name="keyCode" value="EXIT"/>
       </bind>
       <bind role="stop" component="mGame"/>
@@ -252,7 +250,6 @@
       <bind role="start"   component="menuYellowOff"/>
       <bind role="start"   component="menuBlueOff"/>
       <bind role="start" component="menuGreenOn"/>
-
       <bind role="set"   component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
       </bind>
@@ -298,7 +295,6 @@
       <bind role="start" component="btnYellowSelec"/>
       <bind role="start" component="mSlidePers"/>
     </link>
-    
 
     <link id="lExitFrameYellow" xconnector="conBase#onSelectionStartStopSet">
       <bind role="onSelection" component="btnYellowSelec">
