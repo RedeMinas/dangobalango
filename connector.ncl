@@ -40,7 +40,17 @@
           <simpleAction role="start" max="unbounded" qualifier="seq"/>
         </compoundAction>
       </causalConnector>
-      
+
+      <causalConnector id="onBeginStopStartSet">
+        <simpleCondition role="onBegin" />
+        <compoundAction operator="seq">
+          <simpleAction role="set" max="unbounded" qualifier="seq" value="$valueSet"/> 
+          <simpleAction role="stop" max="unbounded" qualifier="seq"/>
+          <simpleAction role="start" max="unbounded" qualifier="seq"/>
+        </compoundAction>
+      </causalConnector>
+
+
       <causalConnector id="onSelectionIconMenuResizeVideo">
         <connectorParam name="varSet"/>
         <connectorParam name="keyCode"/>

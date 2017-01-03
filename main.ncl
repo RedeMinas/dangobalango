@@ -44,8 +44,8 @@
       <descriptor id="dMenuBlueOff"          region="rgFrameBlueOff"/>
       <descriptor id="dLogo"         		    region="rgLogo"/>      
       <descriptor id="dBgdBlack"           region="rgBgdBlack"/>
-	    <descriptor id="dGame"   				        region="rgGame" focusIndex="luaIdx" focusBorderWidth="luaIdx"/>
-      <descriptor id="dSlide"   			       	region="rgSlide" focusIndex="luaIdx" focusBorderWidth="1"/>
+	    <descriptor id="dGame"   				        region="rgGame" focusIndex="luaIdx" focusBorderWidth="0"/>
+      <descriptor id="dSlide"   			       	region="rgSlide" focusIndex="luaIdx" focusBorderWidth="0"/>
     </descriptorBase>
 
     <!-- library of used connectors -->
@@ -77,27 +77,33 @@
     <media id="menuRedOff"      src="media/menu/tela1/1.png"  descriptor="dMenuRedOff"/>
     <media id="menuRedOn"       src="media/menu/tela1/1a.png" descriptor="dMenuRed"/>
     <media id="btnRedSelec"     src="media/menu/tela1/1a.png" descriptor="dFrameRedBtnSelect"/>
-    <media id="mSlideDic"       src="slideDic.lua" 			      descriptor="dSlide"/>
-
+    <media id="mSlideDic"       src="slideDic.lua" 			      descriptor="dSlide">
+      <area id="incSlideDic"/>
+    </media>
 
     <!-- Medias Frame Green -->
     <media id="menuGreenOff"    src="media/menu/tela1/2.png"  descriptor="dMenuGreenOff"/>
     <media id="menuGreenOn"     src="media/menu/tela1/2a.png" descriptor="dMenuGreen"/>
 		<media id="btnGreenSelec"   src="media/menu/tela1/2a.png" descriptor="dFrameGreenBtnSelect"/>
-		<media id="mGame" 		     src="media/gamedango/game.lua" descriptor="dGame"/>
+		<media id="mGame" 		     src="media/gamedango/game.lua" descriptor="dGame">
+      <area id="incGame"/>
+    </media>
 
     <!-- Media Frame Yellow -->
     <media id="menuYellowOff"   src="media/menu/tela1/3.png"  descriptor="dMenuYellowOff"/>
     <media id="menuYellowOn"    src="media/menu/tela1/3a.png" descriptor="dMenuYellow"/>
     <media id="btnYellowSelec"  src="media/menu/tela1/3a.png" descriptor="dFrameYellowBtnSelect"/>
-    <media id="mSlidePers"       src="slidePersonagens.lua" 			      descriptor="dSlide"/>
+    <media id="mSlidePers"       src="slidePersonagens.lua"   descriptor="dSlide">
+      <area id="incSlidePers"/>
+    </media>
 
     <!-- Media Frame Blue -->
     <media id="menuBlueOff"  src="media/menu/tela1/4.png"     descriptor="dMenuBlueOff"/>
     <media id="menuBlueOn"   src="media/menu/tela1/4a.png"    descriptor="dMenuBlue"/>
     <media id="btnBlueSelec" src="media/menu/tela1/4a.png"    descriptor="dFrameBlueBtnSelect"/>
-    <media id="mSlideInfo"       src="slideInfo.lua" 			      descriptor="dSlide"/>
-
+    <media id="mSlideInfo"       src="slideInfo.lua" 			      descriptor="dSlide">
+      <area id="incSlideInfo"/>
+    </media>
     
     <!-- Link Icon Interact -->
     <link id="link_onBeginVideo"  xconnector="conBase#onBeginStart">
@@ -174,10 +180,8 @@
       <bind role="start" component="mSlideDic"/>
     </link>
 
-    <link id="lExitFrameRed" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="btnRedSelec">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
+    <link id="lExitFrameRed" xconnector="conBase#onBeginStopStartSet">
+      <bind role="onBegin" component="mSlideDic" interface="incSlideDic"/>
       <bind role="stop" component="mSlideDic"/>
       <bind role="stop" component="btnRedSelec"/>
       <bind role="stop"  component="mBgd2"/>
@@ -189,16 +193,16 @@
       <bind role="start"   component="menuBlueOff"/>
       <bind role="start" component="menuRedOn"/>
       <bind role="start" component="menuRedOn"/>
-
       <bind role="set"   component="mVideo" interface="bounds">
         <bindParam name="valueSet" value="37.10%, 20.65%, 54%, 54%"/>
       </bind>
     </link>
+    
 
     <link id="lFocusBeginSlideDic" xconnector="conBase#onBeginSet">
       <bind role="onBegin" component="mSlideDic" />
       <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="mSlideDic"/>   
+        <bindParam name="value" value="luaIdx"/>   
       </bind>
     </link>
 
@@ -233,13 +237,12 @@
       <bind role="stop"   component="menuBlueOn"/>
       <bind role="start" component="mBgd2"/>
       <bind role="start" component="btnGreenSelec"/>
-      <bind role="start"  component="mGame">/
+      <bind role="start"  component="mGame"/>
     </link>
 
-    <link id="lExitFrameGreen" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="btnGreenSelec">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
+
+    <link id="lExitFrameGreen" xconnector="conBase#onBeginStopStartSet">
+      <bind role="onBegin" component="mGame" interface="incGame"/>
       <bind role="stop" component="mGame"/>
       <bind role="stop" component="btnGreenSelec"/>
       <bind role="stop" component="mBgd2"/>
@@ -258,7 +261,7 @@
     <link id="lFocusBeginGame" xconnector="conBase#onBeginSet">
       <bind role="onBegin" component="mGame"/>
       <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="mGame"/>
+        <bindParam name="value" value="luaIdx"/>
       </bind>
     </link>
     
@@ -296,10 +299,8 @@
       <bind role="start" component="mSlidePers"/>
     </link>
 
-    <link id="lExitFrameYellow" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="btnYellowSelec">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
+    <link id="lExitFrameYellow" xconnector="conBase#onBeginStopStartSet">
+      <bind role="onBegin" component="mSlidePers" interface="incSlidePers"/>
       <bind role="stop" component="mSlidePers"/>
       <bind role="stop" component="btnYellowSelec"/>
       <bind role="stop"  component="mBgd2"/>
@@ -319,7 +320,7 @@
     <link id="lFocusBeginSlidePers" xconnector="conBase#onBeginSet">
       <bind role="onBegin" component="mSlidePers" />
       <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="mSlidePers"/>   
+        <bindParam name="value" value="luaIdx"/>   
       </bind>
     </link>
 
@@ -358,11 +359,8 @@
       <bind role="start" component="mSlideInfo"/>
     </link>
     
-
-    <link id="lExitFrameBlue" xconnector="conBase#onSelectionStartStopSet">
-      <bind role="onSelection" component="btnBlueSelec">
-        <bindParam name="keyCode" value="EXIT"/>
-      </bind>
+    <link id="lExitFrameBlue" xconnector="conBase#onBeginStopStartSet">
+      <bind role="onBegin" component="mSlideInfo" interface="incSlideInfo"/>
       <bind role="stop" component="mSlideInfo"/>
       <bind role="stop" component="btnBlueSelec"/>
       <bind role="stop"  component="mBgd2"/>
@@ -382,7 +380,7 @@
     <link id="lFocusBeginSlideInfo" xconnector="conBase#onBeginSet">
       <bind role="onBegin" component="mSlideInfo" />
       <bind role="set" component="settings" interface="service.currentKeyMaster">
-        <bindParam name="value" value="mSlideInfo"/>
+        <bindParam name="value" value="luaIdx"/>
       </bind>
     </link>
 

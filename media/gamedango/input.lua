@@ -20,7 +20,15 @@ local KEY_TO_DIR = {
 
 local function keypress_handler (evt)
    if evt.class == 'key' and evt.type == 'press' and evt.key then
-      DIR = KEY_TO_DIR[evt.key]
+     DIR = KEY_TO_DIR[evt.key]
+     if evt.key == "EXIT" then
+       event.post{
+         class = 'ncl',
+         type='presentation',
+         label='incGame',
+         action='start'
+       }
+     end
    end
 end
 event.register (keypress_handler)

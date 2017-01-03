@@ -72,8 +72,14 @@ function handler(evt)
         index = moveImageIndex(images, index, true)
       elseif evt.key == "CURSOR_LEFT" then
          index = moveImageIndex(images, index, false)
+      elseif evt.key == "EXIT" then
+        event.post{
+          class = 'ncl',
+          type='presentation',
+          label='incSlidePers',
+          action='start'
+        }
       end
-
     elseif evt.class == "ncl" and evt.type=="presentation" and evt.action=="start" then
       autoForward()
 

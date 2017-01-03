@@ -34,7 +34,7 @@ do
    GAME = coroutine.create (
       function ()
          local level = 1      -- Initial level.
-         local lives = 3       -- Player lives.
+         local lives = 9       -- Player lives.
          local pathname = LEVEL_PATH:gsub ('%%s', level, 1)
 
          local win = true
