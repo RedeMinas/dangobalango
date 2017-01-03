@@ -2,8 +2,8 @@
 <ncl id="DangoBalango" xmlns="http://www.ncl.org.br/NCL3.0/EDTVProfile">
   <head>
     <regionBase>
-      <region id="rgBgd"                                   width="100%"   height="100%"    zIndex="1"/>
-      <region id="rgBgd2"                                  width="100%"   height="100%"    zIndex="1"/>
+      <region id="rgBgd"                                   width="100%"   height="100%"    zIndex="2"/>
+      <region id="rgBgd2"                                  width="100%"   height="100%"    zIndex="2"/>
       <region id="rgVideo"                                 width="100%"   height="100%"    zIndex="7"/>
       <region id="rgIconOK"      left="89%"    top="90%"   width="10.677%"  height="9.259%" zIndex="8"/>
       <region id="rgIconRed"     left="8%"     top="32%"   width="15.52%" height="15.55%"  zIndex="5"/>
@@ -14,13 +14,11 @@
       <region id="rgFrameGreen"  left="22%"    top="75%"   width="14.53%" height="10.74%"  zIndex="4"/>
       <region id="rgFrameYellow" left="22%"    top="75%"   width="13.38%" height="13.61%"  zIndex="4"/>
       <region id="rgFrameBlue"   left="23.5%"  top="77%"   width="11.82%" height="8.61%"  zIndex="4"/>
-      <region id="rgLogo"        left="3%" 	  top="1%"     width="22.08%" height="84.16%"  zIndex="3"/>
+      <region id="rgLogo"        left="3%" 	   top="1%"    width="22.08%" height="84.16%"  zIndex="3"/>
       <region id="rgSlide"       left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="4"/>
       <region id="rgGame"        left="4.99%"  top="13.6%" width="48%"    height="54.5%" zIndex="4"/>
-      <region id="rgArrowR"  left="4.99%"  top="75%" width="10%"    height="10%" zIndex="4"/>
-      <region id="rgArrowL"   left="10%"  top="75%" width="10%"    height="10%" zIndex="4"/>
-
-
+      <region id="rgArrowL"      left="7%"     top="67%"   width="6.25%"    height="6.25%" zIndex="5"/>
+      <region id="rgArrowR"      left="45%"    top="67%"   width="6.25%"    height="6.25%" zIndex="5"/>
     </regionBase>
     
     <descriptorBase>
@@ -173,10 +171,9 @@
       <bind role="stop"   component="mIconBlueOn"/>
       <bind role="start" component="mBgd2"/>
       <bind role="start" component="mFrameRed"/>
-      <bind role="start" component="mSlideDic"/>
       <bind role="start" component="mArrowL"/>
       <bind role="start" component="mArrowR"/>
-
+      <bind role="start" component="mSlideDic"/>
     </link>
 
     <link id="lExitFrameRed" xconnector="conBase#onBeginStopStartSet">
@@ -295,6 +292,8 @@
       <bind role="stop"   component="mIconBlueOn"/>
       <bind role="start" component="mBgd2"/>
       <bind role="start" component="mFrameYellow"/>
+      <bind role="start" component="mArrowL"/>
+      <bind role="start" component="mArrowR"/>
       <bind role="start" component="mSlidePers"/>
     </link>
 
@@ -302,6 +301,8 @@
       <bind role="onBegin" component="mSlidePers" interface="incSlidePers"/>
       <bind role="stop" component="mSlidePers"/>
       <bind role="stop" component="mFrameYellow"/>
+      <bind role="stop" component="mArrowL"/>
+      <bind role="stop" component="mArrowR"/>
       <bind role="stop"  component="mBgd2"/>
       <bind role="start" component="mBgd"/>
       <bind role="start"   component="mLogo"/>
@@ -353,6 +354,8 @@
       <bind role="stop" component="mIconBlueOn"/>
       <bind role="start" component="mBgd2"/>
       <bind role="start" component="mFrameBlue"/>
+      <bind role="start" component="mArrowL"/>
+      <bind role="start" component="mArrowR"/>
       <bind role="start" component="mSlideInfo"/>
     </link>
     
@@ -360,6 +363,8 @@
       <bind role="onBegin" component="mSlideInfo" interface="incSlideInfo"/>
       <bind role="stop" component="mSlideInfo"/>
       <bind role="stop" component="mFrameBlue"/>
+      <bind role="stop" component="mArrowL"/>
+      <bind role="stop" component="mArrowR"/>
       <bind role="stop"  component="mBgd2"/>
       <bind role="start" component="mBgd"/>
       <bind role="start" component="mLogo"/>
