@@ -68,12 +68,18 @@ function handler(evt)
     elseif evt.key == "CURSOR_LEFT" then
       index = moveImageIndex(images, index, false)
     elseif evt.key == "EXIT" then
-      event.post{
-        class = 'ncl',
-        type='presentation',
-        label='incSlideDic',
-        action='start'
-      }
+      event.post("out",{
+                   class = 'ncl',
+                   type='presentation',
+                   label='lSlideDic',
+                   action='start'
+      })
+      event.post("out",{
+                   class = 'ncl',
+                   type='presentation',
+                   label='incSlideDic',
+                   action='start'
+      })
 
     end
   elseif evt.class == "ncl" and evt.type=="presentation" and evt.action=="start" then

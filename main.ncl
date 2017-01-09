@@ -57,7 +57,8 @@
     </media>
 
     <media id="settings" type="application/x-ginga-settings" >
-      <property name="service.currentKeyMaster" value="luaIdx"/>
+      <property name="service.currentKeyMaster" value="mGame"/>
+      <property name="service.currentFocus" value="luaIdx"/>
     </media>
 
     <media id="mBgd"    src="media/menu/tela1/fundo.png"    descriptor="dBgd"/>
@@ -72,7 +73,7 @@
     <media id="mIconRedOn"       src="media/menu/tela1/1a.png" descriptor="dIconRed"/>
     <media id="mFrameRed"     src="media/menu/tela1/1a.png" descriptor="dFrameRed"/>
     <media id="mSlideDic"       src="slideDic.lua" 			      descriptor="dSlide">
-      <area id="incSlideDic"/>
+      <area id="incSlideDic" label="lSlideDic"/>
     </media>
 
     <!-- Medias Frame Green -->
@@ -80,7 +81,7 @@
     <media id="mIconGreenOn"  src="media/menu/tela1/2a.png"  descriptor="dIconGreen"/>
 		<media id="mFrameGreen"   src="media/menu/tela1/2a.png"  descriptor="dFrameGreen"/>
 		<media id="mGame" 		    src="media/gamedango/game.lua" descriptor="dGame">
-      <area id="incGame"/>
+      <area id="incGame" label="lGame"/>
     </media>
 
     <!-- Media Frame Yellow -->
@@ -88,7 +89,7 @@
     <media id="mIconYellowOn"  src="media/menu/tela1/3a.png" descriptor="dIconYellow"/>
     <media id="mFrameYellow"   src="media/menu/tela1/3a.png" descriptor="dFrameYellow"/>
     <media id="mSlidePers"     src="slidePersonagens.lua"    descriptor="dSlide">
-      <area id="incSlidePers"/>
+      <area id="incSlidePers" label="lSlidePers"/>
     </media>
 
     <!-- Media Frame Blue -->
@@ -96,7 +97,7 @@
     <media id="mIconBlueOn"  src="media/menu/tela1/4a.png" descriptor="dIconBlue"/>
     <media id="mFrameBlue"   src="media/menu/tela1/4a.png" descriptor="dFrameBlue"/>
     <media id="mSlideInfo"   src="slideInfo.lua" 			     descriptor="dSlide">
-      <area id="incSlideInfo"/>
+      <area id="incSlideInfo" label="lSlideInfo"/>
     </media>
     
     <!-- Link Icon Interact -->
@@ -320,6 +321,10 @@
       <bind role="set" component="settings" interface="service.currentKeyMaster">
         <bindParam name="value" value="luaIdx"/>   
       </bind>
+      <bind role="set" component="settings" interface="service.currentFocus">
+        <bindParam name="value" value="mSlidePers"/>   
+      </bind>
+
     </link>
 
     <link id="lFocusEndSlidePers" xconnector="conBase#onEndSet">
